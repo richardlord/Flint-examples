@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:f="http://flintparticles.org/2009/flint2d"
+	layout="absolute" width="700" height="500"
+	backgroundColor="#CCCCCC">
+	
+	<mx:Script>
+		<![CDATA[
+			[Embed(source='assets/bird.swf', symbol='Bird')]
+			public var Bird:Class;
+		]]>
+	</mx:Script>
+	
+<f:DisplayObjectRenderer id="renderer" width="700" height="500">
+	<f:emitters>
+		<f:Emitter id="emitter" autoStart="true">
+			<f:counter>
+				<f:Blast startCount="150"/>
+			</f:counter>
+			<f:initializers>
+				<f:Position>
+					<f:RectangleZone top="10" left="10" bottom="490" right="690"/>
+				</f:Position>
+				<f:Velocity>
+					<f:DiscZone centerX="0" centerY="0" innerRadius="100" outerRadius="150"/>
+				</f:Velocity>
+				<f:ImageClass imageClass="{Bird}"/>
+			</f:initializers>
+			<f:actions>
+				<f:Move/>
+				<f:RotateToDirection/>
+				<f:ApproachNeighbours acceleration="100" maxDistance="150"/>
+				<f:MatchVelocity acceleration="200" maxDistance="20"/>
+				<f:MinimumDistance acceleration="600" minimum="10"/>
+				<f:SpeedLimit limit="100" isMinimum="true"/>
+				<f:SpeedLimit limit="200"/>
+				<f:BoundingBox left="0" right="700" top="0" bottom="500"/>
+			</f:actions>
+		</f:Emitter>
+	</f:emitters>
+</f:DisplayObjectRenderer>
+</mx:Application>

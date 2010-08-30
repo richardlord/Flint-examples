@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:f="http://flintparticles.org/2009/flint3d"
+	xmlns:geom="flash.geom.*"
+	layout="absolute" width="500" height="350"
+	backgroundColor="#000000" creationComplete="complete()">
+
+	<mx:Script>
+		<![CDATA[
+			import org.flintparticles.threeD.actions.Explosion;
+			import org.flintparticles.threeD.particles.Particle3DUtils;
+			
+			[Embed(source="assets/184098.jpg")]
+			public var Image1:Class;
+
+			private function complete():void
+			{
+				var bitmap:Bitmap  = new Image1();
+				var particles:Array = Particle3DUtils.createRectangleParticlesFromBitmapData( bitmap.bitmapData, 20, emitter.particleFactory, new Point3D( -192, 127, 0 ) );
+				emitter.addExistingParticles( particles, false );
+				addEventListener( MouseEvent.CLICK, explode, false, 0, true );
+			}
+			
+			private function explode( ev:MouseEvent ):void
+			{
+				var p:Point = renderer.globalToLocal( new Point( ev.stageX, ev.stageY ) );
+				emitter.addAction( new Explosion( 8, new Point3D( p.x - renderer.width / 2, -p.y + renderer.height / 2, 50 ), 500 ) );
+				removeEventListener( MouseEvent.CLICK, explode );
+			}
+		]]>
+	</mx:Script>
+
+<f:DisplayObjectRenderer x="0" y="0" id="renderer" width="500" height="350">
+	<f:camera>
+		<f:Camera id="camera" projectionDistance="400">
+			<f:position>
+				<f:Point3D x="0" y="0" z="-400"/>
+			</f:position>
+		</f:Camera>
+	</f:camera>
+	<f:emitters>
+		<f:Emitter id="emitter" autoStart="true">
+			<f:actions>
+				<f:Move/>
+				<f:DeathZone zoneIsSafe="true">
+					<f:FrustrumZone camera="{camera}">
+						<f:viewRect>
+							<geom:Rectangle left="-290" top="-190" width="580" height="380"/>
+						</f:viewRect>
+					</f:FrustrumZone>
+				</f:DeathZone>
+			</f:actions>
+		</f:Emitter>
+	</f:emitters>
+</f:DisplayObjectRenderer>
+</mx:Application>

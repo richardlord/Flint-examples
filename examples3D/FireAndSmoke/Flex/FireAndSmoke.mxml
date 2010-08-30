@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:f="http://flintparticles.org/2009/flint3d"
+	xmlns:filters="flash.filters.*"
+	layout="absolute" width="400" height="400"
+	backgroundColor="#000000">
+
+	<mx:Script>
+		<![CDATA[
+			[Embed(source='assets/fireblob.swf', symbol='FireBlob')]
+			public var FireBlob:Class;
+		]]>
+	</mx:Script>
+		
+<mx:Label text="Use arrow keys to track in/out and orbit around the fire." color="#FFFFFF"/>
+<f:BitmapRenderer id="renderer" width="400" height="400">
+	<f:camera>
+		<f:Camera projectionDistance="400">
+			<f:position>
+				<f:Point3D x="0" y="150" z="-400"/>
+			</f:position>
+			<f:target>
+				<f:Point3D x="0" y="150" z="0"/>
+			</f:target>
+			<f:controller>
+				<f:OrbitCamera/>
+			</f:controller>
+		</f:Camera>
+	</f:camera>
+	<f:emitters>
+		<f:Emitter id="smoke" autoStart="true">
+			<f:counter>
+				<f:Steady rate="10"/>
+			</f:counter>
+			<f:initializers>
+				<f:Velocity>
+					<f:ConeZone angle="0.5" height="40" truncatedHeight="30">
+						<f:axis>
+							<f:Vector3D x="0" y="1" z="0"/>
+						</f:axis>
+					</f:ConeZone>
+				</f:Velocity>
+				<f:SharedImage>
+					<f:RadialDot radius="6"/>
+				</f:SharedImage>
+				<f:Lifetime minLifetime="11" maxLifetime="12"/>
+			</f:initializers>
+			<f:actions>
+				<f:Move/>
+				<f:Age/>
+				<f:LinearDrag drag="0.01"/>
+				<f:ScaleImage startScale="1" endScale="15"/>
+				<f:Fade startAlpha="0.15" endAlpha="0"/>
+				<f:RandomDrift driftX="15" driftY="15" driftZ="15"/>
+			</f:actions>
+		</f:Emitter>
+		<f:Emitter id="fire" autoStart="true">
+			<f:counter>
+				<f:Steady rate="60"/>
+			</f:counter>
+			<f:initializers>
+				<f:Position>
+					<f:DiscZone outerRadius="3">
+						<f:normal>
+							<f:Vector3D x="0" y="1" z="0"/>
+						</f:normal>
+					</f:DiscZone>
+				</f:Position>
+				<f:Velocity>
+					<f:DiscZone outerRadius="20">
+						<f:normal>
+							<f:Vector3D x="0" y="1" z="0"/>
+						</f:normal>
+					</f:DiscZone>
+				</f:Velocity>
+				<f:SharedImage image="{new FireBlob()}"/>
+				<f:Lifetime minLifetime="2" maxLifetime="3"/>
+			</f:initializers>
+			<f:actions>
+				<f:Move/>
+				<f:RotateToDirection/>
+				<f:Age/>
+				<f:LinearDrag drag="1"/>
+				<f:Accelerate x="0" y="40" z="0"/>
+				<f:ScaleImage startScale="1" endScale="1.5"/>
+				<f:ColorChange startColor="{0xFFFFCC00}" endColor="0x00CC0000"/>
+			</f:actions>
+		</f:Emitter>
+	</f:emitters>
+</f:BitmapRenderer>
+</mx:Application>

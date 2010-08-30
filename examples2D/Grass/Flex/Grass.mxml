@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:f="http://flintparticles.org/2009/flint2d"
+	layout="absolute" width="500" height="500"
+	backgroundColor="#000000">
+
+<f:BitmapLineRenderer width="500" height="500">
+	<f:emitters>
+		<f:Emitter id="emitter" autoStart="true" x="250" y="400">
+			<f:counter>
+				<f:Blast startCount="100"/>
+			</f:counter>
+			<f:initializers>
+				<f:Position>
+					<f:DiscZone centerX="0" centerY="0" outerRadius="40"/>
+				</f:Position>
+				<f:Velocity>
+					<f:DiscSectorZone centerX="0" centerY="0" outerRadius="80" innerRadius="40" minAngle="{-5 * Math.PI / 8}" maxAngle="{-3 * Math.PI / 8}"/>
+				</f:Velocity>
+				<f:ColorInit minColor="0xFF006600" maxColor="0xFF009900"/>
+				<f:Lifetime lifetime="7"/>
+			</f:initializers>
+			<f:actions>
+				<f:Move/>
+				<f:Age/>
+				<f:Accelerate x="0" y="10"/>
+				<f:ScaleImage startScale="4" endScale="1"/>
+			</f:actions>
+		</f:Emitter>
+	</f:emitters>
+</f:BitmapLineRenderer>
+</mx:Application>

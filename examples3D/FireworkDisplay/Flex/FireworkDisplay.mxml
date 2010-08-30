@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:f="http://flintparticles.org/2009/flint3d"
+	xmlns:filters="flash.filters.*"
+	xmlns="*"
+	layout="absolute" width="800" height="600"
+	backgroundColor="#000000" creationComplete="created()">
+
+	<mx:Script>
+		<![CDATA[
+			import org.flintparticles.common.events.EmitterEvent;
+			import org.flintparticles.threeD.particles.Particle3D;
+			import org.flintparticles.common.events.ParticleEvent;
+			
+			private function created():void
+			{
+				whizzer.addEventListener( ParticleEvent.PARTICLE_DEAD, whizzBang, false, 0, true );
+			}
+
+			public function whizzBang( ev:ParticleEvent ):void
+			{
+				var bang:SphereBang = new SphereBang();
+				bang.position = Particle3D( ev.particle ).position;
+				bang.addEventListener( EmitterEvent.EMITTER_EMPTY, removeEmitter, false, 0, true );
+				renderer.addEmitter( bang );
+				bang.start();
+			}
+
+			public function removeEmitter( ev:EmitterEvent ):void
+			{
+				SphereBang( ev.target ).removeEventListener( EmitterEvent.EMITTER_EMPTY, removeEmitter );
+				renderer.removeEmitter( SphereBang( ev.target ) );
+			}
+		]]>
+	</mx:Script>
+
+<mx:Label color="#FFFFFF" text="Use arrow keys to pan/tilt the camera. Use W,S,D,L to move the camera. Use page up/ page down to raise and lower the camera."/>
+<f:BitmapRenderer x="0" y="0" id="renderer" width="800" height="600">
+	<f:camera>
+		<f:Camera id="camera" projectionDistance="400">
+			<f:position>
+				<f:Point3D x="0" y="150" z="-400"/>
+			</f:position>
+			<f:target>
+				<f:Point3D x="0" y="150" z="0"/>
+			</f:target>
+			<f:controller>
+				<f:FirstPersonCamera/>
+			</f:controller>
+		</f:Camera>
+	</f:camera>
+	<f:preFilters>
+		<filters:BlurFilter blurX="2" blurY="2" quality="1"/>
+		<filters:ColorMatrixFilter matrix="{[ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.95,0 ]}"/>
+	</f:preFilters>
+	<f:emitters>
+		<Whizzer id="whizzer" autoStart="true">
+			<zone>
+				<f:LineZone>
+					<f:start>
+						<f:Point3D x="-200" y="0" z="0"/>
+					</f:start>
+					<f:end>
+						<f:Point3D x="200" y="0" z="0"/>
+					</f:end>
+				</f:LineZone>
+			</zone>
+		</Whizzer>
+		<CatherineWheel autoStart="true">
+			<position>
+				<f:Point3D x="-200" y="200" z="50"/>
+			</position>
+		</CatherineWheel>
+		<CatherineWheel autoStart="true">
+			<position>
+				<f:Point3D x="0" y="200" z="50"/>
+			</position>
+		</CatherineWheel>
+		<CatherineWheel autoStart="true">
+			<position>
+				<f:Point3D x="200" y="200" z="50"/>
+			</position>
+		</CatherineWheel>
+		<Candle autoStart="true">
+			<position>
+				<f:Point3D x="150" y="0" z="150"/>
+			</position>
+		</Candle>
+		<Candle autoStart="true">
+			<position>
+				<f:Point3D x="-150" y="0" z="150"/>
+			</position>
+		</Candle>
+		<Candle autoStart="true">
+			<position>
+				<f:Point3D x="150" y="0" z="-150"/>
+			</position>
+		</Candle>
+		<Candle autoStart="true">
+			<position>
+				<f:Point3D x="-150" y="0" z="-150"/>
+			</position>
+		</Candle>
+		
+	</f:emitters>
+</f:BitmapRenderer>
+</mx:Application>

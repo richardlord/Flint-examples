@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:f="http://flintparticles.org/2009/flint2d"
+	xmlns:filters="flash.filters.*"
+	layout="absolute" width="400" height="400"
+	backgroundColor="#000000">
+	
+<f:BitmapRenderer id="renderer" width="400" height="400">
+	<f:preFilters>
+		<filters:BlurFilter blurX="2" blurY="2" quality="1"/>
+	</f:preFilters>
+	<f:emitters>
+		<f:Emitter id="emitter" autoStart="true">
+			<f:counter>
+				<f:Blast startCount="30"/>
+			</f:counter>
+			<f:initializers>
+				<f:Position>
+					<f:RectangleZone left="10" right="390" top="10" bottom="390"/>
+				</f:Position>
+				<f:SharedImage>
+					<f:Dot radius="2"/>
+				</f:SharedImage>
+				<f:ColorInit minColor="0xFFFF00FF" maxColor="0xFF00FFFF"/>
+			</f:initializers>
+			<f:actions>
+				<f:Move/>
+				<f:MutualGravity power="10" maxDistance="500" epsilon="3"/>
+				<f:SpeedLimit limit="150"/>
+				<f:BoundingBox left="0" right="400" top="0" bottom="400"/>
+			</f:actions>
+		</f:Emitter>
+	</f:emitters>
+</f:BitmapRenderer>
+</mx:Application>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:f="http://flintparticles.org/2009/flint2d"
+	layout="absolute" width="600" height="400">
+	
+	<mx:Script>
+		<![CDATA[
+			import org.flintparticles.common.displayObjects.*;
+		]]>
+	</mx:Script>
+
+<mx:Image source="@Embed(source='assets/Snow_1.png')"/>
+<f:DisplayObjectRenderer id="renderer" width="600" height="400">
+	<f:emitters>
+		<f:Emitter id="emitter" autoStart="true" runAheadTime="10">
+			<f:counter>
+				<f:Steady rate="150"/>
+			</f:counter>
+			<f:initializers>
+				<f:Position>
+					<f:LineZone startX="-5" startY="-5" endX="605" endY="-5"/>
+				</f:Position>
+				<f:Velocity>
+					<f:PointZone x="0" y="65"/>
+				</f:Velocity>
+				<f:ImageClass imageClass="{RadialDot}" parameters="{[2]}"/>
+				<f:ScaleImageInit minScale="0.75" maxScale="2"/>
+			</f:initializers>
+			<f:actions>
+				<f:Move/>
+				<f:DeathZone zoneIsSafe="true">
+					<f:RectangleZone left="-10" right="620" top="-10" bottom="420"/>
+				</f:DeathZone>
+				<f:RandomDrift driftX="20" driftY="20"/>
+			</f:actions>
+		</f:Emitter>
+	</f:emitters>
+</f:DisplayObjectRenderer>
+<mx:Image source="@Embed(source='assets/Snow_1_over.png')"/>
+</mx:Application>

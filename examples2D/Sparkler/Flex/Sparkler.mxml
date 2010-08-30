@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:f="http://flintparticles.org/2009/flint2d"
+	xmlns:filters="flash.filters.*"
+	layout="absolute" width="400" height="400"
+	backgroundColor="#000000">
+	
+<f:BitmapRenderer id="renderer" width="400" height="400">
+	<f:preFilters>
+		<filters:BlurFilter blurX="2" blurY="2" quality="1"/>
+		<filters:ColorMatrixFilter matrix="{[ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.95,0 ]}"/>
+	</f:preFilters>
+	<f:emitters>
+		<f:Emitter id="emitter" autoStart="true">
+			<f:counter>
+				<f:Steady rate="150"/>
+			</f:counter>
+			<f:initializers>
+				<f:Velocity>
+					<f:DiscZone centerX="0" centerY="0" innerRadius="200" outerRadius="350"/>
+				</f:Velocity>
+				<f:SharedImage>
+					<f:Line length="8"/>
+				</f:SharedImage>
+				<f:ColorInit minColor="0xFFFFCC00" maxColor="0xFFFFCC00"/>
+				<f:Lifetime minLifetime="0.2" maxLifetime="0.4"/>
+			</f:initializers>
+			<f:actions>
+				<f:Move/>
+				<f:Age/>
+				<f:RotateToDirection/>
+			</f:actions>
+			<f:activities>
+				<f:FollowMouse renderer="{renderer}"/>
+			</f:activities>
+		</f:Emitter>
+	</f:emitters>
+</f:BitmapRenderer>
+</mx:Application>

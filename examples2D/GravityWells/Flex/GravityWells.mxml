@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:f="http://flintparticles.org/2009/flint2d"
+	xmlns:filters="flash.filters.*"
+	layout="absolute" width="400" height="400"
+	backgroundColor="#000000">
+	
+<f:PixelRenderer id="renderer" width="400" height="400">
+	<f:preFilters>
+		<filters:BlurFilter blurX="2" blurY="2" quality="1"/>
+		<filters:ColorMatrixFilter matrix="{[ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.99,0 ]}"/>
+	</f:preFilters>
+	<f:emitters>
+		<f:Emitter id="emitter" autoStart="true">
+			<f:counter>
+				<f:Blast startCount="4000"/>
+			</f:counter>
+			<f:initializers>
+				<f:Position>
+					<f:DiscZone centerX="200" centerY="200" outerRadius="200"/>
+				</f:Position>
+				<f:ColorInit minColor="0xFFFF00FF" maxColor="0xFF00FFFF"/>
+			</f:initializers>
+			<f:actions>
+				<f:Move/>
+				<f:GravityWell power="25" x="200" y="200"/>
+				<f:GravityWell power="25" x="75" y="75"/>
+				<f:GravityWell power="25" x="325" y="325"/>
+				<f:GravityWell power="25" x="75" y="325"/>
+				<f:GravityWell power="25" x="325" y="75"/>
+			</f:actions>
+		</f:Emitter>
+	</f:emitters>
+</f:PixelRenderer>
+</mx:Application>

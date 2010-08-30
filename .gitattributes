@@ -1,0 +1,4 @@
+*.swc -text -diff
+*.swf -text -diff
+*.fla -text -diff
+*.png -text -diff

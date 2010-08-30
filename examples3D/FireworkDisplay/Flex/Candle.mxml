@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<f:Emitter
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:f="http://flintparticles.org/2009/flint3d">
+
+	<f:counter>
+		<f:Steady rate="30"/>
+	</f:counter>
+	<f:initializers>
+		<f:SharedImage>
+			<f:Dot radius="1"/>
+		</f:SharedImage>
+		<f:ColorInit minColor="0xFFFF6600" maxColor="0xFFFFFF00"/>
+		<f:Velocity>
+			<f:DiscZone outerRadius="30">
+				<f:normal>
+					<f:Vector3D x="0" y="1" z="0"/>
+				</f:normal>
+				<f:center>
+					<f:Point3D x="0" y="80" z="0"/>
+				</f:center>
+			</f:DiscZone>
+		</f:Velocity>
+		<f:Lifetime lifetime="2"/>
+	</f:initializers>
+	<f:actions>
+		<f:Move/>
+		<f:Age/>
+		<f:Accelerate x="0" y="-50" z="0"/>
+	</f:actions>
+</f:Emitter>

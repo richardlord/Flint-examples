@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<f:Emitter
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:f="http://flintparticles.org/2009/flint3d">
+	
+	<mx:Script>
+		<![CDATA[
+			import org.flintparticles.threeD.zones.Zone3D;
+			[Bindable]
+			public var zone:Zone3D;
+		]]>
+	</mx:Script>
+
+	<f:counter>
+		<f:Steady rate="0.5"/>
+	</f:counter>
+	<f:initializers>
+		<f:SharedImage>
+			<f:Dot radius="4"/>
+		</f:SharedImage>
+		<f:ColorInit minColor="0xFFFF6600" maxColor="0xFFFFFF00"/>
+		<f:Position zone="{zone}"/>
+		<f:Velocity>
+			<f:ConeZone angle="0.1" height="350" truncatedHeight="330">
+				<f:axis>
+					<f:Vector3D x="0" y="1" z="0"/>
+				</f:axis>
+			</f:ConeZone>
+		</f:Velocity>
+		<f:Lifetime lifetime="3.3"/>
+	</f:initializers>
+	<f:actions>
+		<f:Move/>
+		<f:Age/>
+		<f:Accelerate x="0" y="-50" z="0"/>
+		<f:LinearDrag drag="0.5"/>
+		<f:RandomDrift driftX="10" driftY="10" driftZ="10"/>
+	</f:actions>
+</f:Emitter>

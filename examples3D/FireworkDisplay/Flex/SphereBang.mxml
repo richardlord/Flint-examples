@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<f:Emitter
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:f="http://flintparticles.org/2009/flint3d">
+
+	<mx:Script>
+		<![CDATA[
+			import org.flintparticles.common.energyEasing.Quadratic;
+		]]>
+	</mx:Script>
+
+	<f:counter>
+		<f:Blast startCount="200"/>
+	</f:counter>
+	<f:initializers>
+		<f:SharedImage>
+			<f:Dot radius="1"/>
+		</f:SharedImage>
+		<f:ColorInit minColor="0xFFFF6600" maxColor="0xFFFFFF00"/>
+		<f:Velocity>
+			<f:SphereZone outerRadius="100"/>
+		</f:Velocity>
+		<f:Lifetime lifetime="3"/>
+	</f:initializers>
+	<f:actions>
+		<f:Move/>
+		<f:Fade/>
+		<f:Age easing="{Quadratic.easeIn}"/>
+		<f:Accelerate x="0" y="-50" z="0"/>
+		<f:LinearDrag drag="0.5"/>
+	</f:actions>
+</f:Emitter>

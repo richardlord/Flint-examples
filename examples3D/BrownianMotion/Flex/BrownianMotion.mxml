@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:f="http://flintparticles.org/2009/flint3d"
+	xmlns:local="*"
+	layout="absolute" width="500" height="500"
+	backgroundColor="#000000">
+
+	<mx:Script>
+		<![CDATA[
+			import org.flintparticles.common.displayObjects.Dot;
+		]]>
+	</mx:Script>
+
+<mx:Label text="Hold down the shift key to hide the air particles." color="0xFFFFFF"/>
+<f:DisplayObjectRenderer id="renderer" width="500" height="500">
+	<f:camera>
+		<f:Camera projectionDistance="400">
+			<f:position>
+				<f:Point3D x="0" y="0" z="-400"/>
+			</f:position>
+		</f:Camera>
+	</f:camera>
+	<f:emitters>
+		<f:Emitter id="emitter" autoStart="true">
+			<f:counter>
+				<f:Blast startCount="250"/>
+			</f:counter>
+			<f:initializers>
+				<f:Position>
+					<f:BoxZone width="280" height="280" depth="280"/>
+				</f:Position>
+				<f:Velocity>
+					<f:SphereZone innerRadius="100" outerRadius="150"/>
+				</f:Velocity>
+				<f:ChooseInitializer weights="1,19">
+					<f:InitializerGroup>
+						<f:ImageClass imageClass="{Dot}" parameters="10"/>
+						<f:CollisionRadiusInit radius="10"/>
+						<f:MassInit mass="5"/>
+						<f:ColorInit minColor="0xFFFFFFFF" maxColor="0xFFFFFFFF"/>
+					</f:InitializerGroup>
+					<f:InitializerGroup>
+						<f:ImageClass imageClass="{Dot}" parameters="2"/>
+						<f:CollisionRadiusInit radius="2"/>
+						<f:MassInit mass="1"/>
+						<f:ColorInit minColor="0xFF666666" maxColor="0xFF666666"/>
+					</f:InitializerGroup>						
+				</f:ChooseInitializer>
+			</f:initializers>
+			<f:actions>
+				<f:Move/>
+				<f:Collide bounce="1"/>
+				<f:BoundingBox minX="-150" maxX="150" minY="-150" maxY="150" minZ="-150" maxZ="150"/>
+				<local:ShowAirAction/>
+			</f:actions>
+		</f:Emitter>
+	</f:emitters>
+</f:DisplayObjectRenderer>
+</mx:Application>
