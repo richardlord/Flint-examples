@@ -40,10 +40,10 @@ package
 	import org.flintparticles.threeD.actions.Move;
 	import org.flintparticles.threeD.actions.RandomDrift;
 	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.geom.Point3D;
-	import org.flintparticles.threeD.geom.Vector3D;
 	import org.flintparticles.threeD.initializers.Velocity;
 	import org.flintparticles.threeD.zones.ConeZone;
+
+	import flash.geom.Vector3D;
 
 	public class Smoke extends Emitter3D
 	{
@@ -52,7 +52,7 @@ package
 			counter = new Steady( 10 );
       
 			addInitializer( new Lifetime( 11, 12 ) );
-			addInitializer( new Velocity( new ConeZone( new Point3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), 0.5, 40, 30 ) ) );
+			addInitializer( new Velocity( new ConeZone( new Vector3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), 0.5, 40, 30 ) ) );
 			addInitializer( new SharedImage( new RadialDot( 6 ) ) );
       
 			addAction( new Age( ) );

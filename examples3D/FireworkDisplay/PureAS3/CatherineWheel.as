@@ -39,14 +39,15 @@ package
 	import org.flintparticles.threeD.actions.Move;
 	import org.flintparticles.threeD.activities.RotateEmitter;
 	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.geom.Point3D;
-	import org.flintparticles.threeD.geom.Vector3D;
+	import org.flintparticles.threeD.geom.Vector3DUtils;
 	import org.flintparticles.threeD.initializers.Velocity;
 	import org.flintparticles.threeD.zones.ConeZone;
 
+	import flash.geom.Vector3D;
+
 	public class CatherineWheel extends Emitter3D
 	{
-		public function CatherineWheel( position:Point3D )
+		public function CatherineWheel( position:Vector3D )
 		{
 			counter = new Steady( 80 );
 			
@@ -56,7 +57,7 @@ package
 			
 			addInitializer( new SharedImage( new Dot( 1 ) ) );
 			addInitializer( new ColorInit( 0xFFFFFF00, 0xFFFF6600 ) );
-			addInitializer( new Velocity( new ConeZone( Point3D.ZERO, new Vector3D( 1, 0, 0 ), 0.5, 100, 80 ) ) );
+			addInitializer( new Velocity( new ConeZone( Vector3DUtils.ZERO_POINT, new Vector3D( 1, 0, 0 ), 0.5, 100, 80 ) ) );
 			addInitializer( new Lifetime( 0.5 ) );
 			
 			addAction( new Move() );

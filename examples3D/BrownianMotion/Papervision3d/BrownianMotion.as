@@ -39,8 +39,6 @@ package
 	import org.flintparticles.threeD.actions.Collide;
 	import org.flintparticles.threeD.actions.Move;
 	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.geom.Point3D;
-	import org.flintparticles.threeD.geom.Vector3D;
 	import org.flintparticles.threeD.initializers.Position;
 	import org.flintparticles.threeD.initializers.Velocity;
 	import org.flintparticles.threeD.papervision3d.initializers.ApplyMaterial;
@@ -51,6 +49,7 @@ package
 	import org.papervision3d.materials.special.ParticleMaterial;
 
 	import flash.display.DisplayObject;
+	import flash.geom.Vector3D;
 
 	public class BrownianMotion extends Emitter3D
 	{
@@ -72,8 +71,8 @@ package
 			smoke.addInitializer( new CollisionRadiusInit( 10 ) );
 			smoke.addInitializer( new ApplyMaterial( ParticleMaterial, 0xFFFFFF, 1, ParticleMaterial.SHAPE_CIRCLE ) );
 			
-			addInitializer( new Position( new BoxZone( 280, 280, 280, new Point3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), new Vector3D( 0, 0, 1 ) ) ) );
-			addInitializer( new Velocity( new SphereZone( new Point3D( 0, 0, 0 ), 150, 100 ) ) );
+			addInitializer( new Position( new BoxZone( 280, 280, 280, new Vector3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), new Vector3D( 0, 0, 1 ) ) ) );
+			addInitializer( new Velocity( new SphereZone( new Vector3D( 0, 0, 0 ), 150, 100 ) ) );
 			
 			addInitializer( new ChooseInitializer( [ air, smoke ], [ 19, 1 ] ) );
 			

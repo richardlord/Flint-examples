@@ -39,12 +39,12 @@ package
 	import org.flintparticles.threeD.actions.Move;
 	import org.flintparticles.threeD.actions.RotateToDirection;
 	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.geom.Point3D;
-	import org.flintparticles.threeD.geom.Vector3D;
 	import org.flintparticles.threeD.initializers.Position;
 	import org.flintparticles.threeD.initializers.Velocity;
 	import org.flintparticles.threeD.papervision3d.initializers.PV3DDisplayObjectClass;
 	import org.flintparticles.threeD.zones.DiscZone;
+
+	import flash.geom.Vector3D;
 
 	public class Fire extends Emitter3D
 	{
@@ -56,8 +56,8 @@ package
 			counter = new Steady( 60 );
 
 			addInitializer( new Lifetime( 2, 3 ) );
-			addInitializer( new Velocity( new DiscZone( new Point3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), 20 ) ) );
-			addInitializer( new Position( new DiscZone( new Point3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), 3 ) ) );
+			addInitializer( new Velocity( new DiscZone( new Vector3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), 20 ) ) );
+			addInitializer( new Position( new DiscZone( new Vector3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), 3 ) ) );
 			addInitializer( new PV3DDisplayObjectClass( FireBlob ) );
 
 			addAction( new Age( ) );

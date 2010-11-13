@@ -36,10 +36,10 @@ package
 	import org.flintparticles.threeD.actions.Accelerate;
 	import org.flintparticles.threeD.actions.Move;
 	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.geom.Point3D;
-	import org.flintparticles.threeD.geom.Vector3D;
 	import org.flintparticles.threeD.initializers.Velocity;
 	import org.flintparticles.threeD.zones.DiscZone;
+
+	import flash.geom.Vector3D;
 
 	public class Fountain extends Emitter3D
 	{
@@ -48,7 +48,7 @@ package
 			counter = new Steady( 500 );
 			
 			addInitializer( new ColorInit( 0xFFCCCCFF, 0xFF6666FF ) );
-			addInitializer( new Velocity( new DiscZone( new Point3D( 0, 250, 0 ), new Vector3D( 0, 1, 0 ), 60 ) ) );
+			addInitializer( new Velocity( new DiscZone( new Vector3D( 0, 250, 0 ), new Vector3D( 0, 1, 0 ), 60 ) ) );
 			addInitializer( new Lifetime( 3.2 ) );
 			
 			addAction( new Move() );

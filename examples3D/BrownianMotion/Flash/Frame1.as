@@ -33,8 +33,6 @@ import org.flintparticles.common.displayObjects.Dot;
 import org.flintparticles.common.initializers.*;
 import org.flintparticles.threeD.actions.*;
 import org.flintparticles.threeD.emitters.Emitter3D;
-import org.flintparticles.threeD.geom.Point3D;
-import org.flintparticles.threeD.geom.Vector3D;
 import org.flintparticles.threeD.initializers.*;
 import org.flintparticles.threeD.renderers.*;
 import org.flintparticles.threeD.renderers.controllers.OrbitCamera;
@@ -61,8 +59,8 @@ smoke.addInitializer( new ColorInit( 0xFFFFFFFF, 0xFFFFFFFF ) );
 smoke.addInitializer( new MassInit( 5 ) );
 smoke.addInitializer( new CollisionRadiusInit( 10 ) );
 
-emitter.addInitializer( new Position( new BoxZone( 280, 280, 280, new Point3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), new Vector3D( 0, 0, 1 ) ) ) );
-emitter.addInitializer( new Velocity( new SphereZone( new Point3D( 0, 0, 0 ), 150, 100 ) ) );
+emitter.addInitializer( new Position( new BoxZone( 280, 280, 280, new Vector3D( 0, 0, 0 )( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), new Vector3D( 0, 0, 1 ) ) ) );
+emitter.addInitializer( new Velocity( new SphereZone( new Vector3D( 0, 0, 0 )( 0, 0, 0 ), 150, 100 ) ) );
 emitter.addInitializer( new ChooseInitializer( [ air, smoke ], [ 19, 1 ] ) );
 
 emitter.addAction( new Move() );
@@ -76,8 +74,8 @@ renderer.y = 200;
 renderer.addEmitter( emitter );
 addChild( renderer );
 
-renderer.camera.position = new Point3D( 0, 0, -400 );
-renderer.camera.target = new Point3D( 0, 0, 0 );
+renderer.camera.position = new Vector3D( 0, 0, 0 )( 0, 0, -400 );
+renderer.camera.target = new Vector3D( 0, 0, 0 )( 0, 0, 0 );
 renderer.camera.projectionDistance = 400;
 var orbitter:OrbitCamera = new OrbitCamera( stage, renderer.camera );
 orbitter.start();

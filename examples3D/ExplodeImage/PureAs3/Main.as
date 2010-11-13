@@ -30,11 +30,11 @@
 
 package
 {
+	import org.flintparticles.common.particles.Particle;
 	import org.flintparticles.threeD.actions.DeathZone;
 	import org.flintparticles.threeD.actions.Explosion;
 	import org.flintparticles.threeD.actions.Move;
 	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.geom.Point3D;
 	import org.flintparticles.threeD.particles.Particle3DUtils;
 	import org.flintparticles.threeD.renderers.DisplayObjectRenderer;
 	import org.flintparticles.threeD.zones.FrustrumZone;
@@ -44,6 +44,7 @@ package
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import flash.geom.Vector3D;
 	import flash.text.TextField;
 
 	[SWF(width='500', height='350', frameRate='61', backgroundColor='#000000')]
@@ -77,9 +78,9 @@ package
 			emitter = new Emitter3D();
 			emitter.addAction( new Move() );
 			emitter.addAction( new DeathZone( new FrustrumZone( renderer.camera, new Rectangle( -290, -215, 580, 430 ) ), true ) );
-			emitter.position = new Point3D( 0, 0, 0 );
+			emitter.position = new Vector3D( 0, 0, 0 );
 
-			var particles:Array = Particle3DUtils.createRectangleParticlesFromBitmapData( bitmap.bitmapData, 20, emitter.particleFactory, new Point3D( -192, 127, 0 ) );
+			var particles:Vector.<Particle> = Particle3DUtils.createRectangleParticlesFromBitmapData( bitmap.bitmapData, 20, emitter.particleFactory, new Vector3D( -192, 127, 0 ) );
 			emitter.addExistingParticles( particles, false );
 									
 			renderer.addEmitter( emitter );
@@ -90,7 +91,7 @@ package
 		private function explode( ev:MouseEvent ):void
 		{
 			var p:Point = renderer.globalToLocal( new Point( ev.stageX, ev.stageY ) );
-			emitter.addAction( new Explosion( 8, new Point3D( p.x, -p.y, 50 ), 500 ) );
+			emitter.addAction( new Explosion( 8, new Vector3D( p.x, -p.y, 50 ), 500 ) );
 			stage.removeEventListener( MouseEvent.CLICK, explode );
 		}
 	}

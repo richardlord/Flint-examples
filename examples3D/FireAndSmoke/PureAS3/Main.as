@@ -30,12 +30,12 @@
 package
 {
 	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.geom.Point3D;
 	import org.flintparticles.threeD.renderers.BitmapRenderer;
 	import org.flintparticles.threeD.renderers.controllers.OrbitCamera;
 
 	import flash.display.Sprite;
 	import flash.geom.Rectangle;
+	import flash.geom.Vector3D;
 	import flash.text.TextField;
 
 	[SWF(width='400', height='400', frameRate='61', backgroundColor='#000000')]
@@ -67,8 +67,8 @@ package
 			renderer.addEmitter( fire );
 			addChild( renderer );
 			
-			renderer.camera.position = new Point3D( 0, 150, -400 );
-			renderer.camera.target = new Point3D( 0, 150, 0 );
+			renderer.camera.position = new Vector3D( 0, 150, -400 );
+			renderer.camera.target = new Vector3D( 0, 150, 0 );
 			renderer.camera.projectionDistance = 400;
 			orbitter = new OrbitCamera( stage, renderer.camera );
 			orbitter.start();
