@@ -33,6 +33,7 @@ import org.flintparticles.common.energyEasing.Quadratic;
 import org.flintparticles.common.events.ParticleEvent;
 import org.flintparticles.common.initializers.ColorInit;
 import org.flintparticles.common.initializers.Lifetime;
+import org.flintparticles.common.particles.Particle;
 import org.flintparticles.twoD.actions.TweenToZone;
 import org.flintparticles.twoD.emitters.Emitter2D;
 import org.flintparticles.twoD.initializers.Position;
@@ -80,11 +81,11 @@ tween2Emitter.start();
 function moveToTween1( event:ParticleEvent ):void
 {
 	event.particle.revive();
-	tween1Emitter.addExistingParticles( [ event.particle ], true );
+	tween1Emitter.addExistingParticles( new <Particle>[ event.particle ], true );
 }
 
 function moveToTween2( event:ParticleEvent ):void
 {
 	event.particle.revive();
-	tween2Emitter.addExistingParticles( [ event.particle ], true );
+	tween2Emitter.addExistingParticles( new <Particle>[ event.particle ], true );
 }

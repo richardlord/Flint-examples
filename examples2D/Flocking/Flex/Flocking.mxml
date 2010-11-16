@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mx:Application
-	xmlns:mx="http://www.adobe.com/2006/mxml"
+<s:Application
+	xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark" 
 	xmlns:f="http://flintparticles.org/2009/flint2d"
-	layout="absolute" width="700" height="500"
+	width="700" height="500"
 	backgroundColor="#CCCCCC">
 	
-	<mx:Script>
-		<![CDATA[
-			[Embed(source='assets/bird.swf', symbol='Bird')]
-			public var Bird:Class;
-		]]>
-	</mx:Script>
+<fx:Script>
+	<![CDATA[
+		[Embed(source='assets/bird.swf', symbol='Bird')]
+		public var Bird:Class;
+	]]>
+</fx:Script>
 	
 <f:DisplayObjectRenderer id="renderer" width="700" height="500">
 	<f:emitters>
@@ -40,4 +41,4 @@
 		</f:Emitter>
 	</f:emitters>
 </f:DisplayObjectRenderer>
-</mx:Application>
+</s:Application>

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mx:Application
-	xmlns:mx="http://www.adobe.com/2006/mxml"
+<s:Application
+	xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark" 
 	xmlns:f="http://flintparticles.org/2009/flint2d"
 	xmlns:filters="flash.filters.*"
-	layout="absolute" width="600" height="600"
+	width="600" height="600"
 	backgroundColor="#000000">
 	
-	<mx:Script>
-		<![CDATA[
-			import org.flintparticles.common.energyEasing.Quadratic;
-		]]>
-	</mx:Script>
+<fx:Script>
+	<![CDATA[
+		import org.flintparticles.common.energyEasing.Quadratic;
+	]]>
+</fx:Script>
 
 <f:BitmapRenderer id="renderer" width="600" height="600">
 	<f:preFilters>
@@ -45,4 +46,4 @@
 		</f:Emitter>
 	</f:emitters>
 </f:BitmapRenderer>
-</mx:Application>
+</s:Application>

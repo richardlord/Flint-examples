@@ -30,6 +30,7 @@
 
 package
 {
+	import org.flintparticles.common.particles.Particle;
 	import org.flintparticles.twoD.actions.DeathZone;
 	import org.flintparticles.twoD.actions.Explosion;
 	import org.flintparticles.twoD.actions.Move;
@@ -68,7 +69,7 @@ package
 			emitter = new Emitter2D();
 			emitter.addAction( new DeathZone( new RectangleZone( -5, -5, 505, 355 ), true ) );
 			emitter.addAction( new Move() );
-			var particles:Array = Particle2DUtils.createRectangleParticlesFromBitmapData( bitmap.bitmapData, 10, emitter.particleFactory, 56, 47 );
+			var particles:Vector.<Particle> = Particle2DUtils.createRectangleParticlesFromBitmapData( bitmap.bitmapData, 10, emitter.particleFactory, 56, 47 );
 			emitter.addExistingParticles( particles, false );
 			
 			renderer = new DisplayObjectRenderer();

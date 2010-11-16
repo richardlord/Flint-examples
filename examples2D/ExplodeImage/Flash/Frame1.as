@@ -28,10 +28,11 @@
  * THE SOFTWARE.
  */
 
+import org.flintparticles.common.particles.Particle;
 import org.flintparticles.twoD.actions.*;
 import org.flintparticles.twoD.emitters.Emitter2D;
 import org.flintparticles.twoD.particles.Particle2DUtils;
-import org.flintparticles.twoD.renderers.*;
+import org.flintparticles.twoD.renderers.DisplayObjectRenderer;
 import org.flintparticles.twoD.zones.RectangleZone;	
 
 var txt:TextField = new TextField();
@@ -40,7 +41,7 @@ txt.textColor = 0xFFFFFF;
 addChild( txt );
 
 var emitter:Emitter2D = new Emitter2D();
-var particles:Array = Particle2DUtils.createRectangleParticlesFromBitmapData( new Image1(384,255), 10, emitter.particleFactory, 56, 47 );
+var particles:Vector.<Particle> = Particle2DUtils.createRectangleParticlesFromBitmapData( new Image1(384,255), 10, emitter.particleFactory, 56, 47 );
 emitter.addExistingParticles( particles, false );
 
 var renderer:DisplayObjectRenderer = new DisplayObjectRenderer();

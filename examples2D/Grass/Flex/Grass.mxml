@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mx:Application
-	xmlns:mx="http://www.adobe.com/2006/mxml"
+<s:Application
+	xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark" 
 	xmlns:f="http://flintparticles.org/2009/flint2d"
-	layout="absolute" width="500" height="500"
+	width="500" height="500"
 	backgroundColor="#000000">
 
 <f:BitmapLineRenderer width="500" height="500">
@@ -30,4 +31,4 @@
 		</f:Emitter>
 	</f:emitters>
 </f:BitmapLineRenderer>
-</mx:Application>
+</s:Application>

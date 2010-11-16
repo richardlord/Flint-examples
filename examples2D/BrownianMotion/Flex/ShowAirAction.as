@@ -70,9 +70,9 @@ package
 		
 		public function initialized( document:Object, id:String ):void
 		{
-			if( document.stage )
+			if( DisplayObject( document ).stage )
 			{
-				setStage( document.stage );
+				setStage( DisplayObject( document ).stage );
 			}
 			else
 			{
