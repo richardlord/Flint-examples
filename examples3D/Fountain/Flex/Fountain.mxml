@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mx:Application
-	xmlns:mx="http://www.adobe.com/2006/mxml"
+<s:Application
+	xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark"
 	xmlns:f="http://flintparticles.org/2009/flint3d"
+	xmlns:geom="flash.geom.*"
 	xmlns:filters="flash.filters.*"
-	layout="absolute" width="500" height="500"
+	width="500" height="500"
 	backgroundColor="#000000">
 	
-<mx:Label text="Use arrow keys to track in/out and orbit around the fountain." color="#FFFFFF"/>
+<s:Label text="Use arrow keys to track in/out and orbit around the fountain." color="#FFFFFF"/>
 <f:PixelRenderer id="renderer" width="500" height="500">
 	<f:camera>
 		<f:Camera>
 			<f:position>
-				<f:Point3D x="0" y="100" z="-300"/>
+				<geom:Vector3D x="0" y="100" z="-300"/>
 			</f:position>
 			<f:target>
-				<f:Point3D x="0" y="100" z="0"/>
+				<geom:Vector3D x="0" y="100" z="0"/>
 			</f:target>
 			<f:controller>
 				<f:OrbitCamera/>
@@ -34,10 +36,10 @@
 				<f:Velocity>
 					<f:DiscZone innerRadius="0" outerRadius="60">
 						<f:center>
-							<f:Point3D x="0" y="250" z="0"/>
+							<geom:Vector3D x="0" y="250" z="0"/>
 						</f:center>
 						<f:normal>
-							<f:Vector3D x="0" y="1" z="0"/>
+							<geom:Vector3D x="0" y="1" z="0"/>
 						</f:normal>
 					</f:DiscZone>
 				</f:Velocity>
@@ -52,4 +54,4 @@
 		</f:Emitter>
 	</f:emitters>
 </f:PixelRenderer>
-</mx:Application>
+</s:Application>

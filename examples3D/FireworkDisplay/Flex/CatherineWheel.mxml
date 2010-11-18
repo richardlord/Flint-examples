@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <f:Emitter
-	xmlns:mx="http://www.adobe.com/2006/mxml"
-	xmlns:f="http://flintparticles.org/2009/flint3d">
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:f="http://flintparticles.org/2009/flint3d"
+	xmlns:geom="flash.geom.*">
 
 	<f:counter>
 		<f:Steady rate="80"/>
@@ -9,7 +10,7 @@
 	<f:activities>
 		<f:RotateEmitter rotateSpeed="10">
 			<f:axis>
-				<f:Vector3D x="0" y="0" z="1"/>
+				<geom:Vector3D x="0" y="0" z="1"/>
 			</f:axis>
 		</f:RotateEmitter>
 	</f:activities>
@@ -21,7 +22,7 @@
 		<f:Velocity>
 			<f:ConeZone angle="0.5" height="100" truncatedHeight="80">
 				<f:axis>
-					<f:Vector3D x="0" y="0" z="1"/>
+					<geom:Vector3D x="1" y="0" z="0"/>
 				</f:axis>
 			</f:ConeZone>
 		</f:Velocity>

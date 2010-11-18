@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <f:Emitter
-	xmlns:mx="http://www.adobe.com/2006/mxml"
-	xmlns:f="http://flintparticles.org/2009/flint3d">
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:f="http://flintparticles.org/2009/flint3d"
+	xmlns:geom="flash.geom.*">
 
 	<f:counter>
 		<f:Steady rate="30"/>
@@ -14,10 +15,10 @@
 		<f:Velocity>
 			<f:DiscZone outerRadius="30">
 				<f:normal>
-					<f:Vector3D x="0" y="1" z="0"/>
+					<geom:Vector3D x="0" y="1" z="0"/>
 				</f:normal>
 				<f:center>
-					<f:Point3D x="0" y="80" z="0"/>
+					<geom:Vector3D x="0" y="80" z="0"/>
 				</f:center>
 			</f:DiscZone>
 		</f:Velocity>

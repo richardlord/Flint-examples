@@ -28,11 +28,11 @@
  * THE SOFTWARE.
  */
 
+import org.flintparticles.common.particless.Particle;
 import org.flintparticles.threeD.actions.*;
 import org.flintparticles.threeD.emitters.Emitter3D;
-import org.flintparticles.threeD.geom.Point3D;
 import org.flintparticles.threeD.particles.Particle3DUtils;
-import org.flintparticles.threeD.renderers.*;
+import org.flintparticles.threeD.renderers.DisplayObjectRenderer;
 import org.flintparticles.threeD.zones.FrustrumZone;
 
 var txt:TextField = new TextField();
@@ -50,9 +50,9 @@ addChild( renderer );
 var emitter:Emitter3D = new Emitter3D();
 emitter.addAction( new Move() );
 emitter.addAction( new DeathZone( new FrustrumZone( renderer.camera, new Rectangle( -290, -215, 580, 430 ) ), true ) );
-emitter.position = new Point3D( 0, 0, 0 );
+emitter.position = new Vector3D( 0, 0, 0 );
 
-var particles:Array = Particle3DUtils.createRectangleParticlesFromBitmapData( new Image1(384,255), 20, emitter.particleFactory, new Point3D( -192, 127, 0 ) );
+var particles:Vector.<Particle> = Particle3DUtils.createRectangleParticlesFromBitmapData( new Image1(384,255), 20, emitter.particleFactory, new Vector3D( -192, 127, 0 ) );
 emitter.addExistingParticles( particles, false );
 
 renderer.addEmitter( emitter );
@@ -62,6 +62,6 @@ stage.addEventListener( MouseEvent.CLICK, explode, false, 0, true );
 function explode( ev:MouseEvent ):void
 {
 	var p:Point = renderer.globalToLocal( new Point( ev.stageX, ev.stageY ) );
-	emitter.addAction( new Explosion( 8, new Point3D( p.x, -p.y, 50 ), 500 ) );
+	emitter.addAction( new Explosion( 8, new Vector3D( p.x, -p.y, 50 ), 500 ) );
 	stage.removeEventListener( MouseEvent.CLICK, explode );
 }

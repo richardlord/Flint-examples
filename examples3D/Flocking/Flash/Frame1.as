@@ -32,8 +32,6 @@ import org.flintparticles.common.counters.*;
 import org.flintparticles.common.initializers.*;
 import org.flintparticles.threeD.actions.*;
 import org.flintparticles.threeD.emitters.Emitter3D;
-import org.flintparticles.threeD.geom.Point3D
-import org.flintparticles.threeD.geom.Vector3D;
 import org.flintparticles.threeD.initializers.*;
 import org.flintparticles.threeD.renderers.*;
 import org.flintparticles.threeD.renderers.controllers.*;
@@ -49,8 +47,8 @@ var emitter:Emitter3D = new Emitter3D();
 emitter.counter = new Blast( 150 );
 
 emitter.addInitializer( new ImageClass( Bird ) );
-emitter.addInitializer( new Position( new BoxZone( 580, 380, 580, new Point3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), new Vector3D( 0, 0, 1 ) ) ) );
-emitter.addInitializer( new Velocity( new SphereZone( new Point3D( 0, 0, 0 ), 150, 100 ) ) );
+emitter.addInitializer( new Position( new BoxZone( 580, 380, 580, new Vector3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), new Vector3D( 0, 0, 1 ) ) ) );
+emitter.addInitializer( new Velocity( new SphereZone( new Vector3D( 0, 0, 0 ), 150, 100 ) ) );
 
 emitter.addAction( new ApproachNeighbours( 200, 100 ) );
 emitter.addAction( new MatchVelocity( 40, 200 ) );
@@ -67,8 +65,8 @@ renderer.y = 250;
 renderer.addEmitter( emitter );
 addChild( renderer );
 
-renderer.camera.position = new Point3D( 0, 0, -400 );
-renderer.camera.target = new Point3D( 0, 0, 0 );
+renderer.camera.position = new Vector3D( 0, 0, -400 );
+renderer.camera.target = new Vector3D( 0, 0, 0 );
 renderer.camera.projectionDistance = 400;
 var controller:FirstPersonCamera = new FirstPersonCamera( stage, renderer.camera );
 controller.start();

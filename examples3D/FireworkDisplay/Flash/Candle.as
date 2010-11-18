@@ -35,21 +35,21 @@ package
 	import org.flintparticles.common.initializers.*;
 	import org.flintparticles.threeD.actions.*;
 	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.geom.Point3D;
-	import org.flintparticles.threeD.geom.Vector3D;
 	import org.flintparticles.threeD.initializers.*;
 	import org.flintparticles.threeD.zones.*;	
 
+	import flash.geom.Vector3D;
+
 	public class Candle extends Emitter3D
 	{
-		public function Candle( position:Point3D )
+		public function Candle( position:Vector3D )
 		{
 			counter = new Steady( 30 );
 			
 			addInitializer( new SharedImage( new Dot( 1 ) ) );
 			addInitializer( new ColorInit( 0xFFFFFF00, 0xFFFF6600 ) );
 			addInitializer( new Position( new PointZone( position ) ) );
-			addInitializer( new Velocity( new DiscZone( new Point3D( 0, 80, 0 ), new Vector3D( 0, 1, 0 ), 30 ) ) );
+			addInitializer( new Velocity( new DiscZone( new Vector3D( 0, 80, 0 ), new Vector3D( 0, 1, 0 ), 30 ) ) );
 			addInitializer( new Lifetime( 2 ) );
 			
 			addAction( new Move() );

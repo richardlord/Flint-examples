@@ -30,7 +30,6 @@
 import org.flintparticles.common.events.EmitterEvent;
 import org.flintparticles.common.events.ParticleEvent;
 import org.flintparticles.threeD.emitters.Emitter3D;
-import org.flintparticles.threeD.geom.Point3D;
 import org.flintparticles.threeD.particles.Particle3D;
 import org.flintparticles.threeD.renderers.*;
 import org.flintparticles.threeD.renderers.controllers.FirstPersonCamera;
@@ -50,30 +49,30 @@ renderer.addFilter( new BlurFilter( 2, 2, 1 ) );
 renderer.addFilter( new ColorMatrixFilter( [ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.95,0 ] ) );
 addChild( renderer );
 
-renderer.camera.position = new Point3D( 0, 150, -400 );
-renderer.camera.target = new Point3D( 0, 150, 0 );
+renderer.camera.position = new Vector3D( 0, 150, -400 );
+renderer.camera.target = new Vector3D( 0, 150, 0 );
 renderer.camera.projectionDistance = 400;
 var orbitter:FirstPersonCamera = new FirstPersonCamera( stage, renderer.camera );
 orbitter.start();
 
-var emitter:Emitter3D = new Whizzer( new LineZone( new Point3D( -200, 0, 0 ), new Point3D( 200, 0, 0) ) );
+var emitter:Emitter3D = new Whizzer( new LineZone( new Vector3D( -200, 0, 0 ), new Vector3D( 200, 0, 0) ) );
 renderer.addEmitter( emitter );
 emitter.addEventListener( ParticleEvent.PARTICLE_DEAD, whizzBang, false, 0, true );
 emitter.start();
 
-emitter = new Candle( new Point3D( 150, 0, 150 ) );
+emitter = new Candle( new Vector3D( 150, 0, 150 ) );
 renderer.addEmitter( emitter );
 emitter.start();
 
-emitter = new Candle( new Point3D( -150, 0, 150 ) );
+emitter = new Candle( new Vector3D( -150, 0, 150 ) );
 renderer.addEmitter( emitter );
 emitter.start();
 
-emitter = new Candle( new Point3D( 150, 0, -150 ) );
+emitter = new Candle( new Vector3D( 150, 0, -150 ) );
 renderer.addEmitter( emitter );
 emitter.start();
 
-emitter = new Candle( new Point3D( -150, 0, -150 ) );
+emitter = new Candle( new Vector3D( -150, 0, -150 ) );
 renderer.addEmitter( emitter );
 emitter.start();
 		

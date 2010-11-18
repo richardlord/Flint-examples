@@ -1,49 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mx:Application
-	xmlns:mx="http://www.adobe.com/2006/mxml"
+<s:Application
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:s="library://ns.adobe.com/flex/spark"
 	xmlns:f="http://flintparticles.org/2009/flint3d"
+	xmlns:geom="flash.geom.*"
 	xmlns:filters="flash.filters.*"
 	xmlns="*"
-	layout="absolute" width="800" height="600"
+	width="800" height="600"
 	backgroundColor="#000000" creationComplete="created()">
 
-	<mx:Script>
-		<![CDATA[
-			import org.flintparticles.common.events.EmitterEvent;
-			import org.flintparticles.threeD.particles.Particle3D;
-			import org.flintparticles.common.events.ParticleEvent;
-			
-			private function created():void
-			{
-				whizzer.addEventListener( ParticleEvent.PARTICLE_DEAD, whizzBang, false, 0, true );
-			}
+<fx:Script>
+	<![CDATA[
+		import org.flintparticles.common.events.EmitterEvent;
+		import org.flintparticles.threeD.particles.Particle3D;
+		import org.flintparticles.common.events.ParticleEvent;
+		
+		private function created():void
+		{
+			whizzer.addEventListener( ParticleEvent.PARTICLE_DEAD, whizzBang, false, 0, true );
+		}
 
-			public function whizzBang( ev:ParticleEvent ):void
-			{
-				var bang:SphereBang = new SphereBang();
-				bang.position = Particle3D( ev.particle ).position;
-				bang.addEventListener( EmitterEvent.EMITTER_EMPTY, removeEmitter, false, 0, true );
-				renderer.addEmitter( bang );
-				bang.start();
-			}
+		public function whizzBang( ev:ParticleEvent ):void
+		{
+			var bang:SphereBang = new SphereBang();
+			bang.position = Particle3D( ev.particle ).position;
+			bang.addEventListener( EmitterEvent.EMITTER_EMPTY, removeEmitter, false, 0, true );
+			renderer.addEmitter( bang );
+			bang.start();
+		}
 
-			public function removeEmitter( ev:EmitterEvent ):void
-			{
-				SphereBang( ev.target ).removeEventListener( EmitterEvent.EMITTER_EMPTY, removeEmitter );
-				renderer.removeEmitter( SphereBang( ev.target ) );
-			}
-		]]>
-	</mx:Script>
+		public function removeEmitter( ev:EmitterEvent ):void
+		{
+			SphereBang( ev.target ).removeEventListener( EmitterEvent.EMITTER_EMPTY, removeEmitter );
+			renderer.removeEmitter( SphereBang( ev.target ) );
+		}
+	]]>
+</fx:Script>
 
-<mx:Label color="#FFFFFF" text="Use arrow keys to pan/tilt the camera. Use W,S,D,L to move the camera. Use page up/ page down to raise and lower the camera."/>
+<s:Label color="#FFFFFF" text="Use arrow keys to pan/tilt the camera. Use W,S,D,L to move the camera. Use page up/ page down to raise and lower the camera."/>
 <f:BitmapRenderer x="0" y="0" id="renderer" width="800" height="600">
 	<f:camera>
 		<f:Camera id="camera" projectionDistance="400">
 			<f:position>
-				<f:Point3D x="0" y="150" z="-400"/>
+				<geom:Vector3D x="0" y="150" z="-400"/>
 			</f:position>
 			<f:target>
-				<f:Point3D x="0" y="150" z="0"/>
+				<geom:Vector3D x="0" y="150" z="0"/>
 			</f:target>
 			<f:controller>
 				<f:FirstPersonCamera/>
@@ -59,50 +61,50 @@
 			<zone>
 				<f:LineZone>
 					<f:start>
-						<f:Point3D x="-200" y="0" z="0"/>
+						<geom:Vector3D x="-200" y="0" z="0"/>
 					</f:start>
 					<f:end>
-						<f:Point3D x="200" y="0" z="0"/>
+						<geom:Vector3D x="200" y="0" z="0"/>
 					</f:end>
 				</f:LineZone>
 			</zone>
 		</Whizzer>
 		<CatherineWheel autoStart="true">
 			<position>
-				<f:Point3D x="-200" y="200" z="50"/>
+				<geom:Vector3D x="-200" y="200" z="50"/>
 			</position>
 		</CatherineWheel>
 		<CatherineWheel autoStart="true">
 			<position>
-				<f:Point3D x="0" y="200" z="50"/>
+				<geom:Vector3D x="0" y="200" z="50"/>
 			</position>
 		</CatherineWheel>
 		<CatherineWheel autoStart="true">
 			<position>
-				<f:Point3D x="200" y="200" z="50"/>
+				<geom:Vector3D x="200" y="200" z="50"/>
 			</position>
 		</CatherineWheel>
 		<Candle autoStart="true">
 			<position>
-				<f:Point3D x="150" y="0" z="150"/>
+				<geom:Vector3D x="150" y="0" z="150"/>
 			</position>
 		</Candle>
 		<Candle autoStart="true">
 			<position>
-				<f:Point3D x="-150" y="0" z="150"/>
+				<geom:Vector3D x="-150" y="0" z="150"/>
 			</position>
 		</Candle>
 		<Candle autoStart="true">
 			<position>
-				<f:Point3D x="150" y="0" z="-150"/>
+				<geom:Vector3D x="150" y="0" z="-150"/>
 			</position>
 		</Candle>
 		<Candle autoStart="true">
 			<position>
-				<f:Point3D x="-150" y="0" z="-150"/>
+				<geom:Vector3D x="-150" y="0" z="-150"/>
 			</position>
 		</Candle>
 		
 	</f:emitters>
 </f:BitmapRenderer>
-</mx:Application>
+</s:Application>

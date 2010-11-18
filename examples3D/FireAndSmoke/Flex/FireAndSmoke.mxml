@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mx:Application
-	xmlns:mx="http://www.adobe.com/2006/mxml"
+<s:Application
+	xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark"
 	xmlns:f="http://flintparticles.org/2009/flint3d"
+	xmlns:geom="flash.geom.*"
 	xmlns:filters="flash.filters.*"
-	layout="absolute" width="400" height="400"
+	width="400" height="400"
 	backgroundColor="#000000">
 
-	<mx:Script>
-		<![CDATA[
-			[Embed(source='assets/fireblob.swf', symbol='FireBlob')]
-			public var FireBlob:Class;
-		]]>
-	</mx:Script>
+<fx:Script>
+	<![CDATA[
+		[Embed(source='assets/fireblob.swf', symbol='FireBlob')]
+		public var FireBlob:Class;
+	]]>
+</fx:Script>
 		
-<mx:Label text="Use arrow keys to track in/out and orbit around the fire." color="#FFFFFF"/>
+<s:Label text="Use arrow keys to track in/out and orbit around the fire." color="#FFFFFF"/>
 <f:BitmapRenderer id="renderer" width="400" height="400">
 	<f:camera>
 		<f:Camera projectionDistance="400">
 			<f:position>
-				<f:Point3D x="0" y="150" z="-400"/>
+				<geom:Vector3D x="0" y="150" z="-400"/>
 			</f:position>
 			<f:target>
-				<f:Point3D x="0" y="150" z="0"/>
+				<geom:Vector3D x="0" y="150" z="0"/>
 			</f:target>
 			<f:controller>
 				<f:OrbitCamera/>
@@ -37,7 +39,7 @@
 				<f:Velocity>
 					<f:ConeZone angle="0.5" height="40" truncatedHeight="30">
 						<f:axis>
-							<f:Vector3D x="0" y="1" z="0"/>
+							<geom:Vector3D x="0" y="1" z="0"/>
 						</f:axis>
 					</f:ConeZone>
 				</f:Velocity>
@@ -63,14 +65,14 @@
 				<f:Position>
 					<f:DiscZone outerRadius="3">
 						<f:normal>
-							<f:Vector3D x="0" y="1" z="0"/>
+							<geom:Vector3D x="0" y="1" z="0"/>
 						</f:normal>
 					</f:DiscZone>
 				</f:Position>
 				<f:Velocity>
 					<f:DiscZone outerRadius="20">
 						<f:normal>
-							<f:Vector3D x="0" y="1" z="0"/>
+							<geom:Vector3D x="0" y="1" z="0"/>
 						</f:normal>
 					</f:DiscZone>
 				</f:Velocity>
@@ -89,4 +91,4 @@
 		</f:Emitter>
 	</f:emitters>
 </f:BitmapRenderer>
-</mx:Application>
+</s:Application>

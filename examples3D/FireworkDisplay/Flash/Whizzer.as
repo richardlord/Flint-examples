@@ -35,10 +35,11 @@ package
 	import org.flintparticles.common.initializers.*;
 	import org.flintparticles.threeD.actions.*;
 	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.geom.Point3D;
-	import org.flintparticles.threeD.geom.Vector3D;
+	import org.flintparticles.threeD.geom.Vector3DUtils;
 	import org.flintparticles.threeD.initializers.*;
-	import org.flintparticles.threeD.zones.*;	
+	import org.flintparticles.threeD.zones.*;
+	
+	import flash.geom.Vector3D;
 
 	public class Whizzer extends Emitter3D
 	{
@@ -49,7 +50,7 @@ package
 			addInitializer( new SharedImage( new Dot( 4 ) ) );
 			addInitializer( new ColorInit( 0xFFFFFF00, 0xFFFF6600 ) );
 			addInitializer( new Position( zone ) );
-			addInitializer( new Velocity( new ConeZone( Point3D.ZERO, Vector3D.AXISY, 0.1, 350, 330 ) ) );
+			addInitializer( new Velocity( new ConeZone( Vector3DUtils.ZERO_POINT, Vector3D.Y_AXIS, 0.1, 350, 330 ) ) );
 			addInitializer( new Lifetime( 3.3 ) );
 			
 			addAction( new Age() );
