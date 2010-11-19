@@ -73,13 +73,13 @@ package
 		private function moveToTween1( event:ParticleEvent ):void
 		{
 			event.particle.revive();
-			tween1Emitter.addExistingParticles( new <Particle>[ event.particle ], true );
+			tween1Emitter.addExistingParticles( Vector.<Particle>( [ event.particle ] ), true );
 		}
 		
 		private function moveToTween2( event:ParticleEvent ):void
 		{
 			event.particle.revive();
-			tween2Emitter.addExistingParticles( new <Particle>[ event.particle ], true );
+			tween2Emitter.addExistingParticles( Vector.<Particle>( [ event.particle ] ), true );
 		}
 	}
 }

@@ -28,7 +28,7 @@
  * THE SOFTWARE.
  */
 
-import org.flintparticles.common.particless.Particle;
+import org.flintparticles.common.particles.Particle;
 import org.flintparticles.threeD.actions.*;
 import org.flintparticles.threeD.emitters.Emitter3D;
 import org.flintparticles.threeD.particles.Particle3DUtils;
