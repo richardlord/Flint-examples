@@ -58,7 +58,7 @@ package
 			addInitializer( new SharedImage( new Dot( 1 ) ) );
 			addInitializer( new ColorInit( 0xFFFFFF00, 0xFFFF6600 ) );
 			addInitializer( new Position( new PointZone( position ) ) );
-			addInitializer( new Velocity( new SphereZone( Vector3DUtils.ZERO_POINT, 100 ) ) );
+			addInitializer( new Velocity( new SphereZone( new Vector3D(), 100 ) ) );
 			addInitializer( new Lifetime( 3 ) );
 			
 			addAction( new Age( Quadratic.easeIn ) );

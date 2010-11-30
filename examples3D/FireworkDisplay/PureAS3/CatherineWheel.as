@@ -57,7 +57,7 @@ package
 			
 			addInitializer( new SharedImage( new Dot( 1 ) ) );
 			addInitializer( new ColorInit( 0xFFFFFF00, 0xFFFF6600 ) );
-			addInitializer( new Velocity( new ConeZone( Vector3DUtils.ZERO_POINT, new Vector3D( 1, 0, 0 ), 0.5, 100, 80 ) ) );
+			addInitializer( new Velocity( new ConeZone( new Vector3D(), new Vector3D( 1, 0, 0 ), 0.5, 100, 80 ) ) );
 			addInitializer( new Lifetime( 0.5 ) );
 			
 			addAction( new Move() );
