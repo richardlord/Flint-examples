@@ -19,7 +19,7 @@
 		private function complete():void
 		{
 			var bitmap:Bitmap  = new Image1();
-			var particles:Vector.<Particle> = Particle3DUtils.createRectangleParticlesFromBitmapData( bitmap.bitmapData, 20, emitter.particleFactory, new Vector3D( -192, 127, 0 ) );
+			var particles:Vector.<Particle> = Particle3DUtils.createRectangleParticlesFromBitmapData( bitmap.bitmapData, 20, emitter.particleFactory, new Vector3D( -192, -127, 0 ) );
 			emitter.addExistingParticles( particles, false );
 			addEventListener( MouseEvent.CLICK, explode, false, 0, true );
 		}
@@ -27,7 +27,7 @@
 		private function explode( ev:MouseEvent ):void
 		{
 			var p:Point = renderer.globalToLocal( new Point( ev.stageX, ev.stageY ) );
-			emitter.addAction( new Explosion( 8, new Vector3D( p.x - renderer.width / 2, -p.y + renderer.height / 2, 50 ), 500 ) );
+			emitter.addAction( new Explosion( 8, new Vector3D( p.x - renderer.width / 2, p.y + renderer.height / 2, 50 ), 500 ) );
 			removeEventListener( MouseEvent.CLICK, explode );
 		}
 	]]>

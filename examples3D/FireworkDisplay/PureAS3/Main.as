@@ -68,8 +68,8 @@ package
 			renderer.addFilter( new ColorMatrixFilter( [ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.95,0 ] ) );
 			addChild( renderer );
 
-			renderer.camera.position = new Vector3D( 0, 150, -400 );
-			renderer.camera.target = new Vector3D( 0, 150, 0 );
+			renderer.camera.position = new Vector3D( 0, -150, -400 );
+			renderer.camera.target = new Vector3D( 0, -150, 0 );
 			renderer.camera.projectionDistance = 400;
 			orbitter = new FirstPersonCamera( stage, renderer.camera );
 			orbitter.start();
@@ -95,15 +95,15 @@ package
 			renderer.addEmitter( emitter );
 			emitter.start();
 			
-			emitter = new CatherineWheel( new Vector3D( -200, 200, 50 ) );
+			emitter = new CatherineWheel( new Vector3D( -200, -200, 50 ) );
 			renderer.addEmitter( emitter );
 			emitter.start();
 			
-			emitter = new CatherineWheel( new Vector3D( 0, 200, 50 ) );
+			emitter = new CatherineWheel( new Vector3D( 0, -200, 50 ) );
 			renderer.addEmitter( emitter );
 			emitter.start();
 			
-			emitter = new CatherineWheel( new Vector3D( 200, 200, 50 ) );
+			emitter = new CatherineWheel( new Vector3D( 200, -200, 50 ) );
 			renderer.addEmitter( emitter );
 			emitter.start();
 		}

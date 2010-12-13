@@ -13,10 +13,10 @@
 	<f:camera>
 		<f:Camera>
 			<f:position>
-				<geom:Vector3D x="0" y="100" z="-300"/>
+				<geom:Vector3D x="0" y="-100" z="-300"/>
 			</f:position>
 			<f:target>
-				<geom:Vector3D x="0" y="100" z="0"/>
+				<geom:Vector3D x="0" y="-100" z="0"/>
 			</f:target>
 			<f:controller>
 				<f:OrbitCamera/>
@@ -36,7 +36,7 @@
 				<f:Velocity>
 					<f:DiscZone innerRadius="0" outerRadius="60">
 						<f:center>
-							<geom:Vector3D x="0" y="250" z="0"/>
+							<geom:Vector3D x="0" y="-250" z="0"/>
 						</f:center>
 						<f:normal>
 							<geom:Vector3D x="0" y="1" z="0"/>
@@ -49,7 +49,7 @@
 			<f:actions>
 				<f:Move/>
 				<f:Age/>
-				<f:Accelerate x="0" y="-150" z="0" />
+				<f:Accelerate x="0" y="150" z="0" />
 			</f:actions>
 		</f:Emitter>
 	</f:emitters>

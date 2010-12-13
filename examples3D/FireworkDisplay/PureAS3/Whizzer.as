@@ -40,7 +40,6 @@ package
 	import org.flintparticles.threeD.actions.Move;
 	import org.flintparticles.threeD.actions.RandomDrift;
 	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.geom.Vector3DUtils;
 	import org.flintparticles.threeD.initializers.Position;
 	import org.flintparticles.threeD.initializers.Velocity;
 	import org.flintparticles.threeD.zones.ConeZone;
@@ -57,12 +56,12 @@ package
 			addInitializer( new SharedImage( new Dot( 4 ) ) );
 			addInitializer( new ColorInit( 0xFFFFFF00, 0xFFFF6600 ) );
 			addInitializer( new Position( zone ) );
-			addInitializer( new Velocity( new ConeZone( new Vector3D(), Vector3D.Y_AXIS, 0.1, 350, 330 ) ) );
+			addInitializer( new Velocity( new ConeZone( new Vector3D(), new Vector3D( 0, -1, 0 ), 0.1, 350, 330 ) ) );
 			addInitializer( new Lifetime( 3.3 ) );
 			
 			addAction( new Age() );
 			addAction( new Move() );
-			addAction( new Accelerate( new Vector3D( 0, -50, 0 ) ) );
+			addAction( new Accelerate( new Vector3D( 0, 50, 0 ) ) );
 			addAction( new LinearDrag( 0.5 ) );
 			addAction( new RandomDrift( 10, 10, 10 ) );
 		}

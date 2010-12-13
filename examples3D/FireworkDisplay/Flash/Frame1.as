@@ -49,8 +49,8 @@ renderer.addFilter( new BlurFilter( 2, 2, 1 ) );
 renderer.addFilter( new ColorMatrixFilter( [ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.95,0 ] ) );
 addChild( renderer );
 
-renderer.camera.position = new Vector3D( 0, 150, -400 );
-renderer.camera.target = new Vector3D( 0, 150, 0 );
+renderer.camera.position = new Vector3D( 0, -150, -400 );
+renderer.camera.target = new Vector3D( 0, -150, 0 );
 renderer.camera.projectionDistance = 400;
 var orbitter:FirstPersonCamera = new FirstPersonCamera( stage, renderer.camera );
 orbitter.start();

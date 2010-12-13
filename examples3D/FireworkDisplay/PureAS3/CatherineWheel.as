@@ -39,7 +39,6 @@ package
 	import org.flintparticles.threeD.actions.Move;
 	import org.flintparticles.threeD.activities.RotateEmitter;
 	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.geom.Vector3DUtils;
 	import org.flintparticles.threeD.initializers.Velocity;
 	import org.flintparticles.threeD.zones.ConeZone;
 
@@ -61,7 +60,7 @@ package
 			addInitializer( new Lifetime( 0.5 ) );
 			
 			addAction( new Move() );
-			addAction( new Accelerate( new Vector3D( 0, -50, 0 ) ) );
+			addAction( new Accelerate( new Vector3D( 0, 50, 0 ) ) );
 			addAction( new Age() );
 		}
 	}

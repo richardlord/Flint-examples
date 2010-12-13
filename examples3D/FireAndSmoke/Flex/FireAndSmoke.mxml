@@ -20,10 +20,10 @@
 	<f:camera>
 		<f:Camera projectionDistance="400">
 			<f:position>
-				<geom:Vector3D x="0" y="150" z="-400"/>
+				<geom:Vector3D x="0" y="-150" z="-400"/>
 			</f:position>
 			<f:target>
-				<geom:Vector3D x="0" y="150" z="0"/>
+				<geom:Vector3D x="0" y="-150" z="0"/>
 			</f:target>
 			<f:controller>
 				<f:OrbitCamera/>
@@ -39,7 +39,7 @@
 				<f:Velocity>
 					<f:ConeZone angle="0.5" height="40" truncatedHeight="30">
 						<f:axis>
-							<geom:Vector3D x="0" y="1" z="0"/>
+							<geom:Vector3D x="0" y="-1" z="0"/>
 						</f:axis>
 					</f:ConeZone>
 				</f:Velocity>
@@ -84,7 +84,7 @@
 				<f:RotateToDirection/>
 				<f:Age/>
 				<f:LinearDrag drag="1"/>
-				<f:Accelerate x="0" y="40" z="0"/>
+				<f:Accelerate x="0" y="-40" z="0"/>
 				<f:ScaleImage startScale="1" endScale="1.5"/>
 				<f:ColorChange startColor="{0xFFFFCC00}" endColor="0x00CC0000"/>
 			</f:actions>

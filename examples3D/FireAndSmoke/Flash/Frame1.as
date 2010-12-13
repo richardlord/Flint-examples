@@ -48,7 +48,7 @@ var smoke:Emitter3D = new Emitter3D();
 smoke.counter = new Steady( 10 );
   
 smoke.addInitializer( new Lifetime( 11, 12 ) );
-smoke.addInitializer( new Velocity( new ConeZone( new Vector3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), 0.5, 40, 30 ) ) );
+smoke.addInitializer( new Velocity( new ConeZone( new Vector3D( 0, 0, 0 ), new Vector3D( 0, -1, 0 ), 0.5, 40, 30 ) ) );
 smoke.addInitializer( new SharedImage( new RadialDot( 6 ) ) );
   
 smoke.addAction( new Age( ) );
@@ -71,7 +71,7 @@ fire.addInitializer( new SharedImage( new FireBlob() ) );
 fire.addAction( new Age( ) );
 fire.addAction( new Move( ) );
 fire.addAction( new LinearDrag( 1 ) );
-fire.addAction( new Accelerate( new Vector3D( 0, 40, 0 ) ) );
+fire.addAction( new Accelerate( new Vector3D( 0, -40, 0 ) ) );
 fire.addAction( new ColorChange( 0xFFFFCC00, 0x00CC0000 ) );
 fire.addAction( new ScaleImage( 1, 1.5 ) );
 fire.addAction( new RotateToDirection() );
@@ -85,8 +85,8 @@ renderer.addEmitter( smoke );
 renderer.addEmitter( fire );
 addChild( renderer );
 
-renderer.camera.position = new Vector3D( 0, 150, -400 );
-renderer.camera.target = new Vector3D( 0, 150, 0 );
+renderer.camera.position = new Vector3D( 0, -150, -400 );
+renderer.camera.target = new Vector3D( 0, -150, 0 );
 renderer.camera.projectionDistance = 400;
 var orbitter:OrbitCamera = new OrbitCamera( stage, renderer.camera );
 orbitter.start();

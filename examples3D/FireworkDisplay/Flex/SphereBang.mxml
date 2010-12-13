@@ -27,7 +27,7 @@
 		<f:Move/>
 		<f:Fade/>
 		<f:Age easing="{Quadratic.easeIn}"/>
-		<f:Accelerate x="0" y="-50" z="0"/>
+		<f:Accelerate x="0" y="50" z="0"/>
 		<f:LinearDrag drag="0.5"/>
 	</f:actions>
 </f:Emitter>

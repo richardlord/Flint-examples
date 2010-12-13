@@ -42,10 +42,10 @@
 	<f:camera>
 		<f:Camera id="camera" projectionDistance="400">
 			<f:position>
-				<geom:Vector3D x="0" y="150" z="-400"/>
+				<geom:Vector3D x="0" y="-150" z="-400"/>
 			</f:position>
 			<f:target>
-				<geom:Vector3D x="0" y="150" z="0"/>
+				<geom:Vector3D x="0" y="-150" z="0"/>
 			</f:target>
 			<f:controller>
 				<f:FirstPersonCamera/>
@@ -71,17 +71,17 @@
 		</Whizzer>
 		<CatherineWheel autoStart="true">
 			<position>
-				<geom:Vector3D x="-200" y="200" z="50"/>
+				<geom:Vector3D x="-200" y="-200" z="50"/>
 			</position>
 		</CatherineWheel>
 		<CatherineWheel autoStart="true">
 			<position>
-				<geom:Vector3D x="0" y="200" z="50"/>
+				<geom:Vector3D x="0" y="-200" z="50"/>
 			</position>
 		</CatherineWheel>
 		<CatherineWheel autoStart="true">
 			<position>
-				<geom:Vector3D x="200" y="200" z="50"/>
+				<geom:Vector3D x="200" y="-200" z="50"/>
 			</position>
 		</CatherineWheel>
 		<Candle autoStart="true">

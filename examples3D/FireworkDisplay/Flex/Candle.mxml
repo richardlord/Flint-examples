@@ -18,7 +18,7 @@
 					<geom:Vector3D x="0" y="1" z="0"/>
 				</f:normal>
 				<f:center>
-					<geom:Vector3D x="0" y="80" z="0"/>
+					<geom:Vector3D x="0" y="-80" z="0"/>
 				</f:center>
 			</f:DiscZone>
 		</f:Velocity>
@@ -27,6 +27,6 @@
 	<f:actions>
 		<f:Move/>
 		<f:Age/>
-		<f:Accelerate x="0" y="-50" z="0"/>
+		<f:Accelerate x="0" y="50" z="0"/>
 	</f:actions>
 </f:Emitter>

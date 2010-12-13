@@ -61,7 +61,7 @@ package
 			renderer = new PixelRenderer( new Rectangle( -250, -250, 500, 500 ), false );
 			renderer.camera.dolly( -300 );
 			renderer.camera.lift( 100 );
-			renderer.camera.target = new Vector3D( 0, 100, 0 );
+			renderer.camera.target = new Vector3D( 0, -100, 0 );
 			renderer.addFilter( new BlurFilter( 2, 2, 1 ) );
 			renderer.addFilter( new ColorMatrixFilter( [ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.99,0 ] ) );
 			renderer.addEmitter( emitter );

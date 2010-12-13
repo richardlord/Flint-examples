@@ -48,11 +48,11 @@ package
 			counter = new Steady( 500 );
 			
 			addInitializer( new ColorInit( 0xFFCCCCFF, 0xFF6666FF ) );
-			addInitializer( new Velocity( new DiscZone( new Vector3D( 0, 250, 0 ), new Vector3D( 0, 1, 0 ), 60 ) ) );
+			addInitializer( new Velocity( new DiscZone( new Vector3D( 0, -250, 0 ), new Vector3D( 0, 1, 0 ), 60 ) ) );
 			addInitializer( new Lifetime( 3.2 ) );
 			
 			addAction( new Move() );
-			addAction( new Accelerate( new Vector3D( 0, -150, 0 ) ) );
+			addAction( new Accelerate( new Vector3D( 0, 150, 0 ) ) );
 			addAction( new Age() );
 		}
 	}

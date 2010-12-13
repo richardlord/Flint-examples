@@ -41,7 +41,6 @@ package
 	import org.flintparticles.threeD.actions.LinearDrag;
 	import org.flintparticles.threeD.actions.Move;
 	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.geom.Vector3DUtils;
 	import org.flintparticles.threeD.initializers.Position;
 	import org.flintparticles.threeD.initializers.Velocity;
 	import org.flintparticles.threeD.zones.PointZone;
@@ -64,7 +63,7 @@ package
 			addAction( new Age( Quadratic.easeIn ) );
 			addAction( new Move() );
 			addAction( new Fade() );
-			addAction( new Accelerate( new Vector3D( 0, -50, 0 ) ) );
+			addAction( new Accelerate( new Vector3D( 0, 50, 0 ) ) );
 			addAction( new LinearDrag( 0.5 ) );
 		}
 	}

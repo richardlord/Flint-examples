@@ -49,11 +49,11 @@ package
 			addInitializer( new SharedImage( new Dot( 1 ) ) );
 			addInitializer( new ColorInit( 0xFFFFFF00, 0xFFFF6600 ) );
 			addInitializer( new Position( new PointZone( position ) ) );
-			addInitializer( new Velocity( new DiscZone( new Vector3D( 0, 80, 0 ), new Vector3D( 0, 1, 0 ), 30 ) ) );
+			addInitializer( new Velocity( new DiscZone( new Vector3D( 0, -80, 0 ), new Vector3D( 0, 1, 0 ), 30 ) ) );
 			addInitializer( new Lifetime( 2 ) );
 			
 			addAction( new Move() );
-			addAction( new Accelerate( new Vector3D( 0, -50, 0 ) ) );
+			addAction( new Accelerate( new Vector3D( 0, 50, 0 ) ) );
 			addAction( new Age() );
 		}
 	}

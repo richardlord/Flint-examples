@@ -67,8 +67,8 @@ package
 			renderer.addEmitter( fire );
 			addChild( renderer );
 			
-			renderer.camera.position = new Vector3D( 0, 150, -400 );
-			renderer.camera.target = new Vector3D( 0, 150, 0 );
+			renderer.camera.position = new Vector3D( 0, -150, -400 );
+			renderer.camera.target = new Vector3D( 0, -150, 0 );
 			renderer.camera.projectionDistance = 400;
 			orbitter = new OrbitCamera( stage, renderer.camera );
 			orbitter.start();
