@@ -2,7 +2,7 @@
 <project name="Flint Build Scripts" default="all">
 	
 	<property file="build.config"/>
-		
+	
 	<target name="all" depends="examples2D,flex2D,examples3D,flex3D,papervision3D,away3D" description="Full build of all Flex and PureAS3 examples"/>
 		
 	<target name="examples2D" description="Build 2D examples">
@@ -11,6 +11,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Brownian Motion 2D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Brownian Motion effect in 2D."'/>
@@ -24,6 +25,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Catherine Wheel 2D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Catherine Wheel effect in 2D."'/>
@@ -37,6 +39,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Explode Image 2D"'/>
 			<arg line='-description "An example for the Flint particle system showing an Explode Image effect in 2D."'/>
@@ -50,6 +53,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Fire and Smoke 2D"'/>
 			<arg line='-description "An example for the Flint particle system showing Fire and Smoke effects in 2D."'/>
@@ -63,6 +67,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Firework 2D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Firework effect in 2D."'/>
@@ -76,6 +81,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Flocking 2D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Flocking effect in 2D."'/>
@@ -89,6 +95,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Grass 2D"'/>
 			<arg line='-description "An example for the Flint particle system."'/>
@@ -102,6 +109,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Gravity Wells"'/>
 			<arg line='-description "An example for the Flint particle system showing a Gravity effect using multiple Gravity Wells in 2D."'/>
@@ -115,6 +123,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Logo Firework"'/>
 			<arg line='-description "An example for the Flint particle system showing a Firework effect in the shape of an image in 2D."'/>
@@ -128,6 +137,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Logo on fire"'/>
 			<arg line='-description "An example for the Flint particle system showing a fire effect on a 2D object."'/>
@@ -141,6 +151,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Logo Tween"'/>
 			<arg line='-description "An example for the Flint particle system showing a shape tween between two 2D shapes."'/>
@@ -154,6 +165,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Mutual Gravity"'/>
 			<arg line='-description "An example for the Flint particle system showing particles in 2D subject to gravity from each other."'/>
@@ -167,6 +179,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Pachinko"'/>
 			<arg line='-description "An example for the Flint particle system showing a 2D Pachinko game."'/>
@@ -180,6 +193,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Rain"'/>
 			<arg line='-description "An example for the Flint particle system showing a Rain effect in 2D."'/>
@@ -193,6 +207,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Snowfall"'/>
 			<arg line='-description "An example for the Flint particle system showing a Snow effect in 2D."'/>
@@ -206,6 +221,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Sparkler"'/>
 			<arg line='-description "An example for the Flint particle system showing a Sparkler effect in 2D."'/>
@@ -223,6 +239,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Brownian Motion 3D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Brownian Motion effect in 3D."'/>
@@ -236,6 +253,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Explode Image 3D"'/>
 			<arg line='-description "An example for the Flint particle system showing an Explode Image effect in 3D."'/>
@@ -249,6 +267,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Fire and Smoke 3D"'/>
 			<arg line='-description "An example for the Flint particle system showing Fire and Smoke effects in 3D."'/>
@@ -262,6 +281,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Firework Display 3D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Firework Display in 3D."'/>
@@ -275,6 +295,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Flocking 3D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Flocking effect in 3D."'/>
@@ -288,6 +309,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Flocking 3D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Fountain effect in 3D."'/>
@@ -305,6 +327,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Brownian Motion 2D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Brownian Motion effect in 2D."'/>
@@ -320,6 +343,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Catherine Wheel 2D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Catherine Wheel effect in 2D."'/>
@@ -335,6 +359,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Explode Image 2D"'/>
 			<arg line='-description "An example for the Flint particle system showing an Explode Image effect in 2D."'/>
@@ -350,6 +375,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Fire and Smoke 2D"'/>
 			<arg line='-description "An example for the Flint particle system showing Fire and Smoke effects in 2D."'/>
@@ -365,6 +391,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Firework 2D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Firework effect in 2D."'/>
@@ -380,6 +407,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Flocking 2D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Flocking effect in 2D."'/>
@@ -395,6 +423,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Grass 2D"'/>
 			<arg line='-description "An example for the Flint particle system."'/>
@@ -410,6 +439,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Gravity Wells"'/>
 			<arg line='-description "An example for the Flint particle system showing a Gravity effect using multiple Gravity Wells in 2D."'/>
@@ -425,6 +455,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Logo Firework"'/>
 			<arg line='-description "An example for the Flint particle system showing a Firework effect in the shape of an image in 2D."'/>
@@ -440,6 +471,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Logo on fire"'/>
 			<arg line='-description "An example for the Flint particle system showing a fire effect on a 2D object."'/>
@@ -455,6 +487,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Mutual Gravity"'/>
 			<arg line='-description "An example for the Flint particle system showing particles in 2D subject to gravity from each other."'/>
@@ -470,6 +503,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Rain"'/>
 			<arg line='-description "An example for the Flint particle system showing a Rain effect in 2D."'/>
@@ -485,6 +519,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Snowfall"'/>
 			<arg line='-description "An example for the Flint particle system showing a Snow effect in 2D."'/>
@@ -500,6 +535,7 @@
 			<arg line='-library-path+="${flint2d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Sparkler"'/>
 			<arg line='-description "An example for the Flint particle system showing a Sparkler effect in 2D."'/>
@@ -519,6 +555,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Brownian Motion 3D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Brownian Motion effect in 3D."'/>
@@ -534,6 +571,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Explode Image 3D"'/>
 			<arg line='-description "An example for the Flint particle system showing an Explode Image effect in 3D."'/>
@@ -549,6 +587,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Fire and Smoke 3D"'/>
 			<arg line='-description "An example for the Flint particle system showing Fire and Smoke effects in 3D."'/>
@@ -564,6 +603,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Firework Display 3D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Firework Display in 3D."'/>
@@ -579,6 +619,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Flocking 3D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Flocking effect in 3D."'/>
@@ -594,6 +635,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-title "Fountain 3D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Fountain effect in 3D."'/>
@@ -613,6 +655,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 			<arg line='-library-path+="${papervision3d.swc}"'/>
 
 			<arg line='-title "Brownian Motion in Papervision3D"'/>
@@ -626,6 +669,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 			<arg line='-library-path+="${papervision3d.swc}"'/>
 
 			<arg line='-title "Fire and Smoke in Papervision3D"'/>
@@ -640,6 +684,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 			<arg line='-library-path+="${papervision3d.swc}"'/>
 
 			<arg line='-title "Fountain in Papervision3D"'/>
@@ -658,6 +703,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 			<arg line='-library-path+="${away3d.swc}"'/>
 
 			<arg line='-target-player 10.0.0.0'/>
@@ -673,6 +719,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
 			<arg line='-library-path+="${away3d.swc}"'/>
 
 			<arg line='-target-player 10.0.0.0'/>
