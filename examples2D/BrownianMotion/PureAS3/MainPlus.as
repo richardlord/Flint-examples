@@ -29,26 +29,26 @@
 
 package
 {
-	import org.flintparticles.twoD.emitters.Emitter2D;
-	import org.flintparticles.twoD.renderers.DisplayObjectRenderer;
+	import org.flintparticles.common.debug.Stats;
 
-	import flash.display.Sprite;
+	import flash.text.TextField;
 
 	[SWF(width='500', height='500', frameRate='60', backgroundColor='#000000')]
 	
-	public class Main extends Sprite
+	public class MainPlus extends Main
 	{
-		private var emitter:Emitter2D;
-		
-		public function Main()
+		public function MainPlus()
 		{
-			emitter = new BrownianMotion( stage );
-
-			var renderer:DisplayObjectRenderer = new DisplayObjectRenderer();
-			renderer.addEmitter( emitter );
-			addChild( renderer );
-
-			emitter.start();
+			super();
+			
+			var txt:TextField = new TextField();
+			txt.text = "Hold down the shift key to hide the air particles.";
+			txt.autoSize = "left";
+			txt.textColor = 0xFFFFFF;
+			txt.y = 480;
+			addChild( txt );
+			
+			addChild( new Stats() );
 		}
 	}
 }

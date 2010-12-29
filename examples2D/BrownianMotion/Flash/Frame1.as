@@ -29,6 +29,7 @@
  */
 
 import org.flintparticles.common.counters.Blast;
+import org.flintparticles.common.debug.Stats;
 import org.flintparticles.common.displayObjects.Dot;
 import org.flintparticles.common.initializers.ChooseInitializer;
 import org.flintparticles.common.initializers.CollisionRadiusInit;
@@ -46,15 +47,8 @@ import org.flintparticles.twoD.renderers.DisplayObjectRenderer;
 import org.flintparticles.twoD.zones.DiscZone;
 import org.flintparticles.twoD.zones.RectangleZone;
 
-
-var txt:TextField = new TextField();
-txt.text = "Hold down the shift key to hide the air particles.";
-txt.autoSize = "left";
-txt.textColor = 0xFFFFFF;
-addChild( txt );
-
 var emitter:Emitter2D = new Emitter2D();
-emitter.counter = new Blast( 250 );
+emitter.counter = new Blast( 500 );
 
 var air:InitializerGroup = new InitializerGroup();
 air.addInitializer( new ImageClass( Dot, 2 ) );
@@ -70,7 +64,7 @@ smoke.addInitializer( new CollisionRadiusInit( 10 ) );
 
 emitter.addInitializer( new Position( new RectangleZone( 0, 0, 500, 500 ) ) );
 emitter.addInitializer( new Velocity( new DiscZone( new Point( 0, 0 ), 150, 100 ) ) );
-emitter.addInitializer( new ChooseInitializer( [ air, smoke ], [ 19, 1 ] ) );
+emitter.addInitializer( new ChooseInitializer( [ air, smoke ], [ 30, 1 ] ) );
 
 emitter.addAction( new Move() );
 emitter.addAction( new Collide( 1 ) );

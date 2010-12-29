@@ -53,7 +53,7 @@ package
 	{
 		public function BrownianMotion( stage:DisplayObject )
 		{
-			counter = new Blast( 250 );
+			counter = new Blast( 500 );
 			
 			var air:InitializerGroup = new InitializerGroup();
 			air.addInitializer( new ImageClass( Dot, 2 ) );
@@ -69,7 +69,7 @@ package
 			
 			addInitializer( new Position( new RectangleZone( 0, 0, 500, 500 ) ) );
 			addInitializer( new Velocity( new DiscZone( new Point( 0, 0 ), 150, 100 ) ) );
-			addInitializer( new ChooseInitializer( [ air, smoke ], [ 19, 1 ] ) );
+			addInitializer( new ChooseInitializer( [ air, smoke ], [ 30, 1 ] ) );
 			
 			addAction( new Move() );
 			addAction( new Collide( 1 ) );
