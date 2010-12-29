@@ -31,7 +31,7 @@ import org.flintparticles.common.actions.Age;
 import org.flintparticles.common.actions.Fade;
 import org.flintparticles.common.counters.Steady;
 import org.flintparticles.common.displayObjects.Line;
-import org.flintparticles.common.energyEasing.Quadratic;
+import org.flintparticles.common.easing.Quadratic;
 import org.flintparticles.common.initializers.ColorInit;
 import org.flintparticles.common.initializers.Lifetime;
 import org.flintparticles.common.initializers.SharedImage;
@@ -46,14 +46,14 @@ import org.flintparticles.twoD.zones.DiscSectorZone;
 
 var emitter:Emitter2D = new Emitter2D();
 
-emitter.counter = new Steady( 250 );
+emitter.counter = new Steady( 200 );
 
 emitter.addActivity( new RotateEmitter( -7 ) );
 
 emitter.addInitializer( new SharedImage( new Line( 3 ) ) );
 emitter.addInitializer( new ColorInit( 0xFFFFFF00, 0xFFFF6600 ) );
-emitter.addInitializer( new Velocity( new DiscSectorZone( new Point( 0, 0 ), 350, 200, 0, 0.2 ) ) );
-emitter.addInitializer( new Lifetime( 2 ) );
+emitter.addInitializer( new Velocity( new DiscSectorZone( new Point( 0, 0 ), 250, 170, 0, 0.2 ) ) );
+emitter.addInitializer( new Lifetime( 1.3 ) );
 
 emitter.addAction( new Age( Quadratic.easeIn ) );
 emitter.addAction( new Move() );
@@ -61,12 +61,12 @@ emitter.addAction( new Fade() );
 emitter.addAction( new Accelerate( 0, 50 ) );
 emitter.addAction( new LinearDrag( 0.5 ) );
 
-var renderer:BitmapRenderer = new BitmapRenderer( new Rectangle( 0, 0, 600, 600 ) );
+var renderer:BitmapRenderer = new BitmapRenderer( new Rectangle( 0, 0, 500, 500 ) );
 renderer.addFilter( new BlurFilter( 2, 2, 1 ) );
 renderer.addFilter( new ColorMatrixFilter( [ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.97,0 ] ) );
 renderer.addEmitter( emitter );
 addChild( renderer );
 
-emitter.x = 300;
-emitter.y = 300;
+emitter.x = 250;
+emitter.y = 250;
 emitter.start( );

@@ -4,34 +4,34 @@
 	xmlns:s="library://ns.adobe.com/flex/spark" 
 	xmlns:f="http://flintparticles.org/2009/flint2d"
 	xmlns:filters="flash.filters.*"
-	width="600" height="600"
+	width="500" height="500"
 	backgroundColor="#000000">
 	
 <fx:Script>
 	<![CDATA[
-		import org.flintparticles.common.energyEasing.Quadratic;
+		import org.flintparticles.common.easing.Quadratic;
 	]]>
 </fx:Script>
 
-<f:BitmapRenderer id="renderer" width="600" height="600">
+<f:BitmapRenderer id="renderer" width="500" height="500">
 	<f:preFilters>
 		<filters:BlurFilter blurX="2" blurY="2" quality="1"/>
 		<filters:ColorMatrixFilter matrix="{[ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.97,0 ]}"/>
 	</f:preFilters>
 	<f:emitters>
-		<f:Emitter id="emitter" autoStart="true" x="300" y="300">
+		<f:Emitter id="emitter" autoStart="true" x="250" y="250">
 			<f:counter>
-				<f:Steady rate="250"/>
+				<f:Steady rate="200"/>
 			</f:counter>
 			<f:initializers>
 				<f:ColorInit minColor="0xFFFFFF00" maxColor="0xFFFF6600"/>
 				<f:Velocity>
-					<f:DiscSectorZone centerX="0" centerY="0" innerRadius="200" outerRadius="350" minAngle="0" maxAngle="0.2"/>
+					<f:DiscSectorZone centerX="0" centerY="0" innerRadius="170" outerRadius="250" minAngle="0" maxAngle="0.2"/>
 				</f:Velocity>
 				<f:SharedImage>
 					<f:Line length="3"/>
 				</f:SharedImage>
-				<f:Lifetime lifetime="2"/>
+				<f:Lifetime lifetime="1.3"/>
 			</f:initializers>
 			<f:actions>
 				<f:Move/>
