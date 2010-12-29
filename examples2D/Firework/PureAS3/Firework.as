@@ -33,7 +33,7 @@ package
 	import org.flintparticles.common.actions.Fade;
 	import org.flintparticles.common.counters.Blast;
 	import org.flintparticles.common.displayObjects.Dot;
-	import org.flintparticles.common.energyEasing.Quadratic;
+	import org.flintparticles.common.easing.Quadratic;
 	import org.flintparticles.common.events.EmitterEvent;
 	import org.flintparticles.common.initializers.ColorInit;
 	import org.flintparticles.common.initializers.Lifetime;

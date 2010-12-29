@@ -29,39 +29,17 @@
 
 package
 {
-	import org.flintparticles.twoD.emitters.Emitter2D;
-	import org.flintparticles.twoD.renderers.BitmapRenderer;
-
-	import flash.display.Sprite;
-	import flash.filters.BlurFilter;
-	import flash.filters.ColorMatrixFilter;
-	import flash.geom.Rectangle;
+	import org.flintparticles.common.debug.Stats;
 
 	[SWF(width='500', height='400', frameRate='60', backgroundColor='#000000')]
 	
-	/**
-	 * This example creates a firework like effect.
-	 * 
-	 * <p>This is the document class for the Flex project.</p>
-	 */
-
-	public class Main extends Sprite
+	public class MainPlus extends Main
 	{
-		private var emitter:Emitter2D;
-		
-		public function Main()
+		public function MainPlus()
 		{
-			emitter = new Firework();
+			super();
 			
-			var renderer:BitmapRenderer = new BitmapRenderer( new Rectangle( 0, 0, 500, 400 ) );
-			renderer.addFilter( new BlurFilter( 2, 2, 1 ) );
-			renderer.addFilter( new ColorMatrixFilter( [ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.95,0 ] ) );
-			renderer.addEmitter( emitter );
-			addChild( renderer );
-			
-			emitter.x = 250;
-			emitter.y = 150;
-			emitter.start();
+			addChild( new Stats() );
 		}
 	}
 }
