@@ -34,7 +34,7 @@ package
 
 	import flash.display.Sprite;
 
-	[SWF(width='700', height='500', frameRate='61', backgroundColor='#CCCCCC')]
+	[SWF(width='700', height='500', frameRate='60', backgroundColor='#CCCCCC')]
 	
 	public class Main extends Sprite
 	{

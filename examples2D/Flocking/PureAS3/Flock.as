@@ -53,7 +53,7 @@ package
 		
 		public function Flock()
 		{
-			counter = new Blast( 150 );
+			counter = new Blast( 250 );
 			
 			addInitializer( new ImageClass( Bird ) );
 			addInitializer( new Position( new RectangleZone( 10, 10, 680, 480 ) ) );

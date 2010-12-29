@@ -17,7 +17,7 @@
 	<f:emitters>
 		<f:Emitter id="emitter" autoStart="true">
 			<f:counter>
-				<f:Blast startCount="150"/>
+				<f:Blast startCount="250"/>
 			</f:counter>
 			<f:initializers>
 				<f:Position>
