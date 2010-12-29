@@ -1,4 +1,3 @@
-
 /*
  * FLINT PARTICLE SYSTEM
  * .....................
@@ -30,41 +29,17 @@
 
 package
 {
-	import org.flintparticles.twoD.emitters.Emitter2D;
-	import org.flintparticles.twoD.renderers.BitmapRenderer;
-
-	import flash.display.Sprite;
-	import flash.geom.Rectangle;
+	import org.flintparticles.common.debug.Stats;
 
 	[SWF(width='300', height='400', frameRate='60', backgroundColor='#000000')]
 	
-	/**
-	 * This example creates fire and smoke using two emitters.
-	 * 
-	 * <p>This is the document class for the Flex project.</p>
-	 */
-
-	public class Main extends Sprite
+	public class MainPlus extends Main
 	{
-		private var smoke:Emitter2D;
-		private var fire:Emitter2D;
-		
-		public function Main()
+		public function MainPlus()
 		{
-			smoke = new Smoke();
-			smoke.x = 150;
-			smoke.y = 380;
-			smoke.start();
+			super();
 			
-			fire = new Fire();
-			fire.x = 150;
-			fire.y = 380;
-			fire.start();
-			
-			var renderer:BitmapRenderer = new BitmapRenderer( new Rectangle( 0, 0, 300, 400 ) );
-			renderer.addEmitter( smoke );
-			renderer.addEmitter( fire );
-			addChild( renderer );
+			addChild( new Stats() );
 		}
 	}
 }
