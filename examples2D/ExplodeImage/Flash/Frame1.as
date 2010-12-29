@@ -28,34 +28,48 @@
  * THE SOFTWARE.
  */
 
+import org.flintparticles.common.events.EmitterEvent;
 import org.flintparticles.common.particles.Particle;
-import org.flintparticles.twoD.actions.*;
+import org.flintparticles.twoD.actions.DeathZone;
+import org.flintparticles.twoD.actions.Explosion;
+import org.flintparticles.twoD.actions.Move;
 import org.flintparticles.twoD.emitters.Emitter2D;
 import org.flintparticles.twoD.particles.Particle2DUtils;
 import org.flintparticles.twoD.renderers.DisplayObjectRenderer;
-import org.flintparticles.twoD.zones.RectangleZone;	
+import org.flintparticles.twoD.zones.RectangleZone;
 
-var txt:TextField = new TextField();
-txt.text = "Click on the image";
-txt.textColor = 0xFFFFFF;
-addChild( txt );
+var explosion:Explosion;
 
 var emitter:Emitter2D = new Emitter2D();
-var particles:Vector.<Particle> = Particle2DUtils.createRectangleParticlesFromBitmapData( new Image1(384,255), 10, emitter.particleFactory, 56, 47 );
-emitter.addExistingParticles( particles, false );
+emitter.addAction( new Move() );
+emitter.addAction( new DeathZone( new RectangleZone( -10, -10, 510, 360 ), true ) );
+prepare();
 
 var renderer:DisplayObjectRenderer = new DisplayObjectRenderer();
-renderer.addEmitter( emitter );
 addChild( renderer );
+renderer.addEmitter( emitter );
 emitter.start();
 
 stage.addEventListener( MouseEvent.CLICK, explode, false, 0, true );
+emitter.addEventListener( EmitterEvent.EMITTER_EMPTY, prepare );
+
+function prepare( event:EmitterEvent = null ):void
+{
+	if( explosion )
+	{
+		emitter.removeAction( explosion );
+		explosion = null;
+	}
+	var particles:Vector.<Particle> = Particle2DUtils.createRectangleParticlesFromBitmapData( new Image1(384,255), 8, emitter.particleFactory, 56, 47 );
+	emitter.addParticles( particles, false );
+}
 		
 function explode( ev:MouseEvent ):void
 {
-	var p:Point = renderer.globalToLocal( new Point( ev.stageX, ev.stageY ) );
-	emitter.addAction( new Explosion( 8, p.x, p.y, 500 ) );
-	emitter.addAction( new Move() );
-	emitter.addAction( new DeathZone( new RectangleZone( -10, -10, 510, 360 ), true ) );
-	stage.removeEventListener( MouseEvent.CLICK, explode );
+	if( !explosion )
+	{
+		var p:Point = renderer.globalToLocal( new Point( ev.stageX, ev.stageY ) );
+		explosion = new Explosion( 8, p.x, p.y, 500 );
+		emitter.addAction( explosion );
+	}
 }
