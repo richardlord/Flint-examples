@@ -29,29 +29,17 @@
 
 package
 {
-	import org.flintparticles.twoD.emitters.Emitter2D;
-	import org.flintparticles.twoD.renderers.BitmapLineRenderer;
-
-	import flash.display.Sprite;
-	import flash.geom.Rectangle;
+	import org.flintparticles.common.debug.Stats;
 
 	[SWF(width='500', height='500', frameRate='60', backgroundColor='#000000')]
 	
-	public class Main extends Sprite
+	public class MainPlus extends Main
 	{
-		private var emitter:Emitter2D;
-		
-		public function Main()
+		public function MainPlus()
 		{
-			emitter = new Grass();
-			emitter.x = 250;
-			emitter.y = 450;
+			super();
 			
-			var renderer:BitmapLineRenderer = new BitmapLineRenderer( new Rectangle( 0, 0, 500, 500 ) );
-			renderer.addEmitter( emitter );
-			addChild( renderer );
-			
-			emitter.start();
+			addChild( new Stats() );
 		}
 	}
 }
