@@ -43,7 +43,7 @@ package
 	{
 		public function GravityWells()
 		{
-			counter = new Blast( 4000 );
+			counter = new Blast( 10000 );
 			
 			addInitializer( new ColorInit( 0xFFFF00FF, 0xFF00FFFF ) );
 			addInitializer( new Position( new DiscZone( new Point( 200, 200 ), 200 ) ) );

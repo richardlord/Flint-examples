@@ -29,31 +29,17 @@
 
 package
 {
-	import org.flintparticles.twoD.emitters.Emitter2D;
-	import org.flintparticles.twoD.renderers.PixelRenderer;
-
-	import flash.display.Sprite;
-	import flash.filters.BlurFilter;
-	import flash.filters.ColorMatrixFilter;
-	import flash.geom.Rectangle;
+	import org.flintparticles.common.debug.Stats;
 
 	[SWF(width='400', height='400', frameRate='60', backgroundColor='#000000')]
-
-	public class Main extends Sprite
+	
+	public class MainPlus extends Main
 	{
-		private var emitter:Emitter2D;
-		
-		public function Main()
+		public function MainPlus()
 		{
-			emitter = new GravityWells();
-
-			var renderer:PixelRenderer = new PixelRenderer( new Rectangle( 0, 0, 400, 400 ) );
-			renderer.addFilter( new BlurFilter( 2, 2, 1 ) );
-			renderer.addFilter( new ColorMatrixFilter( [ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.99,0 ] ) );
-			renderer.addEmitter( emitter );
-			addChild( renderer );
+			super();
 			
-			emitter.start();
+			addChild( new Stats() );
 		}
 	}
 }
