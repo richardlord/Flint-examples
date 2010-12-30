@@ -29,7 +29,7 @@
 
 import org.flintparticles.common.actions.*;
 import org.flintparticles.common.counters.*;
-import org.flintparticles.common.energyEasing.Quadratic;
+import org.flintparticles.common.easing.Quadratic;
 import org.flintparticles.common.events.EmitterEvent;
 import org.flintparticles.common.initializers.*;
 import org.flintparticles.twoD.actions.*;
@@ -39,7 +39,7 @@ import org.flintparticles.twoD.renderers.*;
 import org.flintparticles.twoD.zones.*;	
 
 var emitter:Emitter2D = new Emitter2D();
-emitter.counter = new Blast( 1500 );
+emitter.counter = new Blast( 4000 );
 
 emitter.addInitializer( new ColorInit( 0xFFFF3300, 0xFFFFFF00 ) );
 emitter.addInitializer( new Lifetime( 6 ) );

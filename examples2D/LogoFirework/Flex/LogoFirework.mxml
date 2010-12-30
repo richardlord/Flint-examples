@@ -9,7 +9,7 @@
 	
 <fx:Script>
 	<![CDATA[
-		import org.flintparticles.common.energyEasing.Quadratic;
+		import org.flintparticles.common.easing.Quadratic;
 
 		[Embed(source="assets/flint.png")]
 		public var Logo:Class;
@@ -24,7 +24,7 @@
 	<f:emitters>
 		<f:Emitter id="emitter" autoStart="true" x="250" y="300" emitterEmpty="emitter.start()">
 			<f:counter>
-				<f:Blast startCount="1500"/>
+				<f:Blast startCount="4000"/>
 			</f:counter>
 			<f:initializers>
 				<f:Position>

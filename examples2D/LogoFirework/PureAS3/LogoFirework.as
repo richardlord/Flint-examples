@@ -32,7 +32,7 @@ package
 	import org.flintparticles.common.actions.Age;
 	import org.flintparticles.common.actions.Fade;
 	import org.flintparticles.common.counters.Blast;
-	import org.flintparticles.common.energyEasing.Quadratic;
+	import org.flintparticles.common.easing.Quadratic;
 	import org.flintparticles.common.events.EmitterEvent;
 	import org.flintparticles.common.initializers.ColorInit;
 	import org.flintparticles.common.initializers.Lifetime;
@@ -55,7 +55,7 @@ package
 
 		public function LogoFirework()
 		{
-			counter = new Blast( 1500 );
+			counter = new Blast( 4000 );
 			
 			addInitializer( new ColorInit( 0xFFFF3300, 0xFFFFFF00 ) );
 			addInitializer( new Lifetime( 6 ) );
