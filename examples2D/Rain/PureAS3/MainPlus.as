@@ -29,33 +29,17 @@
 
 package
 {
-	import org.flintparticles.twoD.emitters.Emitter2D;
-	import org.flintparticles.twoD.renderers.PixelRenderer;
-
-	import flash.display.Sprite;
-	import flash.geom.Rectangle;
+	import org.flintparticles.common.debug.Stats;
 
 	[SWF(width='600', height='400', frameRate='60', backgroundColor='#000000')]
 	
-	public class Main extends Sprite
+	public class MainPlus extends Main
 	{
-		[Embed(source="assets/Out_on_the_streets.png")]
-		public var Background:Class;
-
-		private var emitter:Emitter2D;
-		
-		public function Main()
+		public function MainPlus()
 		{
-			emitter = new Rain();
+			super();
 			
-			addChild( new Background() );
-			
-			var renderer:PixelRenderer = new PixelRenderer( new Rectangle( 0, 0, 600, 400 ) );
-			renderer.addEmitter( emitter );
-			addChild( renderer );
-			
-			emitter.start();
-			emitter.runAhead( 4, 30 );
+			addChild( new Stats() );
 		}
 	}
 }
