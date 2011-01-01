@@ -39,7 +39,7 @@ package
 	import flash.text.TextField;
 	import flash.text.TextFormat;
 
-	[SWF(width='480', height='425', frameRate='61', backgroundColor='#000000')]
+	[SWF(width='480', height='425', frameRate='60', backgroundColor='#000000')]
 	
 	public class Main extends Sprite
 	{
