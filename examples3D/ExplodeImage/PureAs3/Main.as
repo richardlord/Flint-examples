@@ -30,6 +30,7 @@
 
 package
 {
+	import org.flintparticles.common.events.EmitterEvent;
 	import org.flintparticles.common.particles.Particle;
 	import org.flintparticles.threeD.actions.DeathZone;
 	import org.flintparticles.threeD.actions.Explosion;
@@ -45,9 +46,8 @@ package
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.geom.Vector3D;
-	import flash.text.TextField;
 
-	[SWF(width='500', height='350', frameRate='61', backgroundColor='#000000')]
+	[SWF(width='500', height='350', frameRate='60', backgroundColor='#000000')]
 	
 	public class Main extends Sprite
 	{
@@ -58,14 +58,10 @@ package
 		private var emitter:Emitter3D;
 		private var bitmap:Bitmap;
 		private var renderer:DisplayObjectRenderer;
+		private var explosion:Explosion;
 		
 		public function Main()
 		{
-			var txt:TextField = new TextField();
-			txt.text = "Click on the image";
-			txt.textColor = 0xFFFFFF;
-			addChild( txt );
-
 			bitmap = new Image1();
 			
 			renderer = new DisplayObjectRenderer();
@@ -78,21 +74,33 @@ package
 			emitter = new Emitter3D();
 			emitter.addAction( new Move() );
 			emitter.addAction( new DeathZone( new FrustrumZone( renderer.camera, new Rectangle( -290, -215, 580, 430 ) ), true ) );
-			emitter.position = new Vector3D( 0, 0, 0 );
-
-			var particles:Vector.<Particle> = Particle3DUtils.createRectangleParticlesFromBitmapData( bitmap.bitmapData, 20, emitter.particleFactory, new Vector3D( -192, -127, 0 ) );
-			emitter.addExistingParticles( particles, false );
-									
+			prepare();
+			
 			renderer.addEmitter( emitter );
 			emitter.start();
 			stage.addEventListener( MouseEvent.CLICK, explode, false, 0, true );
+			emitter.addEventListener( EmitterEvent.EMITTER_EMPTY, prepare );
+		}
+		
+		private function prepare( event:EmitterEvent = null ):void
+		{
+			if( explosion )
+			{
+				emitter.removeAction( explosion );
+				explosion = null;
+			}
+			var particles:Vector.<Particle> = Particle3DUtils.createRectangleParticlesFromBitmapData( bitmap.bitmapData, 12, emitter.particleFactory, new Vector3D( -192, -127, 0 ) );
+			emitter.addParticles( particles, false );
 		}
 		
 		private function explode( ev:MouseEvent ):void
 		{
-			var p:Point = renderer.globalToLocal( new Point( ev.stageX, ev.stageY ) );
-			emitter.addAction( new Explosion( 8, new Vector3D( p.x, p.y, 50 ), 500 ) );
-			stage.removeEventListener( MouseEvent.CLICK, explode );
+			if( !explosion )
+			{
+				var p:Point = renderer.globalToLocal( new Point( ev.stageX, ev.stageY ) );
+				explosion = new Explosion( 8, new Vector3D( p.x, p.y, 50 ), 500 );
+				emitter.addAction( explosion );
+			}
 		}
 	}
 }

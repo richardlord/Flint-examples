@@ -9,6 +9,7 @@
 
 <fx:Script>
 	<![CDATA[
+		import org.flintparticles.common.events.EmitterEvent;
 		import org.flintparticles.common.particles.Particle;
 		import org.flintparticles.threeD.actions.Explosion;
 		import org.flintparticles.threeD.particles.Particle3DUtils;
@@ -16,19 +17,36 @@
 		[Embed(source="assets/184098.jpg")]
 		public var Image1:Class;
 
+		private var explosion:Explosion;
+		private var bitmap:Bitmap;
+		
 		private function complete():void
 		{
-			var bitmap:Bitmap  = new Image1();
-			var particles:Vector.<Particle> = Particle3DUtils.createRectangleParticlesFromBitmapData( bitmap.bitmapData, 20, emitter.particleFactory, new Vector3D( -192, -127, 0 ) );
-			emitter.addExistingParticles( particles, false );
+			bitmap  = new Image1();
+			prepare();
 			addEventListener( MouseEvent.CLICK, explode, false, 0, true );
+			emitter.addEventListener( EmitterEvent.EMITTER_EMPTY, prepare );
 		}
 		
+		private function prepare( event:EmitterEvent = null ):void
+		{
+			if( explosion )
+			{
+				emitter.removeAction( explosion );
+				explosion = null;
+			}
+			var particles:Vector.<Particle> = Particle3DUtils.createRectangleParticlesFromBitmapData( bitmap.bitmapData, 12, emitter.particleFactory, new Vector3D( -192, -127, 0 ) );
+			emitter.addParticles( particles, false );
+		}
+
 		private function explode( ev:MouseEvent ):void
 		{
-			var p:Point = renderer.globalToLocal( new Point( ev.stageX, ev.stageY ) );
-			emitter.addAction( new Explosion( 8, new Vector3D( p.x - renderer.width / 2, p.y + renderer.height / 2, 50 ), 500 ) );
-			removeEventListener( MouseEvent.CLICK, explode );
+			if( !explosion )
+			{
+				var p:Point = renderer.globalToLocal( new Point( ev.stageX, ev.stageY ) );
+				explosion = new Explosion( 8, new Vector3D( p.x - renderer.width / 2, p.y - renderer.height / 2, 50 ), 500 );
+				emitter.addAction( explosion );
+			}
 		}
 	]]>
 </fx:Script>
@@ -48,7 +66,7 @@
 				<f:DeathZone zoneIsSafe="true">
 					<f:FrustrumZone camera="{camera}">
 						<f:viewRect>
-							<geom:Rectangle left="-290" top="-190" width="580" height="380"/>
+							<geom:Rectangle left="-290" top="-215" width="580" height="430"/>
 						</f:viewRect>
 					</f:FrustrumZone>
 				</f:DeathZone>
