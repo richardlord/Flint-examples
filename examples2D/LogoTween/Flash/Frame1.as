@@ -29,7 +29,7 @@
 
 import org.flintparticles.common.actions.Age;
 import org.flintparticles.common.counters.Blast;
-import org.flintparticles.common.energyEasing.Quadratic;
+import org.flintparticles.common.easing.Quadratic;
 import org.flintparticles.common.events.ParticleEvent;
 import org.flintparticles.common.initializers.ColorInit;
 import org.flintparticles.common.initializers.Lifetime;
@@ -45,7 +45,7 @@ var flintImage:BitmapData = new FlintImage( 320, 80 );
 var particlesImage:BitmapData = new ParticlesImage( 320, 80 );
 
 var startEmitter:Emitter2D = new Emitter2D();
-startEmitter.counter = new Blast( 3000 );
+startEmitter.counter = new Blast( 5000 );
 startEmitter.addInitializer( new ColorInit( 0xFFFFFF00, 0xCC6600 ) );
 startEmitter.addInitializer( new Lifetime( 6 ) );
 startEmitter.addInitializer( new Position( new BitmapDataZone( flintImage, 40, 60 ) ) );
@@ -64,7 +64,7 @@ tween2Emitter.addAction( new TweenToZone( new BitmapDataZone( particlesImage, 40
 
 var renderer:PixelRenderer = new PixelRenderer( new Rectangle( 0, 0, 400, 200 ) );
 renderer.addFilter( new BlurFilter( 2, 2, 1 ) );
-renderer.addFilter( new ColorMatrixFilter( [ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.95,0 ] ) );
+renderer.addFilter( new ColorMatrixFilter( [ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.97,0 ] ) );
 renderer.addEmitter( startEmitter );
 renderer.addEmitter( tween1Emitter );
 renderer.addEmitter( tween2Emitter );
@@ -81,11 +81,11 @@ tween2Emitter.start();
 function moveToTween1( event:ParticleEvent ):void
 {
 	event.particle.revive();
-	tween1Emitter.addExistingParticles( Vector.<Particle>( [ event.particle ] ), true );
+	tween1Emitter.addParticles( Vector.<Particle>( [ event.particle ] ), true );
 }
 
 function moveToTween2( event:ParticleEvent ):void
 {
 	event.particle.revive();
-	tween2Emitter.addExistingParticles( Vector.<Particle>( [ event.particle ] ), true );
+	tween2Emitter.addParticles( Vector.<Particle>( [ event.particle ] ), true );
 }

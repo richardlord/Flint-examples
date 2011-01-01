@@ -39,7 +39,7 @@ package
 	import flash.filters.ColorMatrixFilter;
 	import flash.geom.Rectangle;
 
-	[SWF(width='400', height='200', frameRate='61', backgroundColor='#000000')]
+	[SWF(width='400', height='200', frameRate='60', backgroundColor='#000000')]
 	
 	public class Main extends Sprite
 	{
@@ -55,7 +55,7 @@ package
 
 			var renderer:PixelRenderer = new PixelRenderer( new Rectangle( 0, 0, 400, 200 ) );
 			renderer.addFilter( new BlurFilter( 2, 2, 1 ) );
-			renderer.addFilter( new ColorMatrixFilter( [ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.95,0 ] ) );
+			renderer.addFilter( new ColorMatrixFilter( [ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.97,0 ] ) );
 			renderer.addEmitter( startEmitter );
 			renderer.addEmitter( tween1Emitter );
 			renderer.addEmitter( tween2Emitter );
@@ -73,13 +73,13 @@ package
 		private function moveToTween1( event:ParticleEvent ):void
 		{
 			event.particle.revive();
-			tween1Emitter.addExistingParticles( Vector.<Particle>( [ event.particle ] ), true );
+			tween1Emitter.addParticles( Vector.<Particle>( [ event.particle ] ), true );
 		}
 		
 		private function moveToTween2( event:ParticleEvent ):void
 		{
 			event.particle.revive();
-			tween2Emitter.addExistingParticles( Vector.<Particle>( [ event.particle ] ), true );
+			tween2Emitter.addParticles( Vector.<Particle>( [ event.particle ] ), true );
 		}
 	}
 }

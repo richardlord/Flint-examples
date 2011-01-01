@@ -30,7 +30,7 @@
 package
 {
 	import org.flintparticles.common.actions.Age;
-	import org.flintparticles.common.energyEasing.Quadratic;
+	import org.flintparticles.common.easing.Quadratic;
 	import org.flintparticles.common.initializers.Lifetime;
 	import org.flintparticles.twoD.actions.TweenToZone;
 	import org.flintparticles.twoD.emitters.Emitter2D;
