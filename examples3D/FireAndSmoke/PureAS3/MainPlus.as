@@ -29,42 +29,26 @@
 
 package
 {
-	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.renderers.BitmapRenderer;
-	import org.flintparticles.threeD.renderers.controllers.OrbitCamera;
+	import org.flintparticles.common.debug.Stats;
 
-	import flash.display.Sprite;
-	import flash.geom.Rectangle;
-	import flash.geom.Vector3D;
+	import flash.text.TextField;
 
 	[SWF(width='400', height='400', frameRate='60', backgroundColor='#000000')]
 	
-	public class Main extends Sprite
+	public class MainPlus extends Main
 	{
-		private var smoke:Emitter3D;
-		private var fire:Emitter3D;
-		private var orbitter:OrbitCamera;
-		
-		public function Main()
+		public function MainPlus()
 		{
-			smoke = new Smoke();			
-			smoke.start( );
+			super();
 			
-			fire = new Fire();
-			fire.start( );
-			
-			var renderer:BitmapRenderer = new BitmapRenderer( new Rectangle( -200, -200, 400, 400 ) );
-			renderer.x = 200;
-			renderer.y = 200;
-			renderer.addEmitter( smoke );
-			renderer.addEmitter( fire );
-			addChild( renderer );
-			
-			renderer.camera.position = new Vector3D( 0, -150, -400 );
-			renderer.camera.target = new Vector3D( 0, -150, 0 );
-			renderer.camera.projectionDistance = 400;
-			orbitter = new OrbitCamera( stage, renderer.camera );
-			orbitter.start();
+			var txt:TextField = new TextField();
+			txt.text = "Use arrow keys to track in/out and orbit around the fire.";
+			txt.autoSize = "left";
+			txt.textColor = 0xFFFFFF;
+			txt.y = 380;
+			addChild( txt );
+
+			addChild( new Stats() );
 		}
 	}
 }

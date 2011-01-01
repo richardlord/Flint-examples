@@ -15,7 +15,6 @@
 	]]>
 </fx:Script>
 		
-<s:Label text="Use arrow keys to track in/out and orbit around the fire." color="#FFFFFF"/>
 <f:BitmapRenderer id="renderer" width="400" height="400">
 	<f:camera>
 		<f:Camera projectionDistance="400">

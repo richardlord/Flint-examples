@@ -38,12 +38,6 @@ import org.flintparticles.threeD.renderers.BitmapRenderer;
 import org.flintparticles.threeD.renderers.controllers.OrbitCamera;
 import org.flintparticles.threeD.zones.*;
 
-var txt:TextField = new TextField();
-txt.text = "Use arrow keys to track in/out and orbit around the fire.";
-txt.autoSize = "left";
-txt.textColor = 0xFFFFFF;
-addChild( txt );
-
 var smoke:Emitter3D = new Emitter3D();
 smoke.counter = new Steady( 10 );
   
