@@ -7,8 +7,7 @@
 	xmlns:filters="flash.filters.*"
 	width="500" height="500"
 	backgroundColor="#000000">
-	
-<s:Label text="Use arrow keys to track in/out and orbit around the fountain." color="#FFFFFF"/>
+
 <f:PixelRenderer id="renderer" width="500" height="500">
 	<f:camera>
 		<f:Camera>
@@ -23,14 +22,14 @@
 			</f:controller>
 		</f:Camera>
 	</f:camera>
-	<f:preFilters>
+	<f:postFilters>
 		<filters:BlurFilter blurX="2" blurY="2" quality="1"/>
 		<filters:ColorMatrixFilter matrix="{[ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.99,0 ]}"/>
-	</f:preFilters>
+	</f:postFilters>
 	<f:emitters>
 		<f:Emitter id="emitter" autoStart="true">
 			<f:counter>
-				<f:Steady rate="500"/>
+				<f:Steady rate="2500"/>
 			</f:counter>
 			<f:initializers>
 				<f:Velocity>

@@ -29,31 +29,26 @@
 
 package
 {
-	import org.flintparticles.common.actions.Age;
-	import org.flintparticles.common.counters.Steady;
-	import org.flintparticles.common.initializers.ColorInit;
-	import org.flintparticles.common.initializers.Lifetime;
-	import org.flintparticles.threeD.actions.Accelerate;
-	import org.flintparticles.threeD.actions.Move;
-	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.initializers.Velocity;
-	import org.flintparticles.threeD.zones.DiscZone;
+	import org.flintparticles.common.debug.Stats;
 
-	import flash.geom.Vector3D;
+	import flash.text.TextField;
 
-	public class Fountain extends Emitter3D
+	[SWF(width='500', height='500', frameRate='60', backgroundColor='#000000')]
+	
+	public class MainPlus extends Main
 	{
-		public function Fountain()
+		public function MainPlus()
 		{
-			counter = new Steady( 2500 );
+			super();
 			
-			addInitializer( new ColorInit( 0xFFCCCCFF, 0xFF6666FF ) );
-			addInitializer( new Velocity( new DiscZone( new Vector3D( 0, 250, 0 ), new Vector3D( 0, 1, 0 ), 60 ) ) );
-			addInitializer( new Lifetime( 3.2 ) );
-			
-			addAction( new Move() );
-			addAction( new Accelerate( new Vector3D( 0, -150, 0 ) ) );
-			addAction( new Age() );
+			var txt:TextField = new TextField();
+			txt.text = "Use arrow keys to track in/out and orbit around the fountain.";
+			txt.autoSize = "left";
+			txt.textColor = 0xFFFFFF;
+			txt.y = 480;
+			addChild( txt );
+
+			addChild( new Stats() );
 		}
 	}
 }

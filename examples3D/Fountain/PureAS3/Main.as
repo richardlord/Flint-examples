@@ -38,7 +38,6 @@ package
 	import flash.filters.ColorMatrixFilter;
 	import flash.geom.Rectangle;
 	import flash.geom.Vector3D;
-	import flash.text.TextField;
 
 	[SWF(width='500', height='500', frameRate='61', backgroundColor='#000000')]
 	
@@ -50,20 +49,14 @@ package
 		
 		public function Main()
 		{
-			var txt:TextField = new TextField();
-			txt.text = "Use arrow keys to track in/out and orbit around the fountain.";
-			txt.autoSize = "left";
-			txt.textColor = 0xFFFFFF;
-			addChild( txt );
-
 			emitter = new Fountain();
 			
 			renderer = new PixelRenderer( new Rectangle( -250, -250, 500, 500 ), false );
 			renderer.camera.dolly( -300 );
 			renderer.camera.lift( 100 );
 			renderer.camera.target = new Vector3D( 0, -100, 0 );
-			renderer.addFilter( new BlurFilter( 2, 2, 1 ) );
-			renderer.addFilter( new ColorMatrixFilter( [ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.99,0 ] ) );
+			renderer.addFilter( new BlurFilter( 2, 2, 1 ), true );
+			renderer.addFilter( new ColorMatrixFilter( [ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.99,0 ] ), true );
 			renderer.addEmitter( emitter );
 			renderer.x = 250;
 			renderer.y = 250;
