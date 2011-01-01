@@ -35,9 +35,8 @@ package
 
 	import flash.display.Sprite;
 	import flash.geom.Vector3D;
-	import flash.text.TextField;
 
-	[SWF(width='400', height='400', frameRate='61', backgroundColor='#000000')]
+	[SWF(width='400', height='400', frameRate='60', backgroundColor='#000000')]
 	
 	public class Main extends Sprite
 	{
@@ -46,12 +45,6 @@ package
 		
 		public function Main()
 		{
-			var txt:TextField = new TextField();
-			txt.text = "Hold down the shift key to hide the air particles.";
-			txt.autoSize = "left";
-			txt.textColor = 0xFFFFFF;
-			addChild( txt );
-
 			emitter = new BrownianMotion( stage );
 
 			var renderer:DisplayObjectRenderer = new DisplayObjectRenderer();

@@ -29,54 +29,26 @@
 
 package
 {
-	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.papervision3d.PV3DParticleRenderer;
-	import org.papervision3d.cameras.Camera3D;
-	import org.papervision3d.core.geom.Particles;
-	import org.papervision3d.render.BasicRenderEngine;
-	import org.papervision3d.scenes.Scene3D;
-	import org.papervision3d.view.Viewport3D;
+	import org.flintparticles.common.debug.Stats;
 
-	import flash.display.Sprite;
-	import flash.events.Event;
+	import flash.text.TextField;
 
 	[SWF(width='400', height='400', frameRate='60', backgroundColor='#000000')]
 	
-	public class Main extends Sprite
+	public class MainPlus extends Main
 	{
-		private var viewport:Viewport3D;
-		private var emitter:Emitter3D;
-		private var pv3dRenderer:BasicRenderEngine;
-		private var flintRenderer:PV3DParticleRenderer;
-		private var scene:Scene3D;
-		private var camera:Camera3D;
-
-		public function Main()
+		public function MainPlus()
 		{
-			viewport = new Viewport3D( 400, 400 );
-			addChild( viewport );
+			super();
 			
-			pv3dRenderer = new BasicRenderEngine();
-			scene = new Scene3D();
-			camera = new Camera3D();
-			camera.z = -400;
-			
-			var particles:Particles = new Particles();
-			scene.addChild( particles );
-			
-			emitter = new BrownianMotion( stage );
+			var txt:TextField = new TextField();
+			txt.text = "Hold down the shift key to hide the air particles.";
+			txt.autoSize = "left";
+			txt.textColor = 0xFFFFFF;
+			txt.y = 380;
+			addChild( txt );
 
-			flintRenderer = new PV3DParticleRenderer( particles );
-			flintRenderer.addEmitter( emitter );
-			emitter.start();
-			
-			addEventListener( Event.ENTER_FRAME, render );
-		}
-		
-		private function render( ev:Event ):void
-		{
-			// render the view
-			pv3dRenderer.renderScene( scene, camera, viewport);
+			addChild( new Stats() );
 		}
 	}
 }
