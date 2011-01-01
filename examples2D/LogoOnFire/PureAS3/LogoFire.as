@@ -33,7 +33,7 @@ package
 	import org.flintparticles.common.actions.ColorChange;
 	import org.flintparticles.common.actions.ScaleImage;
 	import org.flintparticles.common.counters.Steady;
-	import org.flintparticles.common.energyEasing.TwoWay;
+	import org.flintparticles.common.easing.TwoWay;
 	import org.flintparticles.common.initializers.ImageClass;
 	import org.flintparticles.common.initializers.Lifetime;
 	import org.flintparticles.twoD.actions.Accelerate;

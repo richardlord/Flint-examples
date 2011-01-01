@@ -9,7 +9,7 @@
 	
 <fx:Script>
 	<![CDATA[
-		import org.flintparticles.common.energyEasing.TwoWay;
+		import org.flintparticles.common.easing.TwoWay;
 		
 		[Embed(source="assets/flint.png")]
 		public var Logo:Class;

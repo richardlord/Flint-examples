@@ -29,38 +29,17 @@
 
 package
 {
-	import org.flintparticles.twoD.emitters.Emitter2D;
-	import org.flintparticles.twoD.renderers.BitmapRenderer;
-
-	import flash.display.Bitmap;
-	import flash.display.Sprite;
-	import flash.geom.Rectangle;
+	import org.flintparticles.common.debug.Stats;
 
 	[SWF(width='500', height='200', frameRate='60', backgroundColor='#000000')]
 	
-	public class Main extends Sprite
+	public class MainPlus extends Main
 	{
-		[Embed(source="assets/flint.png")]
-		public var Logo:Class;
-
-		private var emitter:Emitter2D;
-		
-		public function Main()
+		public function MainPlus()
 		{
-			var bitmap:Bitmap = new Logo();
-			addChild( bitmap );
-			bitmap.x = 118;
-			bitmap.y = 70;
-
-			emitter = new LogoFire();
-
-			var renderer:BitmapRenderer = new BitmapRenderer( new Rectangle( 0, 0, 500, 200 ) );
-			renderer.addEmitter( emitter );
-			addChild( renderer );
+			super();
 			
-			emitter.x = 118;
-			emitter.y = 70;
-			emitter.start( );
+			addChild( new Stats() );
 		}
 	}
 }
