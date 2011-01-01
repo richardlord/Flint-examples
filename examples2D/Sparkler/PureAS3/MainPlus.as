@@ -29,30 +29,26 @@
 
 package
 {
-	import org.flintparticles.twoD.emitters.Emitter2D;
-	import org.flintparticles.twoD.renderers.BitmapRenderer;
+	import org.flintparticles.common.debug.Stats;
 
-	import flash.display.Sprite;
-	import flash.filters.BlurFilter;
-	import flash.filters.ColorMatrixFilter;
-	import flash.geom.Rectangle;
+	import flash.text.TextField;
 
 	[SWF(width='400', height='400', frameRate='60', backgroundColor='#000000')]
 	
-	public class Main extends Sprite
+	public class MainPlus extends Main
 	{
-		private var emitter:Emitter2D;
-		
-		public function Main()
+		public function MainPlus()
 		{
-			var renderer:BitmapRenderer = new BitmapRenderer( new Rectangle( 0, 0, 400, 400 ) );
-			renderer.addFilter( new BlurFilter( 2, 2, 1 ) );
-			renderer.addFilter( new ColorMatrixFilter( [ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.95,0 ] ) );
-			addChild( renderer );
+			super();
 			
-			emitter = new Sparkler( renderer );
-			renderer.addEmitter( emitter );
-			emitter.start( );
+			var txt:TextField = new TextField();
+			txt.text = "Move the mouse over this box.";
+			txt.autoSize = "left";
+			txt.textColor = 0xFFFFFF;
+			txt.y = 380;
+			addChild( txt );
+
+			addChild( new Stats() );
 		}
 	}
 }
