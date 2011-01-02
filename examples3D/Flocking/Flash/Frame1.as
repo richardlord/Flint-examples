@@ -37,14 +37,8 @@ import org.flintparticles.threeD.renderers.*;
 import org.flintparticles.threeD.renderers.controllers.*;
 import org.flintparticles.threeD.zones.*;	
 
-var txt:TextField = new TextField();
-txt.text = "Use arrow keys to pan/tilt the camera. Use W,S,D,L to move the camera. Use page up/ page down to raise and lower the camera.";
-txt.autoSize = "left";
-txt.textColor = 0x000000;
-addChild( txt );
-
 var emitter:Emitter3D = new Emitter3D();
-emitter.counter = new Blast( 150 );
+emitter.counter = new Blast( 300 );
 
 emitter.addInitializer( new ImageClass( Bird ) );
 emitter.addInitializer( new Position( new BoxZone( 580, 380, 580, new Vector3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), new Vector3D( 0, 0, 1 ) ) ) );

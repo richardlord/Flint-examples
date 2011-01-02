@@ -7,13 +7,6 @@
 	width="700" height="500"
 	backgroundColor="#999999">
 
-<fx:Script>
-	<![CDATA[
-		[Embed(source='assets/bird.swf', symbol='Bird')]
-		public var Bird:Class;
-	]]>
-</fx:Script>
-
 <f:DisplayObjectRenderer id="renderer" width="700" height="500">
 	<f:camera>
 		<f:Camera projectionDistance="400">
@@ -25,7 +18,7 @@
 	<f:emitters>
 		<f:Emitter id="emitter" autoStart="true">
 			<f:counter>
-				<f:Blast startCount="150"/>
+				<f:Blast startCount="300"/>
 			</f:counter>
 			<f:initializers>
 				<f:Position>

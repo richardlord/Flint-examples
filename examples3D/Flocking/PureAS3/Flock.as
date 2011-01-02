@@ -48,12 +48,9 @@ package
 
 	public class Flock extends Emitter3D
 	{
-		[Embed(source='assets/bird.swf', symbol='Bird')]
-		public var Bird:Class;
-		
 		public function Flock()
 		{
-			counter = new Blast( 150 );
+			counter = new Blast( 300 );
 			
 			addInitializer( new ImageClass( Bird ) );
 			addInitializer( new Position( new BoxZone( 580, 380, 580, new Vector3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), new Vector3D( 0, 0, 1 ) ) ) );
