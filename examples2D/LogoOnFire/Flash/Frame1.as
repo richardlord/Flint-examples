@@ -39,8 +39,8 @@ import org.flintparticles.twoD.renderers.*;
 import org.flintparticles.twoD.zones.*;	
 import org.flintparticles.common.easing.TwoWay;
 
-var bitmapData:BitmapData = new Logo( 265, 80);
-var bitmap:Bitmap = new Bitmap();
+var bitmapData:BitmapData = new Logo( 265, 80 );
+var bitmap:Bitmap = new Bitmap( new Logo( 265, 80 ) );
 bitmap.bitmapData = bitmapData;
 addChild( bitmap );
 bitmap.x = 118;

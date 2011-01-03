@@ -46,24 +46,19 @@ package
 	import org.flintparticles.twoD.zones.BitmapDataZone;
 	import org.flintparticles.twoD.zones.DiscSectorZone;
 
-	import flash.display.Bitmap;
+	import flash.display.BitmapData;
 	import flash.geom.Point;
 
 	public class LogoFire extends Emitter2D
 	{
-		[Embed(source="assets/flint.png")]
-		public var Logo:Class;
-		[Embed(source='assets/fireblob.swf', symbol='FireBlob')]
-		public var FireBlob:Class;
-
 		public function LogoFire()
 		{
 			counter = new Steady( 600 );
 			
 			addInitializer( new Lifetime( 0.8 ) );
 			addInitializer( new Velocity( new DiscSectorZone( new Point( 0, 0 ), 10, 5, -Math.PI * 0.75, -Math.PI * 0.25 ) ) );
-			var bitmap:Bitmap = new Logo();
-			addInitializer( new Position( new BitmapDataZone( bitmap.bitmapData ) ) );
+			var bitmap:BitmapData = new Logo( 265, 80 );
+			addInitializer( new Position( new BitmapDataZone( bitmap ) ) );
 			addInitializer( new ImageClass( FireBlob ) );
 			
 			addAction( new Age( TwoWay.quadratic ) );

@@ -2,7 +2,6 @@
 <s:Application
 	xmlns:fx="http://ns.adobe.com/mxml/2009" 
 	xmlns:s="library://ns.adobe.com/flex/spark"
-	xmlns:mx="library://ns.adobe.com/flex/mx"
 	xmlns:f="http://flintparticles.org/2009/flint2d"
 	width="500" height="200"
 	backgroundColor="#000000">
@@ -10,15 +9,10 @@
 <fx:Script>
 	<![CDATA[
 		import org.flintparticles.common.easing.TwoWay;
-		
-		[Embed(source="assets/flint.png")]
-		public var Logo:Class;
-		[Embed(source='assets/fireblob.swf', symbol='FireBlob')]
-		public var FireBlob:Class;
 	]]>
 </fx:Script>
 
-<mx:Image source="@Embed(source='assets/flint.png')" x="118" y="70"/>
+<s:BitmapImage source="{new Logo( 265, 80 )}" width="265" height="80" x="118" y="70"/>
 <f:BitmapRenderer id="renderer" width="500" height="200">
 	<f:emitters>
 		<f:Emitter id="emitter" autoStart="true" x="118" y="70">
@@ -27,7 +21,7 @@
 			</f:counter>
 			<f:initializers>
 				<f:Position>
-					<f:BitmapDataZone bitmapData="{(new Logo()).bitmapData}"/>
+					<f:BitmapDataZone bitmapData="{new Logo( 265, 80 )}"/>
 				</f:Position>
 				<f:Velocity>
 					<f:DiscSectorZone centerX="0" centerY="0" innerRadius="5" outerRadius="10" minAngle="{-Math.PI * 0.75}" maxAngle="{-Math.PI * 0.25}"/>

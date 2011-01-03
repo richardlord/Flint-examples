@@ -45,14 +45,10 @@ package
 	import org.flintparticles.twoD.zones.BitmapDataZone;
 	import org.flintparticles.twoD.zones.DiscZone;
 
-	import flash.display.Bitmap;
 	import flash.geom.Point;
 
 	public class LogoFirework extends Emitter2D
 	{
-		[Embed(source="assets/flint.png")]
-		public var Logo:Class;
-
 		public function LogoFirework()
 		{
 			counter = new Blast( 4000 );
@@ -60,8 +56,7 @@ package
 			addInitializer( new ColorInit( 0xFFFF3300, 0xFFFFFF00 ) );
 			addInitializer( new Lifetime( 6 ) );
 			addInitializer( new Position( new DiscZone( new Point( 0, 0 ), 10 ) ) );
-			var bitmap:Bitmap = new Logo();
-			addInitializer( new Velocity( new BitmapDataZone( bitmap.bitmapData, -132, -300 ) ) );
+			addInitializer( new Velocity( new BitmapDataZone( new Logo( 265, 80 ), -132, -300 ) ) );
 			
 			addAction( new Age( Quadratic.easeIn ) );
 			addAction( new Fade( 1.0, 0 ) );

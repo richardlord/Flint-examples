@@ -44,8 +44,7 @@ emitter.counter = new Blast( 4000 );
 emitter.addInitializer( new ColorInit( 0xFFFF3300, 0xFFFFFF00 ) );
 emitter.addInitializer( new Lifetime( 6 ) );
 emitter.addInitializer( new Position( new DiscZone( new Point( 0, 0 ), 10 ) ) );
-var bitmapData:BitmapData = new Logo( 265, 80);
-emitter.addInitializer( new Velocity( new BitmapDataZone( bitmapData, -132, -300 ) ) );			
+emitter.addInitializer( new Velocity( new BitmapDataZone( new Logo( 265, 80), -132, -300 ) ) );			
 
 emitter.addAction( new Age( Quadratic.easeIn ) );
 emitter.addAction( new Fade( 1.0, 0 ) );

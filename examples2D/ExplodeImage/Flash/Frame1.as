@@ -39,6 +39,7 @@ import org.flintparticles.twoD.renderers.DisplayObjectRenderer;
 import org.flintparticles.twoD.zones.RectangleZone;
 
 var explosion:Explosion;
+var bitmap:BitmapData = new Image1( 384, 255 );
 
 var emitter:Emitter2D = new Emitter2D();
 emitter.addAction( new Move() );
@@ -60,7 +61,7 @@ function prepare( event:EmitterEvent = null ):void
 		emitter.removeAction( explosion );
 		explosion = null;
 	}
-	var particles:Vector.<Particle> = Particle2DUtils.createRectangleParticlesFromBitmapData( new Image1(384,255), 8, emitter.particleFactory, 56, 47 );
+	var particles:Vector.<Particle> = Particle2DUtils.createRectangleParticlesFromBitmapData( bitmap, 8, emitter.particleFactory, 56, 47 );
 	emitter.addParticles( particles, false );
 }
 		

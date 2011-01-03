@@ -13,15 +13,12 @@
 		import org.flintparticles.twoD.actions.Explosion;
 		import org.flintparticles.twoD.particles.Particle2DUtils;
 		
-		[Embed(source="assets/184098.jpg")]
-		public var Image1:Class;
-		
 		private var explosion:Explosion;
-		private var bitmap:Bitmap;
+		private var bitmap:BitmapData;
 
 		private function complete():void
 		{
-			bitmap  = new Image1();
+			bitmap = new Image1( 384, 255 );
 			prepare();
 			addEventListener( MouseEvent.CLICK, explode, false, 0, true );
 			emitter.addEventListener( EmitterEvent.EMITTER_EMPTY, prepare );
@@ -34,7 +31,7 @@
 				emitter.removeAction( explosion );
 				explosion = null;
 			}
-			var particles:Vector.<Particle> = Particle2DUtils.createRectangleParticlesFromBitmapData( bitmap.bitmapData, 8, emitter.particleFactory, 56, 47 );
+			var particles:Vector.<Particle> = Particle2DUtils.createRectangleParticlesFromBitmapData( bitmap, 8, emitter.particleFactory, 56, 47 );
 			emitter.addParticles( particles, false );
 		}
 

@@ -40,7 +40,7 @@ package
 	import org.flintparticles.twoD.renderers.DisplayObjectRenderer;
 	import org.flintparticles.twoD.zones.RectangleZone;
 
-	import flash.display.Bitmap;
+	import flash.display.BitmapData;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
@@ -49,18 +49,14 @@ package
 	
 	public class Main extends Sprite
 	{
-		// width:384 height:255
-		[Embed(source="assets/184098.jpg")]
-		public var Image1:Class;
-
 		private var emitter:Emitter2D;
-		private var bitmap:Bitmap;
+		private var bitmap:BitmapData;
 		private var renderer:DisplayObjectRenderer;
 		private var explosion:Explosion;
 		
 		public function Main()
 		{
-			bitmap = new Image1();
+			bitmap = new Image1( 384, 255 );
 			
 			emitter = new Emitter2D();
 			emitter.addAction( new DeathZone( new RectangleZone( -5, -5, 505, 355 ), true ) );
@@ -83,7 +79,7 @@ package
 				emitter.removeAction( explosion );
 				explosion = null;
 			}
-			var particles:Vector.<Particle> = Particle2DUtils.createRectangleParticlesFromBitmapData( bitmap.bitmapData, 8, emitter.particleFactory, 56, 47 );
+			var particles:Vector.<Particle> = Particle2DUtils.createRectangleParticlesFromBitmapData( bitmap, 8, emitter.particleFactory, 56, 47 );
 			emitter.addParticles( particles, false );
 		}
 		

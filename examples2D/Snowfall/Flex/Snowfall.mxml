@@ -2,7 +2,6 @@
 <s:Application
 	xmlns:fx="http://ns.adobe.com/mxml/2009" 
 	xmlns:s="library://ns.adobe.com/flex/spark"
-	xmlns:mx="library://ns.adobe.com/flex/mx"
 	xmlns:f="http://flintparticles.org/2009/flint2d"
 	width="600" height="400">
 	
@@ -12,7 +11,7 @@
 	]]>
 </fx:Script>
 
-<mx:Image source="@Embed(source='assets/Snow_1.png')"/>
+<s:BitmapImage source="{new SnowBackground( 600, 400 )}" width="600" height="400"/>
 <f:DisplayObjectRenderer id="renderer" width="600" height="400">
 	<f:emitters>
 		<f:Emitter id="emitter" autoStart="true" runAheadTime="10">
@@ -39,5 +38,5 @@
 		</f:Emitter>
 	</f:emitters>
 </f:DisplayObjectRenderer>
-<mx:Image source="@Embed(source='assets/Snow_1_over.png')"/>
+<s:BitmapImage source="{new SnowForeground( 600, 400 )}" width="600" height="400"/>
 </s:Application>

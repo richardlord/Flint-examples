@@ -8,13 +8,6 @@
 	width="400" height="400"
 	backgroundColor="#000000">
 
-<fx:Script>
-	<![CDATA[
-		[Embed(source='assets/fireblob.swf', symbol='FireBlob')]
-		public var FireBlob:Class;
-	]]>
-</fx:Script>
-		
 <f:BitmapRenderer id="renderer" width="400" height="400">
 	<f:camera>
 		<f:Camera projectionDistance="400">

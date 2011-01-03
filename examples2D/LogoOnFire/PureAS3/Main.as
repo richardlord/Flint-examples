@@ -40,14 +40,11 @@ package
 	
 	public class Main extends Sprite
 	{
-		[Embed(source="assets/flint.png")]
-		public var Logo:Class;
-
 		private var emitter:Emitter2D;
 		
 		public function Main()
 		{
-			var bitmap:Bitmap = new Logo();
+			var bitmap:Bitmap = new Bitmap( new Logo( 265, 80 ) );
 			addChild( bitmap );
 			bitmap.x = 118;
 			bitmap.y = 70;

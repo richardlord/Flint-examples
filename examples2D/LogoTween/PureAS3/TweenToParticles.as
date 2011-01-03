@@ -36,21 +36,14 @@ package
 	import org.flintparticles.twoD.emitters.Emitter2D;
 	import org.flintparticles.twoD.zones.BitmapDataZone;
 
-	import flash.display.Bitmap;
-
 	public class TweenToParticles extends Emitter2D
 	{
-		[Embed(source="assets/particles.png")]
-		public var ParticlesImage:Class;
-
 		public function TweenToParticles()
 		{
-			var particlesBitmap:Bitmap = new ParticlesImage();
-			
 			addInitializer( new Lifetime( 6 ) );
 			
 			addAction( new Age( Quadratic.easeInOut ) );
-			addAction( new TweenToZone( new BitmapDataZone( particlesBitmap.bitmapData, 40, 60 ) ) );
+			addAction( new TweenToZone( new BitmapDataZone( new ParticlesImage( 320, 80 ), 40, 60 ) ) );
 		}
 	}
 }

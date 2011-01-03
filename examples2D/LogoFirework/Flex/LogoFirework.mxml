@@ -10,9 +10,6 @@
 <fx:Script>
 	<![CDATA[
 		import org.flintparticles.common.easing.Quadratic;
-
-		[Embed(source="assets/flint.png")]
-		public var Logo:Class;
 	]]>
 </fx:Script>
 
@@ -33,7 +30,7 @@
 				<f:ColorInit minColor="0xFFFF3300" maxColor="0xFFFFFF00"/>
 				<f:Lifetime lifetime="6"/>
 				<f:Velocity>
-					<f:BitmapDataZone bitmapData="{(new Logo()).bitmapData}" offsetX="-132" offsetY="-300"/>
+					<f:BitmapDataZone bitmapData="{new Logo( 265, 80 )}" offsetX="-132" offsetY="-300"/>
 				</f:Velocity>
 			</f:initializers>
 			<f:actions>

@@ -37,6 +37,7 @@ import org.flintparticles.threeD.renderers.DisplayObjectRenderer;
 import org.flintparticles.threeD.zones.FrustrumZone;
 
 var explosion:Explosion;
+var bitmap:BitmapData = new Image1( 384, 255 );
 
 var renderer:DisplayObjectRenderer = new DisplayObjectRenderer();
 renderer.camera.dolly( -400 );
@@ -64,7 +65,7 @@ function prepare( event:EmitterEvent = null ):void
 		emitter.removeAction( explosion );
 		explosion = null;
 	}
-	var particles:Vector.<Particle> = Particle3DUtils.createRectangleParticlesFromBitmapData( new Image1(384,255), 12, emitter.particleFactory, new Vector3D( -192, -127, 0 ) );
+	var particles:Vector.<Particle> = Particle3DUtils.createRectangleParticlesFromBitmapData( bitmap, 12, emitter.particleFactory, new Vector3D( -192, -127, 0 ) );
 	emitter.addParticles( particles, false );
 }
 

@@ -6,13 +6,6 @@
 	width="300" height="400"
 	backgroundColor="#000000">
 	
-<fx:Script>
-	<![CDATA[
-		[Embed(source='assets/fireblob.swf', symbol='FireBlob')]
-		public var FireBlob:Class;
-	]]>
-</fx:Script>
-	
 <f:BitmapRenderer id="renderer" width="300" height="400">
 	<f:emitters>
 		<f:Emitter id="smoke" autoStart="true" x="150" y="380">

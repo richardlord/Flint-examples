@@ -48,9 +48,6 @@ package
 
 	public class Flock extends Emitter2D
 	{
-		[Embed(source='assets/bird.swf', symbol='Bird')]
-		public var Bird:Class;
-		
 		public function Flock()
 		{
 			counter = new Blast( 250 );

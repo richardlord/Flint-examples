@@ -40,7 +40,7 @@ package
 	import org.flintparticles.threeD.renderers.DisplayObjectRenderer;
 	import org.flintparticles.threeD.zones.FrustrumZone;
 
-	import flash.display.Bitmap;
+	import flash.display.BitmapData;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
@@ -51,18 +51,14 @@ package
 	
 	public class Main extends Sprite
 	{
-		// width:384 height:255
-		[Embed(source="assets/184098.jpg")]
-		public var Image1:Class;
-
 		private var emitter:Emitter3D;
-		private var bitmap:Bitmap;
+		private var bitmap:BitmapData;
 		private var renderer:DisplayObjectRenderer;
 		private var explosion:Explosion;
 		
 		public function Main()
 		{
-			bitmap = new Image1();
+			bitmap = new Image1( 384, 255 );
 			
 			renderer = new DisplayObjectRenderer();
 			renderer.camera.dolly( -400 );
@@ -89,7 +85,7 @@ package
 				emitter.removeAction( explosion );
 				explosion = null;
 			}
-			var particles:Vector.<Particle> = Particle3DUtils.createRectangleParticlesFromBitmapData( bitmap.bitmapData, 12, emitter.particleFactory, new Vector3D( -192, -127, 0 ) );
+			var particles:Vector.<Particle> = Particle3DUtils.createRectangleParticlesFromBitmapData( bitmap, 12, emitter.particleFactory, new Vector3D( -192, -127, 0 ) );
 			emitter.addParticles( particles, false );
 		}
 		

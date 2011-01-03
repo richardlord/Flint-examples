@@ -49,9 +49,6 @@ package
 
 	public class Fire extends Emitter2D
 	{
-		[Embed(source='assets/fireblob.swf', symbol='FireBlob')]
-		public var FireBlob:Class;
-
 		public function Fire()
 		{
 			counter = new Steady( 60 );

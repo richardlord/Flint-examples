@@ -32,30 +32,26 @@ package
 	import org.flintparticles.twoD.emitters.Emitter2D;
 	import org.flintparticles.twoD.renderers.DisplayObjectRenderer;
 
+	import flash.display.Bitmap;
 	import flash.display.Sprite;
 
 	[SWF(width='600', height='400', frameRate='60', backgroundColor='#000000')]
 	
 	public class Main extends Sprite
 	{
-		[Embed(source="assets/Snow_1.png")]
-		public var SnowBackground:Class;
-		[Embed(source="assets/Snow_1_over.png")]
-		public var SnowForeground:Class;
-
 		private var emitter:Emitter2D;
 		
 		public function Main()
 		{
 			emitter = new Snowfall();
 			
-			addChild( new SnowBackground() );
+			addChild( new Bitmap( new SnowBackground( 600, 400 ) ) );
 
 			var renderer:DisplayObjectRenderer = new DisplayObjectRenderer();
 			renderer.addEmitter( emitter );
 			addChild( renderer );
 			
-			addChild( new SnowForeground() );
+			addChild( new Bitmap( new SnowForeground( 600, 400 ) ) );
 
 			emitter.start();
 			emitter.runAhead( 10 );
