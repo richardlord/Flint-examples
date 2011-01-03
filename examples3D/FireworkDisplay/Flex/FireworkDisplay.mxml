@@ -37,7 +37,6 @@
 	]]>
 </fx:Script>
 
-<s:Label color="#FFFFFF" text="Use arrow keys to pan/tilt the camera. Use W,S,D,L to move the camera. Use page up/ page down to raise and lower the camera."/>
 <f:BitmapRenderer x="0" y="0" id="renderer" width="800" height="600">
 	<f:camera>
 		<f:Camera id="camera" projectionDistance="400">

@@ -6,7 +6,7 @@
 
 	<fx:Script>
 		<![CDATA[
-			import org.flintparticles.common.energyEasing.Quadratic;
+			import org.flintparticles.common.easing.Quadratic;
 		]]>
 	</fx:Script>
 

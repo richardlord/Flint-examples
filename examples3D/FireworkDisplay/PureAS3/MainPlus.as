@@ -29,35 +29,26 @@
 
 package
 {
-	import org.flintparticles.common.actions.*;
-	import org.flintparticles.common.counters.*;
-	import org.flintparticles.common.displayObjects.Dot;
-	import org.flintparticles.common.easing.Quadratic;
-	import org.flintparticles.common.initializers.*;
-	import org.flintparticles.threeD.actions.*;
-	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.initializers.*;
-	import org.flintparticles.threeD.zones.*;	
+	import org.flintparticles.common.debug.Stats;
 
-	import flash.geom.Vector3D;
+	import flash.text.TextField;
 
-	public class SphereBang extends Emitter3D
+	[SWF(width='800', height='600', frameRate='60', backgroundColor='#000000')]
+	
+	public class MainPlus extends Main
 	{
-		public function SphereBang( position:Vector3D )
+		public function MainPlus()
 		{
-			counter = new Blast( 200 );
+			super();
 			
-			addInitializer( new SharedImage( new Dot( 1 ) ) );
-			addInitializer( new ColorInit( 0xFFFFFF00, 0xFFFF6600 ) );
-			addInitializer( new Position( new PointZone( position ) ) );
-			addInitializer( new Velocity( new SphereZone( new Vector3D(), 100 ) ) );
-			addInitializer( new Lifetime( 3 ) );
-			
-			addAction( new Age( Quadratic.easeIn ) );
-			addAction( new Move() );
-			addAction( new Fade() );
-			addAction( new Accelerate( new Vector3D( 0, 50, 0 ) ) );
-			addAction( new LinearDrag( 0.5 ) );
+			var txt:TextField = new TextField();
+			txt.text = "Use arrow keys to pan/tilt the camera. Use W,S,D,L to move the camera. Use page up/ page down to raise and lower the camera.";
+			txt.autoSize = "left";
+			txt.textColor = 0xFFFFFF;
+			txt.y = 580;
+			addChild( txt );
+
+			addChild( new Stats() );
 		}
 	}
 }

@@ -43,9 +43,8 @@ package
 	import flash.filters.ColorMatrixFilter;
 	import flash.geom.Rectangle;
 	import flash.geom.Vector3D;
-	import flash.text.TextField;
 
-	[SWF(width='800', height='600', frameRate='61', backgroundColor='#000000')]
+	[SWF(width='800', height='600', frameRate='60', backgroundColor='#000000')]
 	
 	public class Main extends Sprite
 	{
@@ -54,13 +53,6 @@ package
 		
 		public function Main()
 		{
-			var txt:TextField = new TextField();
-			txt.text = "Use arrow keys to pan/tilt the camera. Use W,S,D,L to move the camera. Use page up/ page down to raise and lower the camera.";
-			txt.autoSize = "left";
-			txt.textColor = 0xFFFFFF;
-			addChild( txt );
-			txt.y = 580;
-
 			renderer = new BitmapRenderer( new Rectangle( -400, -300, 800, 600 ), false );
 			renderer.x = 400;
 			renderer.y = 300;

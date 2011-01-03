@@ -30,41 +30,38 @@
 package
 {
 	import org.flintparticles.common.actions.Age;
-	import org.flintparticles.common.actions.Fade;
-	import org.flintparticles.common.counters.Blast;
+	import org.flintparticles.common.counters.Steady;
 	import org.flintparticles.common.displayObjects.Dot;
-	import org.flintparticles.common.easing.Quadratic;
 	import org.flintparticles.common.initializers.ColorInit;
 	import org.flintparticles.common.initializers.Lifetime;
 	import org.flintparticles.common.initializers.SharedImage;
 	import org.flintparticles.threeD.actions.Accelerate;
-	import org.flintparticles.threeD.actions.LinearDrag;
 	import org.flintparticles.threeD.actions.Move;
+	import org.flintparticles.threeD.activities.RotateEmitter;
 	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.initializers.Position;
 	import org.flintparticles.threeD.initializers.Velocity;
-	import org.flintparticles.threeD.zones.PointZone;
-	import org.flintparticles.threeD.zones.SphereZone;
+	import org.flintparticles.threeD.zones.ConeZone;
 
 	import flash.geom.Vector3D;
 
-	public class SphereBang extends Emitter3D
+	public class CatherineWheel extends Emitter3D
 	{
-		public function SphereBang( position:Vector3D )
+		public function CatherineWheel( position:Vector3D )
 		{
-			counter = new Blast( 200 );
+			counter = new Steady( 80 );
+			
+			this.position = position;
+			
+			addActivity( new RotateEmitter( new Vector3D( 0, 0, 1 ), 10 ) );
 			
 			addInitializer( new SharedImage( new Dot( 1 ) ) );
 			addInitializer( new ColorInit( 0xFFFFFF00, 0xFFFF6600 ) );
-			addInitializer( new Position( new PointZone( position ) ) );
-			addInitializer( new Velocity( new SphereZone( new Vector3D(), 100 ) ) );
-			addInitializer( new Lifetime( 3 ) );
+			addInitializer( new Velocity( new ConeZone( new Vector3D(), new Vector3D( 1, 0, 0 ), 0.5, 100, 80 ) ) );
+			addInitializer( new Lifetime( 0.5 ) );
 			
-			addAction( new Age( Quadratic.easeIn ) );
 			addAction( new Move() );
-			addAction( new Fade() );
 			addAction( new Accelerate( new Vector3D( 0, 50, 0 ) ) );
-			addAction( new LinearDrag( 0.5 ) );
+			addAction( new Age() );
 		}
 	}
 }

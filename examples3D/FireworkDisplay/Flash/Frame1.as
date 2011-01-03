@@ -35,13 +35,6 @@ import org.flintparticles.threeD.renderers.*;
 import org.flintparticles.threeD.renderers.controllers.FirstPersonCamera;
 import org.flintparticles.threeD.zones.LineZone;	
 
-var txt:TextField = new TextField();
-txt.text = "Use arrow keys to pan/tilt the camera. Use W,S,D,L to move the camera. Use page up/ page down to raise and lower the camera.";
-txt.autoSize = "left";
-txt.textColor = 0xFFFFFF;
-addChild( txt );
-txt.y = 580;
-
 var renderer:BitmapRenderer = new BitmapRenderer( new Rectangle( -400, -300, 800, 600 ), false );
 renderer.x = 400;
 renderer.y = 300;
@@ -75,7 +68,19 @@ emitter.start();
 emitter = new Candle( new Vector3D( -150, 0, -150 ) );
 renderer.addEmitter( emitter );
 emitter.start();
-		
+			
+emitter = new CatherineWheel( new Vector3D( -200, -200, 50 ) );
+renderer.addEmitter( emitter );
+emitter.start();
+
+emitter = new CatherineWheel( new Vector3D( 0, -200, 50 ) );
+renderer.addEmitter( emitter );
+emitter.start();
+
+emitter = new CatherineWheel( new Vector3D( 200, -200, 50 ) );
+renderer.addEmitter( emitter );
+emitter.start();
+
 function whizzBang( ev:ParticleEvent ):void
 {
 	var bang:Emitter3D = new SphereBang( Particle3D( ev.particle ).position );
