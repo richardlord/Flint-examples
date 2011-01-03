@@ -18,7 +18,7 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/BrownianMotion/PureAS3/BrownianMotion.swf'/>
-			<arg line='../examples2D/BrownianMotion/PureAS3/Main.as'/>
+			<arg line='../examples2D/BrownianMotion/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
@@ -32,11 +32,12 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/CatherineWheel/PureAS3/CatherineWheel.swf'/>
-			<arg line='../examples2D/CatherineWheel/PureAS3/Main.as'/>
+			<arg line='../examples2D/CatherineWheel/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint2d.swc}"'/>
+			<arg line='-library-path+="../examples2D/ExplodeImage/PureAS3/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -46,11 +47,12 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/ExplodeImage/PureAS3/ExplodeImage.swf'/>
-			<arg line='../examples2D/ExplodeImage/PureAS3/Main.as'/>
+			<arg line='../examples2D/ExplodeImage/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint2d.swc}"'/>
+			<arg line='-library-path+="../examples2D/FireAndSmoke/PureAS3/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -60,7 +62,7 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/FireAndSmoke/PureAS3/FireAndSmoke.swf'/>
-			<arg line='../examples2D/FireAndSmoke/PureAS3/Main.as'/>
+			<arg line='../examples2D/FireAndSmoke/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
@@ -74,11 +76,12 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/Firework/PureAS3/Firework.swf'/>
-			<arg line='../examples2D/Firework/PureAS3/Main.as'/>
+			<arg line='../examples2D/Firework/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint2d.swc}"'/>
+			<arg line='-library-path+="../examples2D/Flocking/PureAS3/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -88,7 +91,7 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/Flocking/PureAS3/Flocking.swf'/>
-			<arg line='../examples2D/Flocking/PureAS3/Main.as'/>
+			<arg line='../examples2D/Flocking/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
@@ -102,7 +105,7 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/Grass/PureAS3/Grass.swf'/>
-			<arg line='../examples2D/Grass/PureAS3/Main.as'/>
+			<arg line='../examples2D/Grass/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
@@ -116,11 +119,12 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/GravityWells/PureAS3/GravityWells.swf'/>
-			<arg line='../examples2D/GravityWells/PureAS3/Main.as'/>
+			<arg line='../examples2D/GravityWells/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint2d.swc}"'/>
+			<arg line='-library-path+="../examples2D/LogoFirework/PureAS3/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -130,11 +134,12 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/LogoFirework/PureAS3/LogoFirework.swf'/>
-			<arg line='../examples2D/LogoFirework/PureAS3/Main.as'/>
+			<arg line='../examples2D/LogoFirework/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint2d.swc}"'/>
+			<arg line='-library-path+="../examples2D/LogoOnFire/PureAS3/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -144,11 +149,12 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/LogoOnFire/PureAS3/LogoOnFire.swf'/>
-			<arg line='../examples2D/LogoOnFire/PureAS3/Main.as'/>
+			<arg line='../examples2D/LogoOnFire/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint2d.swc}"'/>
+			<arg line='-library-path+="../examples2D/LogoTween/PureAS3/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -158,7 +164,7 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/LogoTween/PureAS3/LogoOnFire.swf'/>
-			<arg line='../examples2D/LogoTween/PureAS3/Main.as'/>
+			<arg line='../examples2D/LogoTween/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
@@ -172,7 +178,7 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/MutualGravity/PureAS3/MutualGravity.swf'/>
-			<arg line='../examples2D/MutualGravity/PureAS3/Main.as'/>
+			<arg line='../examples2D/MutualGravity/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
@@ -186,11 +192,12 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/Pachinko/PureAS3/Pachinko.swf'/>
-			<arg line='../examples2D/Pachinko/PureAS3/Main.as'/>
+			<arg line='../examples2D/Pachinko/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint2d.swc}"'/>
+			<arg line='-library-path+="../examples2D/Rain/PureAS3/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -200,11 +207,12 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/Rain/PureAS3/Rain.swf'/>
-			<arg line='../examples2D/Rain/PureAS3/Main.as'/>
+			<arg line='../examples2D/Rain/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint2d.swc}"'/>
+			<arg line='-library-path+="../examples2D/Snowfall/PureAS3/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -214,7 +222,7 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/Snowfall/PureAS3/Snowfall.swf'/>
-			<arg line='../examples2D/Snowfall/PureAS3/Main.as'/>
+			<arg line='../examples2D/Snowfall/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
@@ -228,7 +236,7 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples2D/Sparkler/PureAS3/Sparkler.swf'/>
-			<arg line='../examples2D/Sparkler/PureAS3/Main.as'/>
+			<arg line='../examples2D/Sparkler/PureAS3/MainPlus.as'/>
 		</exec>
 
 	</target>
@@ -246,11 +254,12 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples3D/BrownianMotion/PureAS3/BrownianMotion.swf'/>
-			<arg line='../examples3D/BrownianMotion/PureAS3/Main.as'/>
+			<arg line='../examples3D/BrownianMotion/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint3d.swc}"'/>
+			<arg line='-library-path+="../examples3D/ExplodeImage/PureAS3/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -260,11 +269,12 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples3D/ExplodeImage/PureAS3/ExplodeImage.swf'/>
-			<arg line='../examples3D/ExplodeImage/PureAS3/Main.as'/>
+			<arg line='../examples3D/ExplodeImage/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint3d.swc}"'/>
+			<arg line='-library-path+="../examples3D/FireAndSmoke/PureAS3/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -274,7 +284,7 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples3D/FireAndSmoke/PureAS3/FireAndSmoke.swf'/>
-			<arg line='../examples3D/FireAndSmoke/PureAS3/Main.as'/>
+			<arg line='../examples3D/FireAndSmoke/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
@@ -288,11 +298,12 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples3D/FireworkDisplay/PureAS3/FireworkDisplay.swf'/>
-			<arg line='../examples3D/FireworkDisplay/PureAS3/Main.as'/>
+			<arg line='../examples3D/FireworkDisplay/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint3d.swc}"'/>
+			<arg line='-library-path+="../examples3D/Flocking/PureAS3/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -302,7 +313,7 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples3D/Flocking/PureAS3/Flocking.swf'/>
-			<arg line='../examples3D/Flocking/PureAS3/Main.as'/>
+			<arg line='../examples3D/Flocking/PureAS3/MainPlus.as'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
@@ -316,7 +327,7 @@
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
 			<arg line='-output ../examples3D/Fountain/PureAS3/Fountain.swf'/>
-			<arg line='../examples3D/Fountain/PureAS3/Main.as'/>
+			<arg line='../examples3D/Fountain/PureAS3/MainPlus.as'/>
 		</exec>
 
 	</target>
@@ -333,8 +344,6 @@
 			<arg line='-description "An example for the Flint particle system showing a Brownian Motion effect in 2D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
-			<arg line='-namespace http://flintparticles.org/2009/flint2d manifest2D.xml'/>
-
 			<arg line='-output ../examples2D/BrownianMotion/Flex/BrownianMotion.swf'/>
 			<arg line='../examples2D/BrownianMotion/Flex/BrownianMotion.mxml'/>
 		</exec>
@@ -349,14 +358,13 @@
 			<arg line='-description "An example for the Flint particle system showing a Catherine Wheel effect in 2D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
-			<arg line='-namespace http://flintparticles.org/2009/flint2d manifest2D.xml'/>
-
 			<arg line='-output ../examples2D/CatherineWheel/Flex/CatherineWheel.swf'/>
 			<arg line='../examples2D/CatherineWheel/Flex/CatherineWheel.mxml'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint2d.swc}"'/>
+			<arg line='-library-path+="../examples2D/ExplodeImage/Flex/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -365,14 +373,13 @@
 			<arg line='-description "An example for the Flint particle system showing an Explode Image effect in 2D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
-			<arg line='-namespace http://flintparticles.org/2009/flint2d manifest2D.xml'/>
-
 			<arg line='-output ../examples2D/ExplodeImage/Flex/ExplodeImage.swf'/>
 			<arg line='../examples2D/ExplodeImage/Flex/ExplodeImage.mxml'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint2d.swc}"'/>
+			<arg line='-library-path+="../examples2D/FireAndSmoke/Flex/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -380,8 +387,6 @@
 			<arg line='-title "Fire and Smoke 2D"'/>
 			<arg line='-description "An example for the Flint particle system showing Fire and Smoke effects in 2D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
-
-			<arg line='-namespace http://flintparticles.org/2009/flint2d manifest2D.xml'/>
 
 			<arg line='-output ../examples2D/FireAndSmoke/Flex/FireAndSmoke.swf'/>
 			<arg line='../examples2D/FireAndSmoke/Flex/FireAndSmoke.mxml'/>
@@ -397,14 +402,13 @@
 			<arg line='-description "An example for the Flint particle system showing a Firework effect in 2D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
-			<arg line='-namespace http://flintparticles.org/2009/flint2d manifest2D.xml'/>
-
 			<arg line='-output ../examples2D/Firework/Flex/Firework.swf'/>
 			<arg line='../examples2D/Firework/Flex/Firework.mxml'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint2d.swc}"'/>
+			<arg line='-library-path+="../examples2D/Flocking/Flex/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -412,8 +416,6 @@
 			<arg line='-title "Flocking 2D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Flocking effect in 2D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
-
-			<arg line='-namespace http://flintparticles.org/2009/flint2d manifest2D.xml'/>
 
 			<arg line='-output ../examples2D/Flocking/Flex/Flocking.swf'/>
 			<arg line='../examples2D/Flocking/Flex/Flocking.mxml'/>
@@ -429,8 +431,6 @@
 			<arg line='-description "An example for the Flint particle system."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
-			<arg line='-namespace http://flintparticles.org/2009/flint2d manifest2D.xml'/>
-
 			<arg line='-output ../examples2D/Grass/Flex/Grass.swf'/>
 			<arg line='../examples2D/Grass/Flex/Grass.mxml'/>
 		</exec>
@@ -445,14 +445,13 @@
 			<arg line='-description "An example for the Flint particle system showing a Gravity effect using multiple Gravity Wells in 2D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
-			<arg line='-namespace http://flintparticles.org/2009/flint2d manifest2D.xml'/>
-
 			<arg line='-output ../examples2D/GravityWells/Flex/GravityWells.swf'/>
 			<arg line='../examples2D/GravityWells/Flex/GravityWells.mxml'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint2d.swc}"'/>
+			<arg line='-library-path+="../examples2D/LogoFirework/Flex/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -461,14 +460,13 @@
 			<arg line='-description "An example for the Flint particle system showing a Firework effect in the shape of an image in 2D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
-			<arg line='-namespace http://flintparticles.org/2009/flint2d manifest2D.xml'/>
-
 			<arg line='-output ../examples2D/LogoFirework/Flex/LogoFirework.swf'/>
 			<arg line='../examples2D/LogoFirework/Flex/LogoFirework.mxml'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint2d.swc}"'/>
+			<arg line='-library-path+="../examples2D/LogoOnFire/Flex/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -476,8 +474,6 @@
 			<arg line='-title "Logo on fire"'/>
 			<arg line='-description "An example for the Flint particle system showing a fire effect on a 2D object."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
-
-			<arg line='-namespace http://flintparticles.org/2009/flint2d manifest2D.xml'/>
 
 			<arg line='-output ../examples2D/LogoOnFire/Flex/LogoOnFire.swf'/>
 			<arg line='../examples2D/LogoOnFire/Flex/LogoOnFire.mxml'/>
@@ -493,14 +489,13 @@
 			<arg line='-description "An example for the Flint particle system showing particles in 2D subject to gravity from each other."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
-			<arg line='-namespace http://flintparticles.org/2009/flint2d manifest2D.xml'/>
-
 			<arg line='-output ../examples2D/MutualGravity/Flex/MutualGravity.swf'/>
 			<arg line='../examples2D/MutualGravity/Flex/MutualGravity.mxml'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint2d.swc}"'/>
+			<arg line='-library-path+="../examples2D/Rain/Flex/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -509,14 +504,13 @@
 			<arg line='-description "An example for the Flint particle system showing a Rain effect in 2D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
-			<arg line='-namespace http://flintparticles.org/2009/flint2d manifest2D.xml'/>
-
 			<arg line='-output ../examples2D/Rain/Flex/Rain.swf'/>
 			<arg line='../examples2D/Rain/Flex/Rain.mxml'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint2d.swc}"'/>
+			<arg line='-library-path+="../examples2D/Snowfall/Flex/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -524,8 +518,6 @@
 			<arg line='-title "Snowfall"'/>
 			<arg line='-description "An example for the Flint particle system showing a Snow effect in 2D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
-
-			<arg line='-namespace http://flintparticles.org/2009/flint2d manifest2D.xml'/>
 
 			<arg line='-output ../examples2D/Snowfall/Flex/Snowfall.swf'/>
 			<arg line='../examples2D/Snowfall/Flex/Snowfall.mxml'/>
@@ -540,8 +532,6 @@
 			<arg line='-title "Sparkler"'/>
 			<arg line='-description "An example for the Flint particle system showing a Sparkler effect in 2D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
-
-			<arg line='-namespace http://flintparticles.org/2009/flint2d manifest2D.xml'/>
 
 			<arg line='-output ../examples2D/Sparkler/Flex/Sparkler.swf'/>
 			<arg line='../examples2D/Sparkler/Flex/Sparkler.mxml'/>
@@ -561,14 +551,13 @@
 			<arg line='-description "An example for the Flint particle system showing a Brownian Motion effect in 3D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
-			<arg line='-namespace http://flintparticles.org/2009/flint3d manifest3D.xml'/>
-
 			<arg line='-output ../examples3D/BrownianMotion/Flex/BrownianMotion.swf'/>
 			<arg line='../examples3D/BrownianMotion/Flex/BrownianMotion.mxml'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint3d.swc}"'/>
+			<arg line='-library-path+="../examples3D/ExplodeImage/Flex/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -577,14 +566,13 @@
 			<arg line='-description "An example for the Flint particle system showing an Explode Image effect in 3D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
-			<arg line='-namespace http://flintparticles.org/2009/flint3d manifest3D.xml'/>
-
 			<arg line='-output ../examples3D/ExplodeImage/Flex/ExplodeImage.swf'/>
 			<arg line='../examples3D/ExplodeImage/Flex/ExplodeImage.mxml'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint3d.swc}"'/>
+			<arg line='-library-path+="../examples3D/FireAndSmoke/Flex/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -592,8 +580,6 @@
 			<arg line='-title "Fire and Smoke 3D"'/>
 			<arg line='-description "An example for the Flint particle system showing Fire and Smoke effects in 3D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
-
-			<arg line='-namespace http://flintparticles.org/2009/flint3d manifest3D.xml'/>
 
 			<arg line='-output ../examples3D/FireAndSmoke/Flex/FireAndSmoke.swf'/>
 			<arg line='../examples3D/FireAndSmoke/Flex/FireAndSmoke.mxml'/>
@@ -609,14 +595,13 @@
 			<arg line='-description "An example for the Flint particle system showing a Firework Display in 3D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
-			<arg line='-namespace http://flintparticles.org/2009/flint3d manifest3D.xml'/>
-
 			<arg line='-output ../examples3D/FireworkDisplay/Flex/FireworkDisplay.swf'/>
 			<arg line='../examples3D/FireworkDisplay/Flex/FireworkDisplay.mxml'/>
 		</exec>
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint3d.swc}"'/>
+			<arg line='-library-path+="../examples3D/Flocking/Flex/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -624,8 +609,6 @@
 			<arg line='-title "Flocking 3D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Flocking effect in 3D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
-
-			<arg line='-namespace http://flintparticles.org/2009/flint3d manifest3D.xml'/>
 
 			<arg line='-output ../examples3D/Flocking/Flex/Flocking.swf'/>
 			<arg line='../examples3D/Flocking/Flex/Flocking.mxml'/>
@@ -640,8 +623,6 @@
 			<arg line='-title "Fountain 3D"'/>
 			<arg line='-description "An example for the Flint particle system showing a Fountain effect in 3D."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
-
-			<arg line='-namespace http://flintparticles.org/2009/flint3d manifest3D.xml'/>
 
 			<arg line='-output ../examples3D/Fountain/Flex/Fountain.swf'/>
 			<arg line='../examples3D/Fountain/Flex/Fountain.mxml'/>
@@ -667,6 +648,7 @@
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint3d.swc}"'/>
+			<arg line='-library-path+="../examples3D/FireAndSmoke/Papervision3D/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
@@ -717,6 +699,7 @@
 
 		<exec executable="${mxmlc}" failonerror="false">
 			<arg line='-library-path+="${flint3d.swc}"'/>
+			<arg line='-library-path+="../examples3D/FireAndSmoke/Away3D/assets/Assets.swc"'/>
 			<arg line='-debug=false'/>
 			<arg line='-optimize=true'/>
 			<arg line='-static-link-runtime-shared-libraries=true'/>
