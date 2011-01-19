@@ -163,7 +163,7 @@
 			<arg line='-description "An example for the Flint particle system showing a shape tween between two 2D shapes."'/>
 			<arg line='-creator "Richard Lord - flintparticles.org"'/>
 
-			<arg line='-output ../examples2D/LogoTween/PureAS3/LogoOnFire.swf'/>
+			<arg line='-output ../examples2D/LogoTween/PureAS3/LogoTween.swf'/>
 			<arg line='../examples2D/LogoTween/PureAS3/MainPlus.as'/>
 		</exec>
 
