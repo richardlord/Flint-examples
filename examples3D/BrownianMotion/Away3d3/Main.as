@@ -29,40 +29,32 @@
 
 package
 {
-	import flash.geom.Vector3D;
 	import away3d.containers.View3D;
 
-	import org.flintparticles.threeD.away3d.Away3DRenderer;
+	import org.flintparticles.integration.away3d.v3.Away3DRenderer;
 	import org.flintparticles.threeD.emitters.Emitter3D;
 
 	import flash.display.Sprite;
 	import flash.events.Event;
 
-	[SWF(width='400', height='400', frameRate='61', backgroundColor='#000000')]
+	[SWF(width='400', height='400', frameRate='60', backgroundColor='#000000')]
 	
 	public class Main extends Sprite
 	{
-		private var smoke:Emitter3D;
-		private var fire:Emitter3D;
+		private var emitter:Emitter3D;
 		private var view:View3D;
 		private var renderer:Away3DRenderer;
 		
 		public function Main()
 		{
-			smoke = new Smoke();
-			smoke.start( );
-			
-			fire = new Fire();
-			fire.start( );
-			
+			emitter = new BrownianMotion( stage );
+
 			view = new View3D({x:200,y:200});
-			view.camera.y = 150;
-			view.camera.z = 750;
-			view.camera.lookAt( new Vector3D( 0, 150, 0 ) );
 			addChild(view);
 			renderer = new Away3DRenderer( view.scene );
-			renderer.addEmitter( smoke );
-			renderer.addEmitter( fire );
+			renderer.addEmitter( emitter );
+
+			emitter.start();
 			
 			addEventListener( Event.ENTER_FRAME, render, false, 0, true );
 		}

@@ -29,17 +29,20 @@
 
 package
 {
+	import away3d.materials.ColorMaterial;
+	import away3d.primitives.Sphere;
+
 	import org.flintparticles.common.counters.Blast;
-	import org.flintparticles.common.displayObjects.Dot;
 	import org.flintparticles.common.initializers.ChooseInitializer;
 	import org.flintparticles.common.initializers.CollisionRadiusInit;
 	import org.flintparticles.common.initializers.ColorInit;
 	import org.flintparticles.common.initializers.InitializerGroup;
 	import org.flintparticles.common.initializers.MassInit;
+	import org.flintparticles.integration.away3d.v3.initializers.A3DObjectClass;
+	import org.flintparticles.integration.away3d.v3.initializers.ApplyMaterial;
 	import org.flintparticles.threeD.actions.BoundingBox;
 	import org.flintparticles.threeD.actions.Collide;
 	import org.flintparticles.threeD.actions.Move;
-	import org.flintparticles.threeD.away3d.initializers.A3DDisplayObjectClass;
 	import org.flintparticles.threeD.emitters.Emitter3D;
 	import org.flintparticles.threeD.initializers.Position;
 	import org.flintparticles.threeD.initializers.Velocity;
@@ -56,14 +59,14 @@ package
 			counter = new Blast( 400 );
 			
 			var air:InitializerGroup = new InitializerGroup();
-			air.addInitializer( new A3DDisplayObjectClass( Dot, 2 ) );
-			air.addInitializer( new ColorInit( 0xFF666666, 0xFF666666 ) );
+			air.addInitializer( new A3DObjectClass( Sphere, { radius:2, segmentsW:4, segmentsH:4 } ) );
+			air.addInitializer( new ApplyMaterial( ColorMaterial, 0x666666, 1 ) );
 			air.addInitializer( new MassInit( 1 ) );
 			air.addInitializer( new CollisionRadiusInit( 2 ) );
 			
 			var smoke:InitializerGroup = new InitializerGroup();
-			smoke.addInitializer( new A3DDisplayObjectClass( Dot, 10 ) );
-			smoke.addInitializer( new ColorInit( 0xFFFFFFFF, 0xFFFFFFFF ) );
+			smoke.addInitializer( new A3DObjectClass( Sphere, { radius:10, segmentsW:6, segmentsH:6 } ) );
+			smoke.addInitializer( new ApplyMaterial( ColorMaterial, 0xFFFFFF, 1 ) );
 			smoke.addInitializer( new MassInit( 5 ) );
 			smoke.addInitializer( new CollisionRadiusInit( 10 ) );
 			
