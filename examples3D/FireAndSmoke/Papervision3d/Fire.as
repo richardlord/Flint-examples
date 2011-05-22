@@ -34,6 +34,7 @@ package
 	import org.flintparticles.common.actions.ScaleImage;
 	import org.flintparticles.common.counters.Steady;
 	import org.flintparticles.common.initializers.Lifetime;
+	import org.flintparticles.integration.papervision3d.initializers.PV3DDisplayObjectClass;
 	import org.flintparticles.threeD.actions.Accelerate;
 	import org.flintparticles.threeD.actions.LinearDrag;
 	import org.flintparticles.threeD.actions.Move;
@@ -41,7 +42,6 @@ package
 	import org.flintparticles.threeD.emitters.Emitter3D;
 	import org.flintparticles.threeD.initializers.Position;
 	import org.flintparticles.threeD.initializers.Velocity;
-	import org.flintparticles.threeD.papervision3d.initializers.PV3DDisplayObjectClass;
 	import org.flintparticles.threeD.zones.DiscZone;
 
 	import flash.geom.Vector3D;

@@ -35,12 +35,12 @@ package
 	import org.flintparticles.common.counters.Steady;
 	import org.flintparticles.common.displayObjects.RadialDot;
 	import org.flintparticles.common.initializers.Lifetime;
+	import org.flintparticles.integration.papervision3d.initializers.PV3DDisplayObjectClass;
 	import org.flintparticles.threeD.actions.LinearDrag;
 	import org.flintparticles.threeD.actions.Move;
 	import org.flintparticles.threeD.actions.RandomDrift;
 	import org.flintparticles.threeD.emitters.Emitter3D;
 	import org.flintparticles.threeD.initializers.Velocity;
-	import org.flintparticles.threeD.papervision3d.initializers.PV3DDisplayObjectClass;
 	import org.flintparticles.threeD.zones.ConeZone;
 
 	import flash.geom.Vector3D;

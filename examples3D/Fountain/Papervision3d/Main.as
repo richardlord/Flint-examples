@@ -29,8 +29,8 @@
 
 package
 {
+	import org.flintparticles.integration.papervision3d.PV3DPixelRenderer;
 	import org.flintparticles.threeD.emitters.Emitter3D;
-	import org.flintparticles.threeD.papervision3d.PV3DPixelRenderer;
 	import org.papervision3d.cameras.Camera3D;
 	import org.papervision3d.core.effects.BitmapLayerEffect;
 	import org.papervision3d.core.geom.Pixels;
