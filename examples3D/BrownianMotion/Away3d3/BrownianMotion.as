@@ -35,7 +35,6 @@ package
 	import org.flintparticles.common.counters.Blast;
 	import org.flintparticles.common.initializers.ChooseInitializer;
 	import org.flintparticles.common.initializers.CollisionRadiusInit;
-	import org.flintparticles.common.initializers.ColorInit;
 	import org.flintparticles.common.initializers.InitializerGroup;
 	import org.flintparticles.common.initializers.MassInit;
 	import org.flintparticles.integration.away3d.v3.initializers.A3DObjectClass;
