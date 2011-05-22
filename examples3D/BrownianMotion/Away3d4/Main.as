@@ -32,7 +32,8 @@ package
 	import away3d.containers.ObjectContainer3D;
 	import away3d.containers.View3D;
 
-	import org.flintparticles.integration.away3d.v4.Away3D4Renderer;
+	import org.flintparticles.integration.away3d.v4.A3D4Renderer;
+	import org.flintparticles.integration.away3d.v4.utils.A3D4ParticleCleaner;
 	import org.flintparticles.threeD.emitters.Emitter3D;
 
 	import flash.display.Sprite;
@@ -44,11 +45,14 @@ package
 	{
 		private var emitter:Emitter3D;
 		private var view:View3D;
-		private var renderer:Away3D4Renderer;
+		private var renderer:A3D4Renderer;
+		private var particleCleaner:A3D4ParticleCleaner;
 		
 		public function Main()
 		{
+			particleCleaner = new A3D4ParticleCleaner();
 			emitter = new BrownianMotion( stage );
+			particleCleaner.addEmitter( emitter );
 
 			view = new View3D();
 			view.width = 400;
@@ -59,7 +63,7 @@ package
 			view.scene.addChild( particleContainer );
 			particleContainer.z = -200;
 			
-			renderer = new Away3D4Renderer( particleContainer );
+			renderer = new A3D4Renderer( particleContainer );
 			renderer.addEmitter( emitter );
 
 			emitter.start();

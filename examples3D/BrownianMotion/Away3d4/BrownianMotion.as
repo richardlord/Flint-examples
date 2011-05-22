@@ -58,13 +58,13 @@ package
 			counter = new Blast( 400 );
 			
 			var air:InitializerGroup = new InitializerGroup();
-			air.addInitializer( new A3D4ObjectClass( Sphere, { radius:2, material:null, segmentsW:4, segmentsH:4 } ) );
+			air.addInitializer( new A3D4ObjectClass( Sphere, null, 2, 4, 4 ) );
 			air.addInitializer( new A3D4ApplyMaterial( ColorMaterial, 0x666666, 1 ) );
 			air.addInitializer( new MassInit( 1 ) );
 			air.addInitializer( new CollisionRadiusInit( 2 ) );
 			
 			var smoke:InitializerGroup = new InitializerGroup();
-			smoke.addInitializer( new A3D4ObjectClass( Sphere, { radius:10, material:null, segmentsW:6, segmentsH:6 } ) );
+			smoke.addInitializer( new A3D4ObjectClass( Sphere, null, 10, 6, 6 ) );
 			smoke.addInitializer( new A3D4ApplyMaterial( ColorMaterial, 0xFFFFFF, 1 ) );
 			smoke.addInitializer( new MassInit( 5 ) );
 			smoke.addInitializer( new CollisionRadiusInit( 10 ) );

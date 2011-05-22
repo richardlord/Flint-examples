@@ -29,11 +29,11 @@
 
 package
 {
-	import away3d.debug.AwayStats;
+	import org.flintparticles.integration.away3d.v4.utils.A3D4ParticleCleaner;
 	import away3d.containers.ObjectContainer3D;
 	import away3d.containers.View3D;
 
-	import org.flintparticles.integration.away3d.v4.Away3D4Renderer;
+	import org.flintparticles.integration.away3d.v4.A3D4Renderer;
 	import org.flintparticles.threeD.emitters.Emitter3D;
 
 	import flash.display.Sprite;
@@ -47,16 +47,19 @@ package
 		private var smoke:Emitter3D;
 		private var fire:Emitter3D;
 		private var view:View3D;
-		private var renderer:Away3D4Renderer;
-		
-		//private var emitter:Emitter3D;
+		private var renderer:A3D4Renderer;
+		private var particleCleaner:A3D4ParticleCleaner;
 		
 		public function Main()
 		{
+			particleCleaner = new A3D4ParticleCleaner();
+			
 			smoke = new Smoke();
+			particleCleaner.addEmitter( smoke );
 			smoke.start( );
 			
 			fire = new Fire();
+			particleCleaner.addEmitter( fire );
 			fire.start( );
 			
 			view = new View3D();
@@ -70,7 +73,7 @@ package
 			var particleContainer:ObjectContainer3D = new ObjectContainer3D();
 			view.scene.addChild( particleContainer );
 			
-			renderer = new Away3D4Renderer( particleContainer );
+			renderer = new A3D4Renderer( particleContainer );
 			renderer.addEmitter( smoke );
 			renderer.addEmitter( fire );
 			
