@@ -26,16 +26,17 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
+ 
 package
 {
-	import away3d.materials.BitmapMaterial;
-	import away3d.primitives.Sphere;
+	import alternativa.engine3d.materials.TextureMaterial;
+	import alternativa.engine3d.primitives.GeoSphere;
+	import alternativa.engine3d.resources.BitmapTextureResource;
 
 	import org.flintparticles.common.actions.Age;
 	import org.flintparticles.common.counters.Steady;
 	import org.flintparticles.common.initializers.Lifetime;
-	import org.flintparticles.integration.away3d.v4.initializers.A3D4CloneObject;
+	import org.flintparticles.integration.alternativa3d.initializers.Alt3DCloneObject;
 	import org.flintparticles.threeD.actions.Move;
 	import org.flintparticles.threeD.actions.Rotate;
 	import org.flintparticles.threeD.emitters.Emitter3D;
@@ -48,7 +49,6 @@ package
 
 	import flash.display.BitmapData;
 	import flash.display.BitmapDataChannel;
-	import flash.display.DisplayObject;
 	import flash.geom.Vector3D;
 
 	public class Planets extends Emitter3D
@@ -56,19 +56,19 @@ package
 		public function Planets()
 		{
 			counter = new Steady( 70 );
-			
-			var bdata:BitmapData = new BitmapData( 128, 128 );
-			bdata.perlinNoise( 128, 128, 12, Math.floor( Math.random() * int.MAX_VALUE ), true, true, BitmapDataChannel.BLUE | BitmapDataChannel.GREEN );
-			var mat:BitmapMaterial = new BitmapMaterial( bdata, true, true, true );
-			var sphere:Sphere = new Sphere( mat, 10, 12, 12 );
-			addInitializer( new A3D4CloneObject( sphere ) );
+
+			var bitmapData : BitmapData = new BitmapData( 128, 128 );
+			bitmapData.perlinNoise( 128, 128, 12, Math.floor( Math.random() * int.MAX_VALUE ), true, true, BitmapDataChannel.BLUE | BitmapDataChannel.GREEN );
+			var mat : TextureMaterial = new TextureMaterial( new BitmapTextureResource( bitmapData ) );
+			var sphere : GeoSphere = new GeoSphere( 10, 12, false, mat );
+			addInitializer( new Alt3DCloneObject( sphere ) );
 
 			addInitializer( new Position( new ParallelogramZone( new Vector3D( -500, -500, 1500 ), new Vector3D( 1000, 0, 0 ), new Vector3D( 0, 1000, 0 ) ) ) );
 			addInitializer( new Velocity( new PointZone( new Vector3D( 0, 0, -400 ) ) ) );
-			addInitializer( new Rotation( new Vector3D(1, 1, 1), 0, 2 * Math.PI ) );
-		    addInitializer(new RotateVelocity( new Vector3D( 1, 0, 0 ), 0.1, 2 ) );
-			addInitializer(new Lifetime( 5 ));
-			
+			addInitializer( new Rotation( new Vector3D( 1, 1, 1 ), 0, 2 * Math.PI ) );
+			addInitializer( new RotateVelocity( new Vector3D( 1, 0, 0 ), 0.1, 2 ) );
+			addInitializer( new Lifetime( 5 ) );
+
 			addAction( new Move() );
 			addAction( new Age() );
 			addAction( new Rotate() );
