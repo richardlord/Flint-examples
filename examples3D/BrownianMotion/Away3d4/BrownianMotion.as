@@ -37,8 +37,7 @@ package
 	import org.flintparticles.common.initializers.CollisionRadiusInit;
 	import org.flintparticles.common.initializers.InitializerGroup;
 	import org.flintparticles.common.initializers.MassInit;
-	import org.flintparticles.integration.away3d.v4.initializers.A3D4ApplyMaterial;
-	import org.flintparticles.integration.away3d.v4.initializers.A3D4ObjectClass;
+	import org.flintparticles.integration.away3d.v4.initializers.A3D4CloneObject;
 	import org.flintparticles.threeD.actions.BoundingBox;
 	import org.flintparticles.threeD.actions.Collide;
 	import org.flintparticles.threeD.actions.Move;
@@ -58,14 +57,14 @@ package
 			counter = new Blast( 400 );
 			
 			var air:InitializerGroup = new InitializerGroup();
-			air.addInitializer( new A3D4ObjectClass( Sphere, null, 2, 4, 4 ) );
-			air.addInitializer( new A3D4ApplyMaterial( ColorMaterial, 0x666666, 1 ) );
+			var airImage:Sphere = new Sphere( new ColorMaterial( 0x666666, 1 ), 2, 6, 6 );
+			air.addInitializer( new A3D4CloneObject( airImage ) );
 			air.addInitializer( new MassInit( 1 ) );
 			air.addInitializer( new CollisionRadiusInit( 2 ) );
 			
 			var smoke:InitializerGroup = new InitializerGroup();
-			smoke.addInitializer( new A3D4ObjectClass( Sphere, null, 10, 6, 6 ) );
-			smoke.addInitializer( new A3D4ApplyMaterial( ColorMaterial, 0xFFFFFF, 1 ) );
+			var smokeImage:Sphere = new Sphere( new ColorMaterial( 0xFFFFFF, 1 ), 10, 10, 10 );
+			smoke.addInitializer( new A3D4CloneObject( smokeImage ) );
 			smoke.addInitializer( new MassInit( 5 ) );
 			smoke.addInitializer( new CollisionRadiusInit( 10 ) );
 			
