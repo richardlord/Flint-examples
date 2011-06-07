@@ -29,7 +29,6 @@
 
 package
 {
-	import org.flintparticles.integration.away3d.v4.utils.A3D4ParticleCleaner;
 	import away3d.containers.ObjectContainer3D;
 	import away3d.containers.View3D;
 
@@ -48,26 +47,21 @@ package
 		private var fire:Emitter3D;
 		private var view:View3D;
 		private var renderer:A3D4Renderer;
-		private var particleCleaner:A3D4ParticleCleaner;
 		
 		public function Main()
 		{
-			particleCleaner = new A3D4ParticleCleaner();
-			
 			smoke = new Smoke();
-			particleCleaner.addEmitter( smoke );
 			smoke.start( );
 			
 			fire = new Fire();
-			particleCleaner.addEmitter( fire );
 			fire.start( );
 			
 			view = new View3D();
 			view.width = 400;
 			view.height = 400;
-			view.camera.y = 80;
-			view.camera.z = 200;
-			view.camera.lookAt( new Vector3D( 0, 80, 0 ) );
+			view.camera.y = 150;
+			view.camera.z = 320;
+			view.camera.lookAt( new Vector3D( 0, 150, 0 ) );
 			addChild(view);
 
 			var particleContainer:ObjectContainer3D = new ObjectContainer3D();
