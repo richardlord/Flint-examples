@@ -3,7 +3,7 @@
 	
 	<property file="build.config"/>
 	
-	<target name="all" depends="examples2D,flex2D,examples3D,flex3D,papervision3D,away3D3,away3D4" description="Full build of all Flex and PureAS3 examples"/>
+	<target name="all" depends="examples2D,flex2D,examples3D,flex3D,papervision3D,away3D3,away3D4,alternative3D" description="Full build of all Flex and PureAS3 examples"/>
 		
 	<target name="examples2D" description="Build 2D examples">
 		<antcall target="buildPure2d">
@@ -155,7 +155,7 @@
 		</antcall>
 	</target>
 
-	<target name="away3D3" description="Build Away 3D examples">
+	<target name="away3D3" description="Build Away 3D 3 examples">
 		<antcall target="buildAway3d3">
 			<param name="name" value='BrownianMotion'/>
 		</antcall>
@@ -164,9 +164,27 @@
 		</antcall>
 	</target>
 	
-	<target name="away3D4" description="Build Away 3D examples">
+	<target name="away3D4" description="Build Away 3D 4 examples">
 		<antcall target="buildAway3d4">
 			<param name="name" value='BrownianMotion'/>
+		</antcall>
+		<antcall target="buildAway3d4WithAssets">
+			<param name="name" value='FireAndSmoke'/>
+		</antcall>
+		<antcall target="buildAway3d4">
+			<param name="name" value='Planets'/>
+		</antcall>
+	</target>
+	
+	<target name="alternative3D" description="Build Alternativa 3D examples">
+		<antcall target="buildAlternativa3d">
+			<param name="name" value='BrownianMotion'/>
+		</antcall>
+		<antcall target="buildAlternativa3dWithAssets">
+			<param name="name" value='FireAndSmoke'/>
+		</antcall>
+		<antcall target="buildAlternativa3d">
+			<param name="name" value='Planets'/>
 		</antcall>
 	</target>
 	
@@ -426,6 +444,47 @@
 
 			<arg line='-output ../examples3D/${name}/Away3d4/${name}.swf'/>
 			<arg line='../examples3D/${name}/Away3d4/Main.as'/>
+		</exec>
+	</target>
+	
+	<target name="buildAlternativa3d">
+		<exec executable="${mxmlc.molehill}" failonerror="false">
+			<arg line='-debug=false'/>
+			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
+
+			<arg line='-library-path+="${flint3d.swc}"'/>
+			<arg line='-library-path+="${flintAlt3d.swc}"'/>
+			<arg line='-library-path+="${alternativa3d.swc}"'/>
+
+			<arg line='-swf-version=13'/>
+			<arg line='-target-player 10.2.0.0'/>
+			<arg line='-title "Flint particles example - flintparticles.org"'/>
+			<arg line='-creator "Richard Lord"'/>
+
+			<arg line='-output ../examples3D/${name}/Alternativa3d/${name}.swf'/>
+			<arg line='../examples3D/${name}/Alternativa3d/Main.as'/>
+		</exec>
+	</target>
+	
+	<target name="buildAlternativa3dWithAssets">
+		<exec executable="${mxmlc.molehill}" failonerror="false">
+			<arg line='-debug=false'/>
+			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
+
+			<arg line='-library-path+="${flint3d.swc}"'/>
+			<arg line='-library-path+="${flintAlt3d.swc}"'/>
+			<arg line='-library-path+="${alternativa3d.swc}"'/>
+			<arg line='-library-path+="../examples3D/${name}/PureAS3/assets/Assets.swc"'/>
+
+			<arg line='-swf-version=13'/>
+			<arg line='-target-player 10.2.0.0'/>
+			<arg line='-title "Flint particles example - flintparticles.org"'/>
+			<arg line='-creator "Richard Lord"'/>
+
+			<arg line='-output ../examples3D/${name}/Alternativa3d/${name}.swf'/>
+			<arg line='../examples3D/${name}/Alternativa3d/Main.as'/>
 		</exec>
 	</target>
 </project>

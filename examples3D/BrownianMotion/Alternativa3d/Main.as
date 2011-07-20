@@ -38,8 +38,6 @@ package
 
 	import flash.display.Sprite;
 	import flash.display.Stage3D;
-	import flash.display.StageAlign;
-	import flash.display.StageScaleMode;
 	import flash.events.Event;
 
 	[SWF(width='400', height='400', frameRate='60', backgroundColor='#000000')]

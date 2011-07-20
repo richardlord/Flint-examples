@@ -48,7 +48,7 @@ package
 		
 		public function Main()
 		{
-			emitter = new Planets( stage );
+			emitter = new Planets();
 
 			view = new View3D();
 			view.width = 500;

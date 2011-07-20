@@ -56,13 +56,13 @@ package
 			counter = new Blast( 400 );
 			
 			var air:InitializerGroup = new InitializerGroup();
-			air.addInitializer( new ImageClass( Dot, 2 ) );
+			air.addInitializer( new ImageClass( Dot, [2] ) );
 			air.addInitializer( new ColorInit( 0xFF666666, 0xFF666666 ) );
 			air.addInitializer( new MassInit( 1 ) );
 			air.addInitializer( new CollisionRadiusInit( 2 ) );
 			
 			var smoke:InitializerGroup = new InitializerGroup();
-			smoke.addInitializer( new ImageClass( Dot, 10 ) );
+			smoke.addInitializer( new ImageClass( Dot, [10] ) );
 			smoke.addInitializer( new ColorInit( 0xFFFFFFFF, 0xFFFFFFFF ) );
 			smoke.addInitializer( new MassInit( 5 ) );
 			smoke.addInitializer( new CollisionRadiusInit( 10 ) );

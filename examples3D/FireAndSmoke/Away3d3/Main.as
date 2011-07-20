@@ -29,14 +29,14 @@
 
 package
 {
-	import flash.geom.Vector3D;
 	import away3d.containers.View3D;
 
-	import org.flintparticles.integration.away3d.v3.Away3DRenderer;
+	import org.flintparticles.integration.away3d.v3.A3D3Renderer;
 	import org.flintparticles.threeD.emitters.Emitter3D;
 
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.geom.Vector3D;
 
 	[SWF(width='400', height='400', frameRate='61', backgroundColor='#000000')]
 	
@@ -45,7 +45,7 @@ package
 		private var smoke:Emitter3D;
 		private var fire:Emitter3D;
 		private var view:View3D;
-		private var renderer:Away3DRenderer;
+		private var renderer:A3D3Renderer;
 		
 		public function Main()
 		{
@@ -60,7 +60,7 @@ package
 			view.camera.z = 750;
 			view.camera.lookAt( new Vector3D( 0, 150, 0 ) );
 			addChild(view);
-			renderer = new Away3DRenderer( view.scene );
+			renderer = new A3D3Renderer( view.scene );
 			renderer.addEmitter( smoke );
 			renderer.addEmitter( fire );
 			

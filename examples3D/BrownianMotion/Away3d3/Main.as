@@ -31,7 +31,7 @@ package
 {
 	import away3d.containers.View3D;
 
-	import org.flintparticles.integration.away3d.v3.Away3DRenderer;
+	import org.flintparticles.integration.away3d.v3.A3D3Renderer;
 	import org.flintparticles.threeD.emitters.Emitter3D;
 
 	import flash.display.Sprite;
@@ -43,7 +43,7 @@ package
 	{
 		private var emitter:Emitter3D;
 		private var view:View3D;
-		private var renderer:Away3DRenderer;
+		private var renderer:A3D3Renderer;
 		
 		public function Main()
 		{
@@ -51,7 +51,7 @@ package
 
 			view = new View3D({x:200,y:200});
 			addChild(view);
-			renderer = new Away3DRenderer( view.scene );
+			renderer = new A3D3Renderer( view.scene );
 			renderer.addEmitter( emitter );
 
 			emitter.start();

@@ -55,7 +55,7 @@ package
 			addInitializer( new Lifetime( 2, 3 ) );
 			addInitializer( new Velocity( new DiscZone( new Vector3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), 20 ) ) );
 			addInitializer( new Position( new DiscZone( new Vector3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), 3 ) ) );
-			addInitializer( new A3D4DisplayObject( new FireBlob() ) );
+			addInitializer( new A3D4DisplayObject( new FireBlob(), true ) );
 
 			addAction( new Age( ) );
 			addAction( new Move( ) );

@@ -35,10 +35,10 @@ package
 	import org.flintparticles.common.counters.Steady;
 	import org.flintparticles.common.displayObjects.RadialDot;
 	import org.flintparticles.common.initializers.Lifetime;
+	import org.flintparticles.integration.away3d.v3.initializers.A3D3DisplayObjectClass;
 	import org.flintparticles.threeD.actions.LinearDrag;
 	import org.flintparticles.threeD.actions.Move;
 	import org.flintparticles.threeD.actions.RandomDrift;
-	import org.flintparticles.integration.away3d.v3.initializers.A3DDisplayObjectClass;
 	import org.flintparticles.threeD.emitters.Emitter3D;
 	import org.flintparticles.threeD.initializers.Velocity;
 	import org.flintparticles.threeD.zones.ConeZone;
@@ -53,7 +53,7 @@ package
       
 			addInitializer( new Lifetime( 11, 12 ) );
 			addInitializer( new Velocity( new ConeZone( new Vector3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), 0.5, 40, 30 ) ) );
-			addInitializer( new A3DDisplayObjectClass( RadialDot, 6 ) );
+			addInitializer( new A3D3DisplayObjectClass( RadialDot, [6] ) );
       
 			addAction( new Age( ) );
 			addAction( new Move( ) );

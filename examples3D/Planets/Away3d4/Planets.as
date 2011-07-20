@@ -48,7 +48,6 @@ package
 
 	import flash.display.BitmapData;
 	import flash.display.BitmapDataChannel;
-	import flash.display.DisplayObject;
 	import flash.geom.Vector3D;
 
 	public class Planets extends Emitter3D
@@ -61,7 +60,7 @@ package
 			bdata.perlinNoise( 128, 128, 12, Math.floor( Math.random() * int.MAX_VALUE ), true, true, BitmapDataChannel.BLUE | BitmapDataChannel.GREEN );
 			var mat:BitmapMaterial = new BitmapMaterial( bdata, true, true, true );
 			var sphere:Sphere = new Sphere( mat, 10, 12, 12 );
-			addInitializer( new A3D4CloneObject( sphere ) );
+			addInitializer( new A3D4CloneObject( sphere, true, 400 ) );
 
 			addInitializer( new Position( new ParallelogramZone( new Vector3D( -500, -500, 1500 ), new Vector3D( 1000, 0, 0 ), new Vector3D( 0, 1000, 0 ) ) ) );
 			addInitializer( new Velocity( new PointZone( new Vector3D( 0, 0, -400 ) ) ) );

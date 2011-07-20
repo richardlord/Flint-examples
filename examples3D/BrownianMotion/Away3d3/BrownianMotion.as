@@ -37,8 +37,8 @@ package
 	import org.flintparticles.common.initializers.CollisionRadiusInit;
 	import org.flintparticles.common.initializers.InitializerGroup;
 	import org.flintparticles.common.initializers.MassInit;
-	import org.flintparticles.integration.away3d.v3.initializers.A3DObjectClass;
-	import org.flintparticles.integration.away3d.v3.initializers.ApplyMaterial;
+	import org.flintparticles.integration.away3d.v3.initializers.A3D3ApplyMaterial;
+	import org.flintparticles.integration.away3d.v3.initializers.A3D3ObjectClass;
 	import org.flintparticles.threeD.actions.BoundingBox;
 	import org.flintparticles.threeD.actions.Collide;
 	import org.flintparticles.threeD.actions.Move;
@@ -58,14 +58,14 @@ package
 			counter = new Blast( 400 );
 			
 			var air:InitializerGroup = new InitializerGroup();
-			air.addInitializer( new A3DObjectClass( Sphere, { radius:2, segmentsW:4, segmentsH:4 } ) );
-			air.addInitializer( new ApplyMaterial( ColorMaterial, 0x666666, 1 ) );
+			air.addInitializer( new A3D3ObjectClass( Sphere, [ { radius:2, segmentsW:4, segmentsH:4 } ] ) );
+			air.addInitializer( new A3D3ApplyMaterial( ColorMaterial, 0x666666, 1 ) );
 			air.addInitializer( new MassInit( 1 ) );
 			air.addInitializer( new CollisionRadiusInit( 2 ) );
 			
 			var smoke:InitializerGroup = new InitializerGroup();
-			smoke.addInitializer( new A3DObjectClass( Sphere, { radius:10, segmentsW:6, segmentsH:6 } ) );
-			smoke.addInitializer( new ApplyMaterial( ColorMaterial, 0xFFFFFF, 1 ) );
+			smoke.addInitializer( new A3D3ObjectClass( Sphere, [ { radius:10, segmentsW:6, segmentsH:6 } ] ) );
+			smoke.addInitializer( new A3D3ApplyMaterial( ColorMaterial, 0xFFFFFF, 1 ) );
 			smoke.addInitializer( new MassInit( 5 ) );
 			smoke.addInitializer( new CollisionRadiusInit( 10 ) );
 			

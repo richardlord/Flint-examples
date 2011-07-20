@@ -42,7 +42,7 @@ var emitter:Emitter2D = new Emitter2D();
 
 emitter.counter = new Steady( 150 );
 
-emitter.addInitializer( new ImageClass( RadialDot, 2 ) );
+emitter.addInitializer( new ImageClass( RadialDot, [2] ) );
 emitter.addInitializer( new Position( new LineZone( new Point( -5, -5 ), new Point( 605, -5 ) ) ) );
 emitter.addInitializer( new Velocity( new PointZone( new Point( 0, 65 ) ) ) );
 emitter.addInitializer( new ScaleImageInit( 0.75, 2 ) );
