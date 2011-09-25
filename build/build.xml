@@ -3,7 +3,7 @@
 	
 	<property file="build.config"/>
 	
-	<target name="all" depends="examples2D,flex2D,examples3D,flex3D,papervision3D,away3D3,away3D4,alternative3D" description="Full build of all Flex and PureAS3 examples"/>
+	<target name="all" depends="examples2D,flex2D,examples3D,flex3D,papervision3D,away3D3,away3D4,flare3D,alternative3D" description="Full build of all Flex and PureAS3 examples"/>
 		
 	<target name="examples2D" description="Build 2D examples">
 		<antcall target="buildPure2d">
@@ -172,6 +172,15 @@
 			<param name="name" value='FireAndSmoke'/>
 		</antcall>
 		<antcall target="buildAway3d4">
+			<param name="name" value='Planets'/>
+		</antcall>
+	</target>
+	
+	<target name="flare3D" description="Build Flare 3D examples">
+		<antcall target="buildFlare3d">
+			<param name="name" value='BrownianMotion'/>
+		</antcall>
+		<antcall target="buildFlare3d">
 			<param name="name" value='Planets'/>
 		</antcall>
 	</target>
@@ -444,6 +453,47 @@
 
 			<arg line='-output ../examples3D/${name}/Away3d4/${name}.swf'/>
 			<arg line='../examples3D/${name}/Away3d4/Main.as'/>
+		</exec>
+	</target>
+	
+	<target name="buildFlare3d">
+		<exec executable="${mxmlc.molehill}" failonerror="false">
+			<arg line='-debug=false'/>
+			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
+
+			<arg line='-library-path+="${flint3d.swc}"'/>
+			<arg line='-library-path+="${flintFlare3d.swc}"'/>
+			<arg line='-library-path+="${flare3d.swc}"'/>
+
+			<arg line='-swf-version=13'/>
+			<arg line='-target-player 10.2.0.0'/>
+			<arg line='-title "Flint particles example - flintparticles.org"'/>
+			<arg line='-creator "Richard Lord"'/>
+
+			<arg line='-output ../examples3D/${name}/Flare3d/${name}.swf'/>
+			<arg line='../examples3D/${name}/Flare3d/Main.as'/>
+		</exec>
+	</target>
+	
+	<target name="buildFlare3dWithAssets">
+		<exec executable="${mxmlc.molehill}" failonerror="false">
+			<arg line='-debug=false'/>
+			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
+
+			<arg line='-library-path+="${flint3d.swc}"'/>
+			<arg line='-library-path+="${flintFlare3d.swc}"'/>
+			<arg line='-library-path+="${flare3d.swc}"'/>
+			<arg line='-library-path+="../examples3D/${name}/PureAS3/assets/Assets.swc"'/>
+
+			<arg line='-swf-version=13'/>
+			<arg line='-target-player 10.2.0.0'/>
+			<arg line='-title "Flint particles example - flintparticles.org"'/>
+			<arg line='-creator "Richard Lord"'/>
+
+			<arg line='-output ../examples3D/${name}/Flare3d/${name}.swf'/>
+			<arg line='../examples3D/${name}/Flare3d/Main.as'/>
 		</exec>
 	</target>
 	
