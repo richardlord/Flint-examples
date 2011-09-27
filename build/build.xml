@@ -165,15 +165,15 @@
 	</target>
 	
 	<target name="away3D4" description="Build Away 3D 4 examples">
-		<antcall target="buildAway3d4">
+		<!--<antcall target="buildAway3d4">
 			<param name="name" value='BrownianMotion'/>
-		</antcall>
+		</antcall>-->
 		<antcall target="buildAway3d4WithAssets">
 			<param name="name" value='FireAndSmoke'/>
 		</antcall>
-		<antcall target="buildAway3d4">
+		<!--<antcall target="buildAway3d4">
 			<param name="name" value='Planets'/>
-		</antcall>
+		</antcall>-->
 	</target>
 	
 	<target name="flare3D" description="Build Flare 3D examples">
@@ -291,7 +291,7 @@
 			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-library-path+="${flint2d.swc}"'/>
-			<arg line='-library-path+="../examples2D/${name}/PureAS3/assets/Assets.swc"'/>
+			<arg line='-library-path+="../examples2D/${name}/Flex/assets/Assets.swc"'/>
 
 			<arg line='-target-player 10.0.0.0'/>
 			<arg line='-title "Flint particles example - flintparticles.org"'/>
@@ -326,7 +326,7 @@
 			<arg line='-static-link-runtime-shared-libraries=true'/>
 
 			<arg line='-library-path+="${flint3d.swc}"'/>
-			<arg line='-library-path+="../examples3D/${name}/PureAS3/assets/Assets.swc"'/>
+			<arg line='-library-path+="../examples3D/${name}/Flex/assets/Assets.swc"'/>
 
 			<arg line='-target-player 10.0.0.0'/>
 			<arg line='-title "Flint particles example - flintparticles.org"'/>
@@ -365,7 +365,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-library-path+="${flintPV3d.swc}"'/>
 			<arg line='-library-path+="${papervision3d.swc}"'/>
-			<arg line='-library-path+="../examples3D/${name}/PureAS3/assets/Assets.swc"'/>
+			<arg line='-library-path+="../examples3D/${name}/Papervision3D/assets/Assets.swc"'/>
 
 			<arg line='-target-player 10.0.0.0'/>
 			<arg line='-title "Flint particles example - flintparticles.org"'/>
@@ -404,7 +404,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-library-path+="${flintA3d3.swc}"'/>
 			<arg line='-library-path+="${away3d3.swc}"'/>
-			<arg line='-library-path+="../examples3D/${name}/PureAS3/assets/Assets.swc"'/>
+			<arg line='-library-path+="../examples3D/${name}/Away3d3/assets/Assets.swc"'/>
 
 			<arg line='-target-player 10.0.0.0'/>
 			<arg line='-title "Flint particles example - flintparticles.org"'/>
@@ -444,7 +444,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-library-path+="${flintA3d4.swc}"'/>
 			<arg line='-library-path+="${away3d4.swc}"'/>
-			<arg line='-library-path+="../examples3D/${name}/PureAS3/assets/Assets.swc"'/>
+			<arg line='-library-path+="../examples3D/${name}/Away3d4/assets/Assets.swc"'/>
 
 			<arg line='-swf-version=13'/>
 			<arg line='-target-player 10.2.0.0'/>
@@ -485,7 +485,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-library-path+="${flintFlare3d.swc}"'/>
 			<arg line='-library-path+="${flare3d.swc}"'/>
-			<arg line='-library-path+="../examples3D/${name}/PureAS3/assets/Assets.swc"'/>
+			<arg line='-library-path+="../examples3D/${name}/Flare3d/assets/Assets.swc"'/>
 
 			<arg line='-swf-version=13'/>
 			<arg line='-target-player 10.2.0.0'/>
@@ -526,7 +526,7 @@
 			<arg line='-library-path+="${flint3d.swc}"'/>
 			<arg line='-library-path+="${flintAlt3d.swc}"'/>
 			<arg line='-library-path+="${alternativa3d.swc}"'/>
-			<arg line='-library-path+="../examples3D/${name}/PureAS3/assets/Assets.swc"'/>
+			<arg line='-library-path+="../examples3D/${name}/Alternativa3d/assets/Assets.swc"'/>
 
 			<arg line='-swf-version=13'/>
 			<arg line='-target-player 10.2.0.0'/>
