@@ -165,15 +165,15 @@
 	</target>
 	
 	<target name="away3D4" description="Build Away 3D 4 examples">
-		<!--<antcall target="buildAway3d4">
+		<antcall target="buildAway3d4">
 			<param name="name" value='BrownianMotion'/>
-		</antcall>-->
+		</antcall>
 		<antcall target="buildAway3d4WithAssets">
 			<param name="name" value='FireAndSmoke'/>
 		</antcall>
-		<!--<antcall target="buildAway3d4">
+		<antcall target="buildAway3d4">
 			<param name="name" value='Planets'/>
-		</antcall>-->
+		</antcall>
 	</target>
 	
 	<target name="flare3D" description="Build Flare 3D examples">
