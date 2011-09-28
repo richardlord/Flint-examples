@@ -49,11 +49,11 @@ package
 	{
 		public function Smoke()
 		{
-			counter = new Steady( 9 );
+			counter = new Steady( 10 );
       
 			addInitializer( new Lifetime( 11, 12 ) );
 			addInitializer( new Velocity( new ConeZone( new Vector3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), 0.5, 40, 30 ) ) );
-			addInitializer( new A3D4DisplayObject( new RadialDot( 8 ), true ) );
+			addInitializer( new A3D4DisplayObject( new RadialDot( 6 ), true ) );
       
 			addAction( new Age( ) );
 			addAction( new Move( ) );

@@ -52,7 +52,7 @@ package
 			counter = new Steady( 9 );
       
 			addInitializer( new Lifetime( 11, 12 ) );
-			addInitializer( new Velocity( new ConeZone( new Vector3D( 0, 0, 0 ), new Vector3D( 0, 1, 0 ), 0.5, 40, 30 ) ) );
+			addInitializer( new Velocity( new ConeZone( new Vector3D( 0, 0, 0 ), new Vector3D( 0, -1, 0 ), 0.5, 40, 30 ) ) );
 			addInitializer( new Alt3DDisplayObject( new RadialDot( 8 ) ) );
       
 			addAction( new Age( ) );

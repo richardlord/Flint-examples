@@ -62,8 +62,8 @@ package
 			addChild( camera.diagram );
 			
 			camera.rotationX = 0;
-			camera.y = 150;
-			camera.z = -400;
+			camera.y = -150;
+			camera.z = -300;
 
 			stage3D = stage.stage3Ds[0];
 			stage3D.addEventListener( Event.CONTEXT3D_CREATE, onContextCreate );

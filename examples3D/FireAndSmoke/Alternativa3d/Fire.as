@@ -30,7 +30,7 @@
 package
 {
 	import org.flintparticles.common.actions.Age;
-	import org.flintparticles.common.actions.ColorChange;
+	import org.flintparticles.common.actions.Fade;
 	import org.flintparticles.common.actions.ScaleImage;
 	import org.flintparticles.common.counters.Steady;
 	import org.flintparticles.common.initializers.Lifetime;
@@ -60,9 +60,9 @@ package
 			addAction( new Age( ) );
 			addAction( new Move( ) );
 			addAction( new LinearDrag( 1 ) );
-			addAction( new Accelerate( new Vector3D( 0, 40, 0 ) ) );
-			addAction( new ColorChange( 0xFEFFCC00, 0x00CC0000 ) );
-			addAction( new ScaleImage( 1, 1.5 ) );
+			addAction( new Accelerate( new Vector3D( 0, -40, 0 ) ) );
+			addAction( new Fade( 1, 0 ) );
+			addAction( new ScaleImage( 1.5, 2.2 ) );
 			addAction( new RotateToDirection() );
 		}
 	}
