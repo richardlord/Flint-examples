@@ -171,7 +171,7 @@
 		<antcall target="buildAway3d4WithAssets">
 			<param name="name" value='FireAndSmoke'/>
 		</antcall>
-		<antcall target="buildAway3d4">
+		<antcall target="buildAway3d4Plus">
 			<param name="name" value='Planets'/>
 		</antcall>
 	</target>
@@ -453,6 +453,26 @@
 
 			<arg line='-output ../examples3D/${name}/Away3d4/${name}.swf'/>
 			<arg line='../examples3D/${name}/Away3d4/Main.as'/>
+		</exec>
+	</target>
+	
+	<target name="buildAway3d4Plus">
+		<exec executable="${mxmlc.molehill}" failonerror="false">
+			<arg line='-debug=false'/>
+			<arg line='-optimize=true'/>
+			<arg line='-static-link-runtime-shared-libraries=true'/>
+
+			<arg line='-library-path+="${flint3d.swc}"'/>
+			<arg line='-library-path+="${flintA3d4.swc}"'/>
+			<arg line='-library-path+="${away3d4.swc}"'/>
+
+			<arg line='-swf-version=13'/>
+			<arg line='-target-player 10.2.0.0'/>
+			<arg line='-title "Flint particles example - flintparticles.org"'/>
+			<arg line='-creator "Richard Lord"'/>
+
+			<arg line='-output ../examples3D/${name}/Away3d4/${name}.swf'/>
+			<arg line='../examples3D/${name}/Away3d4/MainPlus.as'/>
 		</exec>
 	</target>
 	
